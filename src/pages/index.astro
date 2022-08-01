@@ -1,0 +1,39 @@
+---
+import GithubIcon from "../icons/GithubIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import Logo from "../icons/Logo.astro";
+---
+
+<html lang="en" class="h-full">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Krish Krish</title>
+</head>
+
+<body class="bg-[#1A1A1A] text-[#E9E9E9] h-full">
+	<header class="absolute top-0 p-6 flex gap-4 text-[#757575]">
+		<a href="https://github.com/Krish120003" class="hover:text-zinc-300">
+			<GithubIcon />
+		</a>
+		<a href="https://www.linkedin.com/in/krish-krish/" class="hover:text-zinc-300">
+			<LinkedInIcon />
+		</a>
+	</header>
+	<main class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square">
+
+		<h1 class="w-64 font-bold text-2xl absolute -translate-y-[2rem]">Krish Krish</h1>
+		<h1 class="w-64 font-bold text-2xl absolute -rotate-90 -translate-x-[9rem] translate-y-[7rem]">CS Student</h1>
+		<h1 class="w-64 font-bold text-2xl absolute -rotate-180 translate-y-[16rem]">Developer</h1>
+		<Logo class="w-64 relative" />
+
+	</main>
+	<footer class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs">
+		© Krish Krish 2022 - All Rights Reserved.
+	</footer>
+	<aside class="absolute top-0 w-full h-full bg-texture opacity-20 bg-blend-screen pointer-events-none" style={{
+		imageRendering: "pixelated" , backgroundSize: "20rem" }}></aside>
+</body>
+
+</html>
