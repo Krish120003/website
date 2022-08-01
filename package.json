@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.2.5",
-    "astro": "^1.0.0-rc.3"
+    "astro": "^1.0.0-rc.3",
+    "tailwindcss-animation-delay": "^1.0.7"
   }
 }

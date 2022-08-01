@@ -30,9 +30,16 @@ import Logo from "../icons/Logo.astro";
 	</header>
 	<main class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square">
 
-		<h1 class="w-64 font-bold text-2xl absolute -translate-y-[2rem]">Krish Krish</h1>
-		<h1 class="w-64 font-bold text-2xl absolute -rotate-90 -translate-x-[9rem] translate-y-[7rem]">CS Student</h1>
-		<h1 class="w-64 font-bold text-2xl absolute -rotate-180 translate-y-[16rem]">Developer</h1>
+		<h1 class="w-64 font-bold h-[2ex] text-2xl absolute -translate-y-[2rem] overflow-hidden">
+			<span class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-200">Krish Krish</span>
+		</h1>
+		<h1
+			class="w-64 font-bold h-[2ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden">
+			<span class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-700">CS Student</span>
+		</h1>
+		<h1 class="w-64 font-bold h-[2ex] text-2xl absolute -rotate-180 translate-y-[16.5rem] overflow-hidden">
+			<span class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1200">Developer</span>
+		</h1>
 		<Logo class="w-64 relative" />
 
 	</main>
