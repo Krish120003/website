@@ -8,11 +8,16 @@ module.exports = {
       },
       animation: {
         "appear-bottom": "appear-bottom-keyframes 1s ease forwards",
+        "fade-in": "opacity-fade 0.8s linear forwards",
       },
       keyframes: {
         "appear-bottom-keyframes": {
           "0%": { transform: "translateY(2ex)" },
           "100%": { transform: "translateY(0)" },
+        },
+        "opacity-fade": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
       },
     },
