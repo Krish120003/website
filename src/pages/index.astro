@@ -1,5 +1,5 @@
 ---
-import GithubIcon from "../icons/GithubIcon.astro";
+import GithubIcon from "../icons/GitHubIcon.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import Logo from "../icons/Logo.astro";
 ---
@@ -21,19 +21,33 @@ import Logo from "../icons/Logo.astro";
 			<LinkedInIcon />
 		</a>
 	</header>
-	<main class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square">
+	<main class="main">
 
-		<h1 class="w-64 font-bold text-2xl absolute -translate-y-[2rem]">Krish Krish</h1>
-		<h1 class="w-64 font-bold text-2xl absolute -rotate-90 -translate-x-[9rem] translate-y-[7rem]">CS Student</h1>
-		<h1 class="w-64 font-bold text-2xl absolute -rotate-180 translate-y-[16rem]">Developer</h1>
+		<h1 class="title -translate-y-[2rem]">Krish Krish</h1>
+		<h1 class="title -rotate-90 -translate-x-[9rem] translate-y-[7rem]">CS Student</h1>
+		<h1 class="title -rotate-180 translate-y-[16rem]">Developer</h1>
 		<Logo class="w-64 relative" />
 
 	</main>
-	<footer class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs">
+	<footer class="footer">
 		© Krish Krish 2022 - All Rights Reserved.
 	</footer>
-	<aside class="absolute top-0 w-full h-full bg-texture opacity-20 bg-blend-screen pointer-events-none" style={{
+	<aside class="aside" style={{
 		imageRendering: "pixelated" , backgroundSize: "20rem" }}></aside>
 </body>
 
 </html>
+<style lang="css" is:global>
+	.main{
+		@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square;
+	}
+	.title{
+		@apply w-64 font-bold text-2xl absolute;
+	}
+	.footer{
+		@apply absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs;
+	}
+	.aside{
+		@apply absolute top-0 w-full h-full bg-texture opacity-20 bg-blend-screen pointer-events-none;
+	}
+</style>
