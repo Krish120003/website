@@ -12,7 +12,7 @@ module.exports = {
       },
       keyframes: {
         "appear-bottom-keyframes": {
-          "0%": { transform: "translateY(2ex)" },
+          "0%": { transform: "translateY(2.25ex)" },
           "100%": { transform: "translateY(0)" },
         },
         "opacity-fade": {
