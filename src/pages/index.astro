@@ -8,61 +8,101 @@ import IconLink from "../components/IconLink.astro";
 ---
 
 <html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="title" content="Krish Krish" />
+    <meta
+      name="description"
+      content="Software Developer. Computer Science Student. "
+    />
+    <meta name="keywords" content="krish krish, krish" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="title" content="Krish Krish">
-	<meta name="description" content="Software Developer. Computer Science Student. ">
-	<meta name="keywords" content="krish krish, krish">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
+    <title>Krish Krish</title>
+  </head>
 
-	<title>Krish Krish</title>
-</head>
+  <body class="bg-[#1A1A1A] text-[#E9E9E9] h-full">
+    <header
+      class="absolute top-0 p-6 flex gap-4 text-[#757575] animate-fade-in opacity-0 animation-delay-2000"
+    >
+      <IconLink
+        title="Github Link"
+        href="https://github.com/Krish120003"
+        class="hover:text-zinc-100"
+      >
+        <GithubIcon />
+      </IconLink>
+      <IconLink
+        title="LinkedIn Link"
+        href="https://www.linkedin.com/in/krish-krish/"
+        class="hover:text-zinc-100"
+      >
+        <LinkedInIcon />
+      </IconLink>
+      <IconLink
+        title="Email hello@krishkrish.com"
+        href="mailto:hello@krishkrish.com"
+        class="hover:text-zinc-100"
+      >
+        <EnvelopeIcon />
+      </IconLink>
+    </header>
 
-<body class="bg-[#1A1A1A] text-[#E9E9E9] h-full">
-	<header class="absolute top-0 p-6 flex gap-4 text-[#757575] animate-fade-in opacity-0 animation-delay-2000 ">
-		<IconLink title="Github Link" href="https://github.com/Krish120003" class="hover:text-zinc-100">
-			<GithubIcon />
-		</IconLink>
-		<IconLink title="LinkedIn Link" href="https://www.linkedin.com/in/krish-krish/" class="hover:text-zinc-100">
-			<LinkedInIcon />
-		</IconLink>
-		<IconLink title="Email hello@krishkrish.com" href="mailto:hello@krishkrish.com" class="hover:text-zinc-100">
-			<EnvelopeIcon />
-		</IconLink>
-	</header>
-
-	<main class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square">
-
-		<h1 class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden">
-			<span class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600">Krish Krish</span>
-		</h1>
-		<h1
-			class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden">
-			<span class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000">CS Student</span>
-		</h1>
-		<h1 class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden">
-			<span class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block">
-				<div class="rotate-180">Developer</div>
-			</span>
-		</h1>
-		<Logo class="w-64 relative animate-fade-in" />
-
-	</main>
-	<footer class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs">
-		© Krish Krish 2022 - All Rights Reserved.
-	</footer>
-	<aside class="absolute top-0 w-full h-full bg-texture opacity-10 bg-blend-screen pointer-events-none" style={{
-		imageRendering: "pixelated" , backgroundSize: "32rem" }}></aside>
-</body>
-
+    <main
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square"
+    >
+      <h1
+        class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
+      >
+        <span
+          class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600"
+          >Krish Krish</span
+        >
+      </h1>
+      <h1
+        class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden"
+      >
+        <span
+          class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000"
+          >CS Student</span
+        >
+      </h1>
+      <h1
+        class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden"
+      >
+        <span
+          class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block"
+        >
+          <div class="rotate-180">Developer</div>
+        </span>
+      </h1>
+      <Logo class="w-64 relative animate-fade-in" />
+    </main>
+    <section
+      class="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-400 underline"
+    >
+      <a href="/resume.pdf">Resume</a>
+    </section>
+    <footer
+      class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs"
+    >
+      © Krish Krish 2022 - All Rights Reserved.
+    </footer>
+    <aside
+      class="absolute top-0 w-full h-full bg-texture opacity-10 bg-blend-screen pointer-events-none"
+      style={{
+        imageRendering: "pixelated",
+        backgroundSize: "32rem",
+      }}
+    >
+    </aside>
+    <style>
+      main {
+        box-shadow: 0 0 4em #ffffff88;
+      }
+    </style>
+  </body>
 </html>
-
-<style>
-	main {
-		box-shadow: 0 0 4em #ffffff88;
-	}
-</style>
