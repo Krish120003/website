@@ -82,9 +82,13 @@ import IconLink from "../components/IconLink.astro";
       <Logo class="w-64 relative animate-fade-in" />
     </main>
     <section
-      class="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-400 underline"
+      class="absolute top-[80%] left-1/2 -translate-x-1/2 text-gray-400 opacity-0 animate-fade-in animation-delay-2000"
     >
-      <a href="/Resume.pdf">Resume</a>
+      <a
+        href="/Resume.pdf"
+        class="no-underline visited:no-underline px-4 py-2 bg-white text-black font-semibold rounded-lg"
+        >Resume</a
+      >
     </section>
     <footer
       class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs"
