@@ -1,11 +1,10 @@
 # Website
 
-My personal website built with Astro.JS, TypeScript and TailwindCSS.
+My personal website built with Astro.JS, TypeScript and TailwindCSS. Live at [krishkrish.com](https://krishkrish.com)
 
 <p align="center">
   <a href="https://krishkrish.com">
     <img src="https://i.imgur.com/9yvR5VA.png"/>
-    <h1 align="center">krishkrish.com</h1>
   </a>
 </p>
 
