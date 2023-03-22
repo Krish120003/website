@@ -10,31 +10,7 @@ import TypescriptIcon from "../icons/TypescriptIcon.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import PrismaIcon from "../icons/PrismaIcon.astro";
 import Project from "../components/Project.astro";
-
-const data1 = {
-  name: "DeltaHacks Portal",
-  techIcons: [NextIcon, TypescriptIcon, ReactIcon, PrismaIcon],
-  description: `DeltaHacks Portal is a web application built with Next.JS, React, and
-      Typescript. It features a unified dashboard for attendees, volunteers,
-      judges, and sponsors, as well as a QR code encoded meal ticket system,
-      used to run an in-person event with over 600 participants. The application
-      was developed collaboratively by a team of 12.`,
-  github: "https://github.com/deltahacks/portal",
-  demo: "https://portal.deltahacks.com/dashboard",
-  image: DHCover,
-};
-const data2 = {
-  name: "River",
-  techIcons: [NextIcon, TypescriptIcon, ReactIcon, PrismaIcon],
-  description: `RSVPs, now simpler than ever. River is a web application to manage events and collect RSVPs. `,
-  github: "https://github.com/Krish120003/rsvp",
-  demo: "https://rsvp-river.vercel.app/",
-  image: RiverCover,
-};
-const data3 = {
-  name: "Diz Nutz",
-  techIcons: [NextIcon, TypescriptIcon, ReactIcon, PrismaIcon],
-};
+import { project_data } from "../projects.astro";
 ---
 
 <html lang="en" class="h-full">
@@ -59,8 +35,8 @@ const data3 = {
       <h1 class="mb-8 text-6xl font-bold">Projects</h1>
 
       <div class="flex flex-col gap-8">
-        <Project {...data1} />
-        <Project {...data2} />
+        {project_data.map((props) => <Project {...props} />)}
+        <!-- <Project {...data3} /> -->
       </div>
       <section>Project 2</section>
     </main>
