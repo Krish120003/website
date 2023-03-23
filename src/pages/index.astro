@@ -5,7 +5,7 @@ import { project_data } from "../projects.astro";
 import Project from "../components/Project.astro";
 ---
 
-<html lang="en" class="h-full">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -22,39 +22,47 @@ import Project from "../components/Project.astro";
     <title>Krish Krish</title>
   </head>
 
-  <body class="bg-[#1A1A1A] text-[#E9E9E9]">
+  <body
+    class="bg-[#1A1A1A] text-[#E9E9E9] w-full bg-texture bg-blend-soft-light"
+    style={{
+      imageRendering: "pixelated",
+      backgroundSize: "32rem",
+    }}
+  >
+    <!-- <div class="absolute h-[1000%] bg-red-500">eeeee</div> -->
     <Header />
-
-    <main
-      class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 aspect-square"
-    >
-      <h1
-        class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
+    <div class="flex h-screen">
+      <main
+        class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 aspect-square"
       >
-        <span
-          class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600"
-          >Krish Krish</span
+        <h1
+          class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
         >
-      </h1>
-      <h1
-        class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden"
-      >
-        <span
-          class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000"
-          >CS Student</span
+          <span
+            class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600"
+            >Krish Krish</span
+          >
+        </h1>
+        <h1
+          class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden"
         >
-      </h1>
-      <h1
-        class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden"
-      >
-        <span
-          class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block"
+          <span
+            class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000"
+            >CS Student</span
+          >
+        </h1>
+        <h1
+          class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden"
         >
-          <div class="rotate-180">Developer</div>
-        </span>
-      </h1>
-      <Logo class="relative w-64 animate-fade-in" />
-    </main>
+          <span
+            class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block"
+          >
+            <div class="rotate-180">Developer</div>
+          </span>
+        </h1>
+        <Logo class="relative w-64 animate-fade-in" />
+      </main>
+    </div>
     <section
       class="absolute top-[80%] left-1/2 -translate-x-1/2 text-gray-400 opacity-0 animate-fade-in animation-delay-2000"
     >
@@ -65,7 +73,7 @@ import Project from "../components/Project.astro";
       >
     </section>
 
-    <section class="w-5/6 max-w-screen-xl m-auto mt-[100vh]">
+    <section class="w-5/6 max-w-screen-xl m-auto">
       <h1 class="mb-8 text-6xl font-bold">Projects</h1>
 
       <div class="flex flex-col gap-8">
@@ -78,14 +86,14 @@ import Project from "../components/Project.astro";
     >
       © Krish Krish 2022 - All Rights Reserved.
     </footer>
-    <aside
-      class="absolute top-0 w-full h-full pointer-events-none bg-texture opacity-10 bg-blend-screen"
+    <!-- <aside
+      class="absolute top-0 w-screen h-screen pointer-events-none bg-texture opacity-10 bg-blend-screen"
       style={{
         imageRendering: "pixelated",
         backgroundSize: "32rem",
       }}
     >
-    </aside>
+    </aside> -->
 
     <style>
       main {
