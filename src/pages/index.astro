@@ -1,6 +1,8 @@
 ---
 import Logo from "../icons/Logo.astro";
 import Header from "../components/Header.astro";
+import { project_data } from "../projects.astro";
+import Project from "../components/Project.astro";
 ---
 
 <html lang="en" class="h-full">
@@ -20,11 +22,11 @@ import Header from "../components/Header.astro";
     <title>Krish Krish</title>
   </head>
 
-  <body class="bg-[#1A1A1A] text-[#E9E9E9] h-full">
+  <body class="bg-[#1A1A1A] text-[#E9E9E9]">
     <Header />
 
     <main
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square"
+      class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 aspect-square"
     >
       <h1
         class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
@@ -51,30 +53,40 @@ import Header from "../components/Header.astro";
           <div class="rotate-180">Developer</div>
         </span>
       </h1>
-      <Logo class="w-64 relative animate-fade-in" />
+      <Logo class="relative w-64 animate-fade-in" />
     </main>
     <section
       class="absolute top-[80%] left-1/2 -translate-x-1/2 text-gray-400 opacity-0 animate-fade-in animation-delay-2000"
     >
       <a
         href="/Resume.pdf"
-        class="no-underline visited:no-underline px-4 py-2 bg-white text-black font-semibold rounded-lg"
+        class="px-4 py-2 font-semibold text-black no-underline bg-white rounded-lg visited:no-underline"
         >Resume</a
       >
     </section>
+
+    <section class="w-5/6 max-w-screen-xl m-auto mt-[100vh]">
+      <h1 class="mb-8 text-6xl font-bold">Projects</h1>
+
+      <div class="flex flex-col gap-8">
+        {project_data.map((props) => <Project {...props} />)}
+      </div>
+    </section>
+
     <footer
-      class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs"
+      class="relative bottom-0 w-full p-10 text-center text-[#757575] text-xs"
     >
       © Krish Krish 2022 - All Rights Reserved.
     </footer>
     <aside
-      class="absolute top-0 w-full h-full bg-texture opacity-10 bg-blend-screen pointer-events-none"
+      class="absolute top-0 w-full h-full pointer-events-none bg-texture opacity-10 bg-blend-screen"
       style={{
         imageRendering: "pixelated",
         backgroundSize: "32rem",
       }}
     >
     </aside>
+
     <style>
       main {
         box-shadow: 0 0 4em #ffffff88;
