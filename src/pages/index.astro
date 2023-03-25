@@ -23,7 +23,7 @@ import Project from "../components/Project.astro";
   </head>
 
   <body
-    class="bg-[#1A1A1A] text-[#E9E9E9] w-full bg-gradient-to-b from-[#101010] to-[#1A1A1A]"
+    class="text-[#E9E9E9] w-full bg-[#101010]"
     style={{
       imageRendering: "pixelated",
       backgroundSize: "32rem",
@@ -73,19 +73,26 @@ import Project from "../components/Project.astro";
       >
     </section>
 
-    <section class="w-5/6 max-w-screen-xl m-auto">
-      <h1 class="mb-8 text-6xl font-bold">Projects</h1>
-
-      <div class="flex flex-col gap-8">
-        {project_data.map((props) => <Project {...props} />)}
-      </div>
-    </section>
-
-    <footer
-      class="relative bottom-0 w-full p-10 text-center text-[#757575] text-xs"
-    >
-      © Krish Krish 2022 - All Rights Reserved.
-    </footer>
+    <div class="relative">
+      <section class="w-5/6 max-w-screen-xl m-auto relative z-10">
+        <h1 class="mb-8 text-6xl font-bold">Projects</h1>
+        <div class="flex flex-col gap-8">
+          {project_data.map((props) => <Project {...props} />)}
+        </div>
+      </section>
+      <footer
+        class="relative bottom-0 w-full p-10 text-center text-[#757575] text-xs"
+      >
+        © Krish Krish 2022 - All Rights Reserved.
+      </footer>
+      <aside class="absolute w-screen h-72 -translate-y-full -z-20">
+        <div class="absolute pattern-bg w-screen h-72"></div>
+        <div
+          class="absolute bg-gradient-to-b from-[#101010] to-[rgba(16,16,16,0.6)] w-screen h-72"
+        >
+        </div>
+      </aside>
+    </div>
     <!-- <aside
       class="absolute top-0 w-screen h-screen pointer-events-none bg-texture opacity-10 bg-blend-screen"
       style={{
@@ -98,6 +105,10 @@ import Project from "../components/Project.astro";
     <style>
       main {
         box-shadow: 0 0 4em #ffffff88;
+      }
+
+      .pattern-bg {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15l15 15H0V15zM15 0l15 15V0H15z' fill='%23ffffff' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
       }
     </style>
   </body>
