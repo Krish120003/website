@@ -1,8 +1,7 @@
 ---
-import Logo from "../icons/Logo.astro";
-import Header from "../components/Header.astro";
-import { project_data } from "../projects.astro";
-import Project from "../components/Project.astro";
+import { Image, Picture } from "@astrojs/image/components";
+
+import portal from "../images/portal.png";
 ---
 
 <html lang="en">
@@ -22,94 +21,65 @@ import Project from "../components/Project.astro";
     <title>Krish Krish</title>
   </head>
 
-  <body
-    class="text-[#E9E9E9] w-full bg-[#101010]"
-    style={{
-      imageRendering: "pixelated",
-      backgroundSize: "32rem",
-    }}
-  >
-    <!-- <div class="absolute h-[1000%] bg-red-500">eeeee</div> -->
-    <Header />
-    <div class="flex h-screen">
-      <main
-        class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 aspect-square"
-      >
-        <h1
-          class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
-        >
-          <span
-            class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600"
-            >Krish Krish</span
-          >
-        </h1>
-        <h1
-          class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden"
-        >
-          <span
-            class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000"
-            >CS Student</span
-          >
-        </h1>
-        <h1
-          class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden"
-        >
-          <span
-            class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block"
-          >
-            <div class="rotate-180">Developer</div>
-          </span>
-        </h1>
-        <Logo class="relative w-64 animate-fade-in" />
-      </main>
-    </div>
-    <section
-      class="absolute top-[80%] left-1/2 -translate-x-1/2 text-gray-400 opacity-0 animate-fade-in animation-delay-2000"
-    >
-      <a
-        href="/Resume.pdf"
-        class="px-4 py-2 font-semibold text-black no-underline bg-white rounded-lg visited:no-underline"
-        >Resume</a
-      >
-    </section>
+  <body class="bg-primary">
+    <header class="flex items-center justify-between p-8 text-white">
+      <div>
+        <h1 class="text-6xl font-bold">Krish</h1>
+        <p>Creating class with code.</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <a class="w-8 h-8 bg-white" href="">1</a>
+        <a class="w-8 h-8 bg-white" href="">2</a>
+        <a class="w-8 h-8 bg-white" href="">1</a>
+      </div>
+    </header>
 
-    <div class="relative">
-      <section class="w-5/6 max-w-screen-xl m-auto relative z-10">
-        <h1 class="mb-8 text-6xl font-bold">Projects</h1>
-        <div class="flex flex-col gap-8">
-          {project_data.map((props) => <Project {...props} />)}
+    <main class="p-8">
+      <section
+        class="pb-4 mt-32 text-white border-b border-white border-opacity-25"
+      >
+        <div class="text-6xl font-bold">
+          <span class="pr-2 font-normal opacity-50 select-none">{">"}</span>curl
+          projects.krish
+          <span
+            class="w-6 h-full text-6xl bg-white select-none animate-pulse-full opacity-30"
+            >y</span
+          >
+        </div>
+        <p class="py-4 text-xl">
+          > upstream remote: 354 objects, done. <br /> > projects on remote:
+          <a href="https://github.com/Krish120003" class="underline">github ↗</a
+          >
+          <br />
+          <span class="p-1 font-mono text-sm border">git clone</span>
+          or fork to try them out.
+        </p>
+      </section>
+      <!-- Active Projects -->
+      <section class="flex flex-col py-8 text-xl text-white lg:flex-row">
+        <div>
+          <!-- image -->
+          <div
+            class="overflow-hidden transition-all bg-black shadow-2xl rounded-2xl shadow-red-900 hover:shadow-lg hover:translate-y-2"
+          >
+            <Image
+              src={portal}
+              alt="A stylized photo of two overlapping pages from the DeltaHacks Portal"
+              format="webp"
+              aspectRatio={16 / 9}
+            />
+          </div>
+          <h2 class="my-8 text-5xl font-bold">A Power Portal</h2>
+          <p>
+            One portal, all power. DeltaHacks's <a
+              class="underline"
+              href="https://portal.deltahacks.com">Portal↗</a
+            >
+            is a full-stack app to run a hackathon. Built with Next.js, Tailwind
+            and tRPC, it has some of the best current dev experience with reliability.
+          </p>
         </div>
       </section>
-      <footer
-        class="relative bottom-0 w-full p-10 text-center text-[#757575] text-xs"
-      >
-        © Krish Krish 2023 - All Rights Reserved.
-      </footer>
-      <aside class="absolute w-screen h-72 -translate-y-full -z-20">
-        <div class="absolute pattern-bg w-screen h-72"></div>
-        <div
-          class="absolute bg-gradient-to-b from-[#101010] to-[rgba(16,16,16,0.6)] w-screen h-72"
-        >
-        </div>
-      </aside>
-    </div>
-    <!-- <aside
-      class="absolute top-0 w-screen h-screen pointer-events-none bg-texture opacity-10 bg-blend-screen"
-      style={{
-        imageRendering: "pixelated",
-        backgroundSize: "32rem",
-      }}
-    >
-    </aside> -->
-
-    <style>
-      main {
-        box-shadow: 0 0 4em #ffffff88;
-      }
-
-      .pattern-bg {
-        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15l15 15H0V15zM15 0l15 15V0H15z' fill='%23ffffff' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
-      }
-    </style>
+    </main>
   </body>
 </html>

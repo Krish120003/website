@@ -3,12 +3,10 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      backgroundImage: {
-        texture: "url('/Texture.webp')",
-      },
       animation: {
         "appear-bottom": "appear-bottom-keyframes 1s ease forwards",
         "fade-in": "opacity-fade 0.8s linear forwards",
+        "pulse-full": "pulse-full 1s ease-in-out infinite",
       },
       keyframes: {
         "appear-bottom-keyframes": {
@@ -19,6 +17,14 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        "pulse-full": {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0.1 },
+        },
+      },
+      colors: {
+        // setup a primary color
+        primary: "#914DC4",
       },
     },
   },
