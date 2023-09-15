@@ -9,8 +9,16 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^0.2.5",
-    "astro": "^1.0.0-rc.3",
+    "@astrojs/tailwind": "^3.1.1",
+    "astro": "^2.1.5",
     "tailwindcss-animation-delay": "^1.0.7"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.16.1",
+    "@astrojs/react": "^2.1.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

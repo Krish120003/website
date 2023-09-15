@@ -1,0 +1,81 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+import Cover from "../images/projects/deltahacks/Cover.png";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import NextIcon from "../icons/NextIcon.astro";
+import TypescriptIcon from "../icons/TypescriptIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+import PrismaIcon from "../icons/PrismaIcon.astro";
+
+interface Props {
+  name: string;
+  techIcons: ((_props: Record<string, any>) => any)[];
+  description: string;
+  github?: string;
+  demo?: string;
+  image: string;
+}
+
+const { ...props } = Astro.props;
+---
+
+<section
+  class="flex flex-col-reverse lg:flex-row bg-[rgba(0,0,0)] p-8 rounded-xl"
+>
+  <!-- Left -->
+  <div class="flex flex-col gap-4 lg:w-1/2 lg:pr-8">
+    <h2 class="text-3xl font-semibold md:text-4xl">{props.name}</h2>
+    <div class="flex gap-2 text-white opacity-30">
+      {props.techIcons.map((Item) => <Item class="w-7 h-7" />)}
+    </div>
+    <p class="text-sm md:text-base">
+      {props.description}
+    </p>
+    <div class="flex flex-col gap-4 mt-auto lg:flex-row">
+      {
+        props.github && (
+          <a
+            target="_blank"
+            href={props.github}
+            class="flex items-center justify-center gap-4 py-2 text-lg font-bold text-black transition-all bg-white opacity-50 rounded-xl lg:w-36 hover:opacity-70"
+          >
+            <GitHubIcon class="w-6 h-6" />
+            GitHub
+          </a>
+        )
+      }
+      {
+        props.demo && (
+          <a
+            target="_blank"
+            href={props.demo}
+            class="flex items-center justify-center gap-4 py-2 text-lg font-bold text-black transition-all bg-white opacity-50 rounded-xl lg:w-36 hover:opacity-70"
+          >
+            <LinkIcon class="h-7 w-7" />
+            Demo
+          </a>
+        )
+      }
+    </div>
+  </div>
+  <!-- Right -->
+  <div>
+    <Image
+      src={props.image}
+      alt=""
+      width={1676}
+      height={935}
+      class="object-contain"
+      format={"webp"}
+    />
+  </div>
+  <!-- <Picture
+    src={Cover}
+    alt=""
+    class="md:w-1/2"
+    aspectRatio={1.792513369}
+    widths={[600, 1600]}
+    sizes={`(max-width: 4000px) 600px, 1600px`}
+  /> -->
+</section>

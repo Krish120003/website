@@ -1,13 +1,11 @@
 ---
-import EnvelopeIcon from "../icons/EnvelopeIcon.astro";
-import GithubIcon from "../icons/GitHubIcon.astro";
-import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import Logo from "../icons/Logo.astro";
-
-import IconLink from "../components/IconLink.astro";
+import Header from "../components/Header.astro";
+import { project_data } from "../projects.astro";
+import Project from "../components/Project.astro";
 ---
 
-<html lang="en" class="h-full">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -24,88 +22,93 @@ import IconLink from "../components/IconLink.astro";
     <title>Krish Krish</title>
   </head>
 
-  <body class="bg-[#1A1A1A] text-[#E9E9E9] h-full">
-    <header
-      class="absolute top-0 p-6 flex gap-4 text-[#757575] animate-fade-in opacity-0 animation-delay-2000"
-    >
-      <IconLink
-        title="Github Link"
-        href="https://github.com/Krish120003"
-        class="hover:text-zinc-100"
+  <body
+    class="text-[#E9E9E9] w-full bg-[#101010]"
+    style={{
+      imageRendering: "pixelated",
+      backgroundSize: "32rem",
+    }}
+  >
+    <!-- <div class="absolute h-[1000%] bg-red-500">eeeee</div> -->
+    <Header />
+    <div class="flex h-screen">
+      <main
+        class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 aspect-square"
       >
-        <GithubIcon />
-      </IconLink>
-      <IconLink
-        title="LinkedIn Link"
-        href="https://www.linkedin.com/in/krish-krish/"
-        class="hover:text-zinc-100"
-      >
-        <LinkedInIcon />
-      </IconLink>
-      <IconLink
-        title="Email hello@krishkrish.com"
-        href="mailto:hello@krishkrish.com"
-        class="hover:text-zinc-100"
-      >
-        <EnvelopeIcon />
-      </IconLink>
-    </header>
-
-    <main
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square"
-    >
-      <h1
-        class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
-      >
-        <span
-          class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600"
-          >Krish Krish</span
+        <h1
+          class="w-64 font-bold h-[2.25ex] text-2xl absolute -translate-y-[2rem] overflow-hidden"
         >
-      </h1>
-      <h1
-        class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden"
-      >
-        <span
-          class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000"
-          >CS Student</span
+          <span
+            class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-600"
+            >Krish Krish</span
+          >
+        </h1>
+        <h1
+          class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-90 -translate-x-[9.25rem] translate-y-[7.25rem] overflow-hidden"
         >
-      </h1>
-      <h1
-        class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden"
-      >
-        <span
-          class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block"
+          <span
+            class="absolute translate-y-[2ex] animate-appear-bottom animation-delay-1000"
+            >CS Student</span
+          >
+        </h1>
+        <h1
+          class="w-64 font-bold h-[2.25ex] text-2xl absolute -rotate-180 translate-y-[16.25rem] overflow-hidden"
         >
-          <div class="rotate-180">Developer</div>
-        </span>
-      </h1>
-      <Logo class="w-64 relative animate-fade-in" />
-    </main>
+          <span
+            class="absolute translate-y-[2.25ex] animate-appear-bottom animation-delay-1400 block"
+          >
+            <div class="rotate-180">Developer</div>
+          </span>
+        </h1>
+        <Logo class="relative w-64 animate-fade-in" />
+      </main>
+    </div>
     <section
       class="absolute top-[80%] left-1/2 -translate-x-1/2 text-gray-400 opacity-0 animate-fade-in animation-delay-2000"
     >
       <a
         href="/Resume.pdf"
-        class="no-underline visited:no-underline px-4 py-2 bg-white text-black font-semibold rounded-lg"
+        class="px-4 py-2 font-semibold text-black no-underline bg-white rounded-lg visited:no-underline"
         >Resume</a
       >
     </section>
-    <footer
-      class="absolute bottom-0 w-full p-4 text-center text-[#757575] text-xs"
-    >
-      © Krish Krish 2022 - All Rights Reserved.
-    </footer>
-    <aside
-      class="absolute top-0 w-full h-full bg-texture opacity-10 bg-blend-screen pointer-events-none"
+
+    <div class="relative">
+      <section class="w-5/6 max-w-screen-xl m-auto relative z-10">
+        <h1 class="mb-8 text-6xl font-bold">Projects</h1>
+        <div class="flex flex-col gap-8">
+          {project_data.map((props) => <Project {...props} />)}
+        </div>
+      </section>
+      <footer
+        class="relative bottom-0 w-full p-10 text-center text-[#757575] text-xs"
+      >
+        © Krish Krish 2023 - All Rights Reserved.
+      </footer>
+      <aside class="absolute w-screen h-72 -translate-y-full -z-20">
+        <div class="absolute pattern-bg w-screen h-72"></div>
+        <div
+          class="absolute bg-gradient-to-b from-[#101010] to-[rgba(16,16,16,0.6)] w-screen h-72"
+        >
+        </div>
+      </aside>
+    </div>
+    <!-- <aside
+      class="absolute top-0 w-screen h-screen pointer-events-none bg-texture opacity-10 bg-blend-screen"
       style={{
         imageRendering: "pixelated",
         backgroundSize: "32rem",
       }}
     >
-    </aside>
+    </aside> -->
+
     <style>
       main {
         box-shadow: 0 0 4em #ffffff88;
+      }
+
+      .pattern-bg {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15l15 15H0V15zM15 0l15 15V0H15z' fill='%23ffffff' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
       }
     </style>
   </body>
