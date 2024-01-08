@@ -65,7 +65,7 @@ export default function Home() {
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="lowercase dark:bg-neutral-900 dark:text-white">
+      <div className="dark:bg-neutral-900 dark:text-white">
         <main className="m-auto min-h-full max-w-3xl  p-12">
           <section className="space-y-2 pb-6">
             <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">

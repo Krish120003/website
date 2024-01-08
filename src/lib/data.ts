@@ -43,12 +43,12 @@ export const projects: ProjectItem[] = [
     link: "https://github.com/Krish120003/CPP_Neural_Network",
   },
   {
-    title: "website",
+    title: "Website",
     description: "My personal website",
     link: "https://github.com/Krish120003/website",
   },
   {
-    title: "river",
+    title: "River",
     description: "A simplified and user-friendly RSVP collection platform",
     link: "https://github.com/Krish120003/rsvp",
   },
