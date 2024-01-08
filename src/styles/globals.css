@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* set root to full height and width */
+
+
+html, body, #__next {
+  height: 100%;
+}
