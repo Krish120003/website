@@ -83,62 +83,62 @@ interface TechnologyItem {
 export const technologies: TechnologyItem[] = [
   {
     name: "Python",
-    icon: SiPython,
+    icon: SiPython as React.FC,
   },
   {
     name: "Typescript",
-    icon: SiTypescript,
+    icon: SiTypescript as React.FC,
   },
   {
     name: "Docker",
-    icon: SiDocker,
+    icon: SiDocker as React.FC,
   },
   {
     name: "React",
-    icon: SiReact,
+    icon: SiReact as React.FC,
   },
   {
     name: "Tailwind",
-    icon: SiTailwindcss,
+    icon: SiTailwindcss as React.FC,
   },
   {
     name: "C++",
-    icon: SiCplusplus,
+    icon: SiCplusplus as React.FC,
   },
   {
     name: "Next.js",
-    icon: SiNextdotjs,
+    icon: SiNextdotjs as React.FC,
   },
   {
     name: "Node.js",
-    icon: SiNodedotjs,
+    icon: SiNodedotjs as React.FC,
   },
   {
     name: "Git",
-    icon: SiGit,
+    icon: SiGit as React.FC,
   },
   {
     name: "Linux",
-    icon: SiLinux,
+    icon: SiLinux as React.FC,
   },
   {
     name: "PostgreSQL",
-    icon: SiPostgresql,
+    icon: SiPostgresql as React.FC,
   },
   {
     name: "Google Cloud",
-    icon: SiGooglecloud,
+    icon: SiGooglecloud as React.FC,
   },
   {
     name: "Jupyter",
-    icon: SiJupyter,
+    icon: SiJupyter as React.FC,
   },
   {
     name: "Java",
-    icon: FaJava,
+    icon: FaJava as React.FC,
   },
   {
     name: "VS Code",
-    icon: SiVisualstudiocode,
+    icon: SiVisualstudiocode as React.FC,
   },
 ];
