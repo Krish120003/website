@@ -76,7 +76,7 @@ export default function Home() {
               Canada. i spend my time learning and experimenting with web and
               machine learning technologies.
             </p>
-            <p className=" dark:text-neutral-200">
+            <p className="dark:text-neutral-200">
               Currently, I lead a team of developers at{" "}
               <Link
                 href="https://deltahacks.com"
@@ -89,6 +89,11 @@ export default function Home() {
                 McMaster University
               </span>{" "}
               as a teaching assistant.
+            </p>
+            <p className="dark:text-neutral-200">
+              Previously, I worked as a junior software developer at Synergy
+              Machines, responsible for developing full stack dashboards for
+              evironmental data analytics.
             </p>
           </section>
           <section className="pb-8">
@@ -111,7 +116,10 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="/resume.pdf" className="flex w-fit items-center">
+                <Link
+                  href="/krish_resume.pdf"
+                  className="flex w-fit items-center"
+                >
                   Resume <MdArrowOutward />
                 </Link>
               </li>
