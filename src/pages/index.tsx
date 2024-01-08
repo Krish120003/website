@@ -55,7 +55,7 @@ export default function Home() {
         />
 
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="viewport" content="width=device-width" />
 
@@ -69,23 +69,26 @@ export default function Home() {
         <main className="m-auto min-h-full max-w-3xl  p-12">
           <section className="space-y-2 pb-6">
             <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
-              Hi there, I'm Krish
+              Hi there, {"I'm"} Krish
             </h1>
             <p className="dark:text-neutral-200">
-              I'm a 20 year old computer science undergrad student from Canada.
-              i spend my time learning and experimenting with web and machine
-              learning technologies.
+              {"I'm"} a 20 year old computer science undergrad student from
+              Canada. i spend my time learning and experimenting with web and
+              machine learning technologies.
             </p>
             <p className=" dark:text-neutral-200">
               Currently, I lead a team of developers at{" "}
               <Link
                 href="https://deltahacks.com"
-                className="inline-flex items-center text-white underline"
+                className="inline-flex items-center font-semibold underline dark:text-white"
               >
                 DeltaHacks <MdArrowOutward />
               </Link>
-              , and teach Python Programming at{" "}
-              <span className="text-white">McMaster University</span>.
+              hosting a hackathon, and teach Python Programming at{" "}
+              <span className="font-semibold dark:text-white">
+                McMaster University
+              </span>{" "}
+              as a teaching assistant.
             </p>
           </section>
           <section className="pb-8">
@@ -94,7 +97,7 @@ export default function Home() {
               <li>
                 <Link
                   href="https://www.linkedin.com/in/krish-krish/"
-                  className="flex items-center"
+                  className="flex w-fit items-center"
                 >
                   LinkedIn <MdArrowOutward />
                 </Link>
@@ -102,9 +105,14 @@ export default function Home() {
               <li>
                 <Link
                   href="https://github.com/Krish120003"
-                  className="flex items-center"
+                  className="flex w-fit items-center"
                 >
                   GitHub <MdArrowOutward />
+                </Link>
+              </li>
+              <li>
+                <Link href="/resume.pdf" className="flex w-fit items-center">
+                  Resume <MdArrowOutward />
                 </Link>
               </li>
             </ul>
@@ -113,8 +121,8 @@ export default function Home() {
             <h2 className="pb-1 text-xl font-semibold md:text-2xl">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 dark:text-neutral-200">
               {projects.map((project) => (
-                <div className="pb-4 pr-6">
-                  <ProjectItem key={project.title} {...project} />
+                <div className="pb-4 pr-6" key={project.title}>
+                  <ProjectItem {...project} />
                 </div>
               ))}
             </div>
@@ -132,6 +140,10 @@ export default function Home() {
               ))}
             </ul>
           </section>
+          <footer className="mt-8 flex flex-col justify-between border-t py-8 md:flex-row">
+            <div>&copy; {new Date().getFullYear()} Krish Krish</div>
+            <Link href="mailto:hello@krishkrish.com">hello@krishkrish.com</Link>
+          </footer>
         </main>
       </div>
     </>
