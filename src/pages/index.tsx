@@ -4,7 +4,6 @@ import React from "react";
 
 import { MdArrowOutward } from "react-icons/md";
 import { projects, technologies } from "../lib/data";
-import { SiArchiveofourown, SiLinkedin } from "react-icons/si";
 import { Layout } from "~/components/Layout";
 
 interface ProjectItemProps {

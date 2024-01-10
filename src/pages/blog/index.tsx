@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostMetadataType, getSortedPostsData } from "../../lib/posts";
+import { type PostMetadataType, getSortedPostsData } from "../../lib/posts";
 import { Layout } from "~/components/Layout";
 import { format } from "date-fns";
 
@@ -11,10 +11,10 @@ export default function Blog({ allPostsData }: BlogProps) {
   return (
     <Layout blog>
       <h1 className="text-lg text-neutral-800 dark:text-neutral-100">
-        Krish's Blog
+        Krish&apos;s Blog
       </h1>
       <p className="text-neutral-600 dark:text-neutral-400">
-        I make occasional posts about what I'm learning
+        I make occasional posts about what I&apos;m learning
       </p>
       <ul className="space-y-8 pt-8">
         {allPostsData.map(({ id, date, title, description }) => (

@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import type { InferGetStaticPropsType } from "next";
 import { Layout } from "~/components/Layout";
 import { format } from "date-fns";
 export default function Post({
-  postData: { title, id, date, contentHtml, readTime },
+  postData: { title, date, contentHtml, readTime },
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
