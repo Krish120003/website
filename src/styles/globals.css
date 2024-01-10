@@ -18,11 +18,21 @@ body,
   object-fit: cover;
   scale: 1.4;
   animation: rotate 45s infinite linear;
-  filter: contrast(1) blur(120px);
+  filter: blur(120px);
 }
 
 .bg-small {
   filter: blur(70px);
+}
+
+/* dark mode */
+@media (prefers-color-scheme: light) {
+  .bg-big {
+    filter: hue-rotate(210deg) saturate(0.5) blur(120px);
+  }
+  .bg-small {
+    filter: hue-rotate(210deg) saturate(0.5) blur(70px);
+  }
 }
 
 @keyframes rotate {
