@@ -20,7 +20,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
 }) => {
   return (
     <>
-      <Link href={link} className="flex items-end underline">
+      <Link href={link} className="flex items-end pb-2 underline">
         <h3>{title}</h3>
         <div className="pb-1">
           <MdArrowOutward />
@@ -67,7 +67,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="space-y-2 pb-6">
+        <section className="space-y-6 pb-6">
           <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
             Hi there, {"I'm"} Krish
           </h1>
@@ -96,9 +96,9 @@ export default function Home() {
             evironmental data analytics.
           </p>
         </section>
-        <section className="pb-8">
+        <section className="py-6">
           <h2 className="pb-1 text-xl font-semibold md:text-2xl">Links</h2>
-          <ul className="space-y-1 underline">
+          <ul className="space-y-1 underline dark:text-neutral-300">
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
@@ -125,11 +125,11 @@ export default function Home() {
             </li>
           </ul>
         </section>
-        <section>
-          <h2 className="pb-1 text-xl font-semibold md:text-2xl">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 dark:text-neutral-200">
+        <section className="py-6">
+          <h2 className="pb-6 text-xl font-semibold md:text-2xl">Projects</h2>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 dark:text-neutral-300">
             {projects.map((project) => (
-              <div className="pb-4 pr-6" key={project.title}>
+              <div className="" key={project.title}>
                 <ProjectItem {...project} />
               </div>
             ))}
@@ -139,7 +139,7 @@ export default function Home() {
           <h2 className="text-xl font-semibold md:text-2xl">
             Technologies I use
           </h2>
-          <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-200">
+          <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">
             {technologies.map((tech) => (
               <li key={tech.name} className="flex items-center gap-2">
                 {<tech.icon />}

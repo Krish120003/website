@@ -44,7 +44,8 @@ export const projects: ProjectItem[] = [
   },
   {
     title: "Website",
-    description: "My personal website",
+    description:
+      "My personal website and blog, built with Next.js and Tailwind",
     link: "https://github.com/Krish120003/website",
   },
   {
@@ -59,7 +60,8 @@ export const projects: ProjectItem[] = [
   },
   {
     title: "Advent of Code solutions",
-    description: "My solutions to Advent of Code since 2022",
+    description:
+      "My solutions to Advent of Code since 2022, implemented in Python",
     link: "https://github.com/Krish120003/AdventOfCode",
   },
   {
