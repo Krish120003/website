@@ -10,5 +10,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // add prose
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;
