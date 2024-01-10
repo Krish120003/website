@@ -2,10 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* set root to full height and width */
 
-
-html, body, #__next {
+html,
+body,
+#__next {
   height: 100%;
+}
+
+.bg-big {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-color: red;
+  object-fit: cover;
+  scale: 1.4;
+  animation: rotate 45s infinite linear;
+  filter: contrast(1) blur(120px);
+}
+
+.bg-small {
+  filter: blur(70px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
