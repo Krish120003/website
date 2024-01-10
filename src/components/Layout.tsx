@@ -20,7 +20,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
         {blog ? (
           <Link
             href={parentRoute}
-            className="flex items-center gap-1 pb-8 text-neutral-500 transition-all hover:gap-2 hover:text-neutral-700 dark:hover:text-neutral-300"
+            className="mb-8 flex items-center gap-1 text-neutral-500 transition-all hover:gap-2 hover:text-neutral-700 dark:hover:text-neutral-300"
           >
             <IoMdArrowBack />
             Back
