@@ -9,7 +9,7 @@ interface LayoutProps {
 }
 
 const Background = () => {
-  const imgSrc = "https://i.imgur.com/93PRbNf.png";
+  const imgSrc = "/k.png";
 
   return (
     <aside className="fixed -z-10 h-full max-h-full w-full overflow-hidden opacity-50 invert dark:bg-black dark:invert-0">
@@ -35,7 +35,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
 
   return (
     <>
-      <div className="h-fit  dark:text-white">
+      <div className="h-fit dark:text-white">
         <Background key="background" />
         <main className="m-auto min-h-full max-w-3xl px-12 pt-12">
           {blog ? (
