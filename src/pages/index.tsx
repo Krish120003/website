@@ -2,9 +2,15 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-import { MdArrowOutward } from "react-icons/md";
+import {
+  MdArrowOutward,
+  MdLaptopChromebook,
+  MdOutlineLibraryBooks,
+} from "react-icons/md";
 import { projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaFilePdf } from "react-icons/fa";
 
 interface ProjectItemProps {
   title: string;
@@ -101,33 +107,49 @@ export default function Home() {
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
-                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
+                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
               >
-                LinkedIn <MdArrowOutward />
+                <span className="flex items-center gap-1">
+                  <SiLinkedin />
+                  LinkedIn
+                </span>
+                <MdArrowOutward />
               </Link>
             </li>
             <li>
               <Link
                 href="https://github.com/Krish120003"
-                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
+                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
               >
-                GitHub <MdArrowOutward />
+                <span className="flex items-center gap-1">
+                  <SiGithub />
+                  GitHub
+                </span>
+                <MdArrowOutward />
               </Link>
             </li>
             <li>
               <Link
                 href="/krish_resume.pdf"
-                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
+                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
               >
-                Resume <MdArrowOutward />
+                <span className="flex items-center gap-1">
+                  <FaFilePdf />
+                  Resume
+                </span>
+                <MdArrowOutward />
               </Link>
             </li>
             <li>
               <Link
                 href="/blog"
-                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
+                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
               >
-                Blog <MdArrowOutward />
+                <span className="flex items-center gap-1">
+                  <MdOutlineLibraryBooks />
+                  Blog
+                </span>{" "}
+                <MdArrowOutward />
               </Link>
             </li>
           </ul>
