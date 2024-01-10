@@ -36,7 +36,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
   return (
     <>
       <div className="h-fit  dark:text-white">
-        <Background />
+        <Background key="background" />
         <main className="m-auto min-h-full max-w-3xl px-12 pt-12">
           {blog ? (
             <Link

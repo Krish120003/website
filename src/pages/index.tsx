@@ -68,11 +68,11 @@ export default function Home() {
       <Layout>
         <section className="space-y-6 pb-6">
           <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
-            Hi there, {"I'm"} Krish
+            Hi There, {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
             {"I'm"} a 20 year old computer science undergrad student from
-            Canada. i spend my time learning and experimenting with web and
+            Canada. I spend my time learning and experimenting with web and
             machine learning technologies.
           </p>
           <p className="dark:text-neutral-200">
@@ -144,7 +144,7 @@ export default function Home() {
         </section>
         <section>
           <h2 className="text-xl font-semibold md:text-2xl">
-            Technologies I use
+            Technologies I Use
           </h2>
           <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">
             {technologies.map((tech) => (
