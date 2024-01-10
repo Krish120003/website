@@ -5,6 +5,7 @@ import React from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { projects, technologies } from "../lib/data";
 import { SiArchiveofourown, SiLinkedin } from "react-icons/si";
+import { Layout } from "~/components/Layout";
 
 interface ProjectItemProps {
   title: string;
@@ -65,95 +66,89 @@ export default function Home() {
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="dark:bg-neutral-900 dark:text-white">
-        <main className="m-auto min-h-full max-w-3xl  p-12">
-          <section className="space-y-2 pb-6">
-            <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
-              Hi there, {"I'm"} Krish
-            </h1>
-            <p className="dark:text-neutral-200">
-              {"I'm"} a 20 year old computer science undergrad student from
-              Canada. i spend my time learning and experimenting with web and
-              machine learning technologies.
-            </p>
-            <p className="dark:text-neutral-200">
-              Currently, I lead a team of developers at{" "}
+      <Layout>
+        <section className="space-y-2 pb-6">
+          <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
+            Hi there, {"I'm"} Krish
+          </h1>
+          <p className="dark:text-neutral-200">
+            {"I'm"} a 20 year old computer science undergrad student from
+            Canada. i spend my time learning and experimenting with web and
+            machine learning technologies.
+          </p>
+          <p className="dark:text-neutral-200">
+            Currently, I lead a team of developers at{" "}
+            <Link
+              href="https://deltahacks.com"
+              className="inline-flex items-center font-semibold underline dark:text-white"
+            >
+              DeltaHacks <MdArrowOutward />
+            </Link>
+            hosting a hackathon, and teach Python Programming at{" "}
+            <span className="font-semibold dark:text-white">
+              McMaster University
+            </span>{" "}
+            as a teaching assistant.
+          </p>
+          <p className="dark:text-neutral-200">
+            Previously, I worked as a junior software developer at Synergy
+            Machines, responsible for developing full stack dashboards for
+            evironmental data analytics.
+          </p>
+        </section>
+        <section className="pb-8">
+          <h2 className="pb-1 text-xl font-semibold md:text-2xl">Links</h2>
+          <ul className="space-y-1 underline">
+            <li>
               <Link
-                href="https://deltahacks.com"
-                className="inline-flex items-center font-semibold underline dark:text-white"
+                href="https://www.linkedin.com/in/krish-krish/"
+                className="flex w-fit items-center"
               >
-                DeltaHacks <MdArrowOutward />
+                LinkedIn <MdArrowOutward />
               </Link>
-              hosting a hackathon, and teach Python Programming at{" "}
-              <span className="font-semibold dark:text-white">
-                McMaster University
-              </span>{" "}
-              as a teaching assistant.
-            </p>
-            <p className="dark:text-neutral-200">
-              Previously, I worked as a junior software developer at Synergy
-              Machines, responsible for developing full stack dashboards for
-              evironmental data analytics.
-            </p>
-          </section>
-          <section className="pb-8">
-            <h2 className="pb-1 text-xl font-semibold md:text-2xl">Links</h2>
-            <ul className="space-y-1 underline">
-              <li>
-                <Link
-                  href="https://www.linkedin.com/in/krish-krish/"
-                  className="flex w-fit items-center"
-                >
-                  LinkedIn <MdArrowOutward />
-                </Link>
+            </li>
+            <li>
+              <Link
+                href="https://github.com/Krish120003"
+                className="flex w-fit items-center"
+              >
+                GitHub <MdArrowOutward />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/krish_resume.pdf"
+                className="flex w-fit items-center"
+              >
+                Resume <MdArrowOutward />
+              </Link>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="pb-1 text-xl font-semibold md:text-2xl">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 dark:text-neutral-200">
+            {projects.map((project) => (
+              <div className="pb-4 pr-6" key={project.title}>
+                <ProjectItem {...project} />
+              </div>
+            ))}
+          </div>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold md:text-2xl">
+            Technologies I use
+          </h2>
+          <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-200">
+            {technologies.map((tech) => (
+              <li key={tech.name} className="flex items-center gap-2">
+                {<tech.icon />}
+                {tech.name}
               </li>
-              <li>
-                <Link
-                  href="https://github.com/Krish120003"
-                  className="flex w-fit items-center"
-                >
-                  GitHub <MdArrowOutward />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/krish_resume.pdf"
-                  className="flex w-fit items-center"
-                >
-                  Resume <MdArrowOutward />
-                </Link>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2 className="pb-1 text-xl font-semibold md:text-2xl">Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 dark:text-neutral-200">
-              {projects.map((project) => (
-                <div className="pb-4 pr-6" key={project.title}>
-                  <ProjectItem {...project} />
-                </div>
-              ))}
-            </div>
-          </section>
-          <section>
-            <h2 className="text-xl font-semibold md:text-2xl">
-              Technologies I use
-            </h2>
-            <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-200">
-              {technologies.map((tech) => (
-                <li key={tech.name} className="flex items-center gap-2">
-                  {<tech.icon />}
-                  {tech.name}
-                </li>
-              ))}
-            </ul>
-          </section>
-          <footer className="mt-8 flex flex-col justify-between border-t py-8 md:flex-row">
-            <div>&copy; {new Date().getFullYear()} Krish Krish</div>
-            <Link href="mailto:hello@krishkrish.com">hello@krishkrish.com</Link>
-          </footer>
-        </main>
-      </div>
+            ))}
+          </ul>
+        </section>
+      </Layout>
     </>
   );
 }
