@@ -102,7 +102,7 @@ export default function Home() {
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
-                className="flex w-fit items-center"
+                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
               >
                 LinkedIn <MdArrowOutward />
               </Link>
@@ -110,7 +110,7 @@ export default function Home() {
             <li>
               <Link
                 href="https://github.com/Krish120003"
-                className="flex w-fit items-center"
+                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
               >
                 GitHub <MdArrowOutward />
               </Link>
@@ -118,9 +118,17 @@ export default function Home() {
             <li>
               <Link
                 href="/krish_resume.pdf"
-                className="flex w-fit items-center"
+                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
               >
                 Resume <MdArrowOutward />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="flex w-fit items-center gap-0 transition-all hover:gap-2"
+              >
+                Blog <MdArrowOutward />
               </Link>
             </li>
           </ul>
