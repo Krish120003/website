@@ -4,7 +4,7 @@ My personal website built with Next.js, TypeScript and TailwindCSS. Live at [kri
 
 <p align="center">
   <a href="https://krishkrish.com">
-    <img src="https://i.imgur.com/ICfZEpN.png"/>
+    <img src="https://i.imgur.com/PfSmnTb.png"/>
   </a>
 </p>
 
