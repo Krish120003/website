@@ -12,7 +12,7 @@ export default function Blog({ allPostsData }: BlogProps) {
   return (
     <Layout blog>
       <Head>
-        <title>krish's blog</title>
+        <title>krish&apos;s blog</title>
       </Head>
       <h1 className="text-lg text-neutral-800 dark:text-neutral-100">
         Krish&apos;s Blog

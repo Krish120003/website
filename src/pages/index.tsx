@@ -2,11 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-import {
-  MdArrowOutward,
-  MdLaptopChromebook,
-  MdOutlineLibraryBooks,
-} from "react-icons/md";
+import { MdArrowOutward, MdOutlineLibraryBooks } from "react-icons/md";
 import { projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin } from "react-icons/si";
