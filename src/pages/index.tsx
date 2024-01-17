@@ -89,7 +89,8 @@ export default function Home() {
             <span className="font-semibold dark:text-white">
               McMaster University
             </span>{" "}
-            as a teaching assistant.
+            as a teaching assistant. I'm looking for internship opportunities to
+            learn and grow as a developer.
           </p>
           <p className="dark:text-neutral-200">
             Previously, I worked as a junior software developer at Synergy
