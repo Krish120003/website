@@ -9,20 +9,20 @@ export default function Post({
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{`krish's blog • ${title}`}</title>
       </Head>
       <Layout blog>
         <div className="">
-          <h1 className="text-xl font-semibold leading-tight tracking-tight">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight">
             {title}
           </h1>
-          <div className="py-1 text-sm dark:text-neutral-400">
+          <div className="py-1 text-sm dark:opacity-80">
             Published {format(date, "LLL d, y")} • {readTime} minute read
           </div>
 
           <div
             dangerouslySetInnerHTML={{ __html: contentHtml }}
-            className="prose-md prose prose-neutral w-full max-w-none pt-8 dark:prose-invert"
+            className="prose-md prose prose-neutral w-full max-w-none pt-8 dark:prose-invert [&>p>img]:m-auto"
           />
         </div>
       </Layout>

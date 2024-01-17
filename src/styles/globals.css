@@ -43,3 +43,8 @@ body,
     transform: rotate(360deg);
   }
 }
+
+.katex-html {
+  display: none;
+  visibility: hidden;
+}

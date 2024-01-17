@@ -2,6 +2,7 @@ import Link from "next/link";
 import { type PostMetadataType, getSortedPostsData } from "../../lib/posts";
 import { Layout } from "~/components/Layout";
 import { format } from "date-fns";
+import Head from "next/head";
 
 interface BlogProps {
   allPostsData: PostMetadataType[];
@@ -10,6 +11,9 @@ interface BlogProps {
 export default function Blog({ allPostsData }: BlogProps) {
   return (
     <Layout blog>
+      <Head>
+        <title>krish's blog</title>
+      </Head>
       <h1 className="text-lg text-neutral-800 dark:text-neutral-100">
         Krish&apos;s Blog
       </h1>
@@ -25,7 +29,7 @@ export default function Blog({ allPostsData }: BlogProps) {
             >
               {title}
             </Link>
-            <div className="text-md text-neutral-800 dark:text-neutral-400">
+            <div className="text-md text-neutral-800 dark:text-white dark:opacity-65">
               {format(date, "LLL d, y")}
             </div>
             <p className="dark:text-neutral-300">{description}</p>

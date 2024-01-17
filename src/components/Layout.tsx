@@ -17,11 +17,11 @@ const Background = () => {
 
       <img
         src={imgSrc}
-        className="animate-spin-20s bg-small absolute w-1/2 mix-blend-screen"
+        className="bg-small absolute w-1/2 animate-spin-20s mix-blend-screen"
       />
       <img
         src={imgSrc}
-        className="bg-small animate-spin-20s animation-delay--5000 absolute bottom-0 right-0 w-full mix-blend-screen"
+        className="bg-small absolute bottom-0 right-0 w-full animate-spin-20s mix-blend-screen animation-delay--5000"
       />
     </aside>
   );
@@ -41,14 +41,14 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
           {blog ? (
             <Link
               href={parentRoute}
-              className="mb-8 flex items-center gap-1 text-neutral-500 transition-all hover:gap-2 hover:text-neutral-700 dark:hover:text-neutral-300"
+              className="mb-8 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90"
             >
               <IoMdArrowBack />
               Back
             </Link>
           ) : null}
           {children}
-          <footer className="mt-8 flex flex-col justify-between border-t py-8 text-neutral-500 md:flex-row dark:border-neutral-500">
+          <footer className="mt-8 flex flex-col justify-between border-t border-black py-8 opacity-35 transition-opacity hover:opacity-75 md:flex-row dark:border-white">
             <div>&copy; {new Date().getFullYear()} Krish Krish</div>
             <Link href="mailto:hello@krishkrish.com">hello@krishkrish.com</Link>
           </footer>

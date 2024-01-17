@@ -140,7 +140,7 @@ export default function Home() {
                 <MdArrowOutward />
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 href="/blog"
                 className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
@@ -151,7 +151,7 @@ export default function Home() {
                 </span>{" "}
                 <MdArrowOutward />
               </Link>
-            </li> */}
+            </li>
           </ul>
         </section>
         <section className="py-6">
