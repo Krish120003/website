@@ -54,7 +54,12 @@ body,
   overflow: scroll;
 }
 
-.katex-mathml * {
+.prose * {
   max-width: 100%;
-  overflow: scroll;
+  text-wrap: wrap;
+}
+
+.prose a {
+  text-wrap: wrap;
+  word-break: break-all;
 }
