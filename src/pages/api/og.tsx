@@ -5,9 +5,9 @@ export const config = {
   runtime: "edge",
 };
 
-const interRegular = fetch(
-  new URL("../../../public/fonts/Inter-Regular.ttf", import.meta.url),
-).then((res) => res.arrayBuffer());
+// const interRegular = fetch(
+//   new URL("../../../public/fonts/Inter-Regular.ttf", import.meta.url),
+// ).then((res) => res.arrayBuffer());
 
 const interBold = fetch(
   new URL("../../../public/fonts/Inter-Bold.ttf", import.meta.url),
@@ -15,8 +15,8 @@ const interBold = fetch(
 
 export default async function handler(request: NextRequest) {
   try {
-    const [interRegularD, interBoldD] = await Promise.all([
-      interRegular,
+    const [interBoldD] = await Promise.all([
+      //   interRegular,
       interBold,
     ]);
 
@@ -94,12 +94,13 @@ export default async function handler(request: NextRequest) {
             style={{
               display: "flex",
               flexDirection: "column",
+              fontWeight: "normal",
             }}
           >
             <p
               style={{
                 margin: "0",
-                fontFamily: "sans-serif",
+                fontFamily: "unset",
                 color: "white",
                 opacity: 0.75,
                 fontSize: "1.5em",
@@ -136,12 +137,12 @@ export default async function handler(request: NextRequest) {
         width: 1200,
         height: 630,
         fonts: [
-          {
-            name: "Inter",
-            data: interRegularD,
-            style: "normal",
-            weight: 400,
-          },
+          //   {
+          //     name: "Inter",
+          //     data: interRegularD,
+          //     style: "normal",
+          //     weight: 400,
+          //   },
           {
             name: "Inter",
             data: interBoldD,
