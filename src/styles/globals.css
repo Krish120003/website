@@ -48,3 +48,13 @@ body,
   display: none;
   visibility: hidden;
 }
+
+.katex-mathml {
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.katex-mathml * {
+  max-width: 100%;
+  overflow: scroll;
+}
