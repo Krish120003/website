@@ -406,13 +406,12 @@ In conclusion, this project explored how to build neural networks from scratch, 
 
 ## References
 
-- [https://www.bargraphmaker.net/](https://www.bargraphmaker.net/)
-- [https://en.wikipedia.org/wiki/Neural_network ](https://en.wikipedia.org/wiki/Neural_network)
-- [https://nnfs.io ](https://nnfs.io)
-- [https://cs50.harvard.edu/ai/2020/notes/5/ ](https://cs50.harvard.edu/ai/2020/notes/5/)
-- [https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi ](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-- [https://en.wikipedia.org/wiki/Sigmoid_function ](https://en.wikipedia.org/wiki/Sigmoid_function)
-- [https://en.wikipedia.org/wiki/Rectifier\_(neural_networks) ](<https://en.wikipedia.org/wiki/Rectifier_(neural_networks)>)
-- [https://en.wikipedia.org/wiki/Mean_squared_error ](https://en.wikipedia.org/wiki/Mean_squared_error)
-- [https://www.youtube.com/watch?v=aircAruvnKk ](https://www.youtube.com/watch?v=aircAruvnKk)
-- [https://www.desmos.com/calculator](https://www.desmos.com/calculator)
+- [Neural Networks Wikipedia Page](https://en.wikipedia.org/wiki/Neural_network)
+- [NNFS Book](https://nnfs.io)
+- [CS50 AI Neural Network Notes](https://cs50.harvard.edu/ai/2020/notes/5/)
+- [3B1B's ML videos](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
+- [Sigmoid Wikipedia Page](https://en.wikipedia.org/wiki/Sigmoid_function)
+- [Rectifier Wikipedia Page](<https://en.wikipedia.org/wiki/Rectifier_(neural_networks)>)
+- [MSE Wikipedia Page](https://en.wikipedia.org/wiki/Mean_squared_error)
+- [Desmos Calculator](https://www.desmos.com/calculator)
+- [Bar Graph Tool](https://www.bargraphmaker.net/)
