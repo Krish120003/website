@@ -15,7 +15,7 @@ export default function Post({
   const escapedPublishDate = encodeURIComponent(publishDateFormatted);
   const escapedReadTime = encodeURIComponent(readTime);
 
-  const ogImageUrl = `${hostUrl}/api/og?title=${escapedTitle}&description=${escapedDescription}&publishTime=${escapedPublishDate}&readingTime=${escapedReadTime}"`;
+  const ogImageUrl = `${hostUrl}/api/og?title=${escapedTitle}&description=${escapedDescription}&publishTime=${escapedPublishDate}&readingTime=${escapedReadTime}`;
 
   return (
     <>
