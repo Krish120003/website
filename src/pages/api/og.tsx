@@ -127,7 +127,7 @@ export default async function handler(request: NextRequest) {
                 fontSize: "1.5em",
               }}
             >
-              krish's blog • krishkrish.com
+              krish&apos;s blog • krishkrish.com
             </p>
           </div>
         </div>
@@ -151,8 +151,12 @@ export default async function handler(request: NextRequest) {
         ],
       },
     );
-  } catch (e: any) {
-    console.log(`${e.message}`);
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      console.log(`${e.message}`);
+    } else {
+      console.log("Error", e);
+    }
     return new Response(`Failed to generate the image`, {
       status: 500,
     });
