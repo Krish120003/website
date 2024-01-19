@@ -1,16 +1,25 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import dynamic from "next/dynamic";
-
-const LogRocket = dynamic(() => import("~/components/Logrocket"), {
-  ssr: false,
-});
-
+import LogRocket from "logrocket";
+import setupLogRocketReact from "logrocket-react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "~/styles/globals.css";
+import { useEffect } from "react";
+
+const isProd = process.env.NODE_ENV === "production";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
+  useEffect(() => {
+    if (!isProd) {
+      return;
+    }
+    LogRocket.init("mg25jh/personal-website");
+
+    setupLogRocketReact(LogRocket);
+  }, []);
+
   return (
     <>
-      <LogRocket />
+      <SpeedInsights />
       <Component {...pageProps} />
     </>
   );
