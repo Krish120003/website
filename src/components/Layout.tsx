@@ -37,7 +37,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
     <>
       <div className="h-fit dark:text-white">
         <Background key="background" />
-        <main className="m-auto min-h-full max-w-3xl px-12 pt-12">
+        <main className="m-auto min-h-full max-w-4xl px-12 pt-12">
           {blog ? (
             <Link
               href={parentRoute}
