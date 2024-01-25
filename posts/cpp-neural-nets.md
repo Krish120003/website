@@ -1,12 +1,12 @@
 ---
-title: "Writing a Neural Network in C++"
+title: "Teaching my computer to recognize handwritten digits"
 date: "2023-12-07"
-description: "Exploring basic neural networks and their implementation in C++"
+description: "Exploring basic neural networks I implemented in C++"
 ---
 
 ## Introduction
 
-I am taking a scientific computing course this semester, and the final project was to implement some scientific computing algorithm in C++. While most people chose to implement Euler's method or Runge-Kutta, I decided to implement a neural network from scratch in C++. This is my final project report for the course, and I am reposting it on my blog.
+I am taking a scientific computing course this semester, and the final project was to implement some scientific computing algorithm in C++. While most people chose to implement Euler's method or Runge-Kutta, I decided to implement a neural network from scratch in C++. This is my final project report for the course, and I am reposting it on my blog. **This post is a very long report, and was not intended to be read as a blog post. It's reposted as-is for archival purposes and for reference.**
 
 ## Preface
 
