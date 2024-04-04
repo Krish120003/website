@@ -100,7 +100,7 @@ export async function getPostData(id: string) {
     .use(remarkParse)
     .use(remarkMath)
     .use(remarkRehype)
-    .use(rehypePrism)
+    .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeKatex)
     .use(rehypeStringify)
     .process(matterResult.content);
