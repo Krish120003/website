@@ -1,6 +1,6 @@
 ---
 title: Composing Decorators in Python
-date: "2020-04-04"
+date: "2024-04-04"
 description: "An experiment in abusing syntactic sugar"
 ---
 
