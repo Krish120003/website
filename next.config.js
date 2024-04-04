@@ -17,6 +17,19 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/i/u/static/:path*",
+        destination: "https://us-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/i/u/:path*",
+        destination: "https://us.i.posthog.com/:path*",
+      },
+    ];
+  },
 };
 
 import bundleAnalyzer from "@next/bundle-analyzer";
