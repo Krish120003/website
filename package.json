@@ -17,8 +17,6 @@
     "@vercel/speed-insights": "^1.0.5",
     "date-fns": "^3.2.0",
     "gray-matter": "^4.0.3",
-    "logrocket": "^7.0.0",
-    "logrocket-react": "^6.0.3",
     "next": "^14.0.4",
     "posthog-js": "^1.117.2",
     "prismjs": "^1.29.0",
@@ -39,7 +37,6 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.44.7",
-    "@types/logrocket-react": "^3.0.3",
     "@types/node": "^18.17.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",

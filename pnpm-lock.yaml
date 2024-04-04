@@ -26,12 +26,6 @@ dependencies:
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
-  logrocket:
-    specifier: ^7.0.0
-    version: 7.0.0
-  logrocket-react:
-    specifier: ^6.0.3
-    version: 6.0.3(logrocket@7.0.0)(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: ^14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -88,9 +82,6 @@ devDependencies:
   '@types/eslint':
     specifier: ^8.44.7
     version: 8.56.1
-  '@types/logrocket-react':
-    specifier: ^3.0.3
-    version: 3.0.3
   '@types/node':
     specifier: ^18.17.0
     version: 18.19.5
@@ -802,12 +793,6 @@ packages:
   /@types/katex@0.16.7:
     resolution: {integrity: sha512-HMwFiRujE5PjrgwHQ25+bsLJgowjGjm5Z8FVSf0N6PwgJrwxH0QxzHYDcKsTfV3wva0vzrpqMTJS2jXPr5BMEQ==}
     dev: false
-
-  /@types/logrocket-react@3.0.3:
-    resolution: {integrity: sha512-fGpJV4ccwfWAL0293EQx5HrS4PGMvXBpTQOXpA/SLXSCm7fC2O19w7Y3CcgWDmyawQnqbzd8faKAL12VhPdZKA==}
-    dependencies:
-      logrocket: 1.0.1
-    dev: true
 
   /@types/mdast@4.0.3:
     resolution: {integrity: sha512-LsjtqsyF+d2/yFOYaN22dHZI1Cpwkrj+g06G8+qtUKlhovPW89YhqSnfKtMbkgmEtYpH2gydRNULd6y8mciAFg==}
@@ -2994,26 +2979,6 @@ packages:
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-
-  /logrocket-react@6.0.3(logrocket@7.0.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-mU2QMFy5lfogXeAb+djy5XcAL5lAxPovRiN62lb4EzeuvuYmXJJmArniK3K2P9Gu02auWTiSwKHISFS0JH+eyA==}
-    peerDependencies:
-      logrocket: '>=2.0'
-      react: '>=18'
-      react-dom: '>=18'
-    dependencies:
-      logrocket: 7.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /logrocket@1.0.1:
-    resolution: {integrity: sha512-oPA0c5GzMKsWp/6p19OaujZQMzttluqVOI+989uHeciPAljPZvGEpZRbNO3Rr+jC/8jVLJdlMP9IHuyhKsASGA==}
-    dev: true
-
-  /logrocket@7.0.0:
-    resolution: {integrity: sha512-IvM4RKYTAByljKTWCx/Q+58Nvt4Dmf/0PIHLfall3kqDtxiDSVKSzu3/bvGb3riHE/C7xY3wzLxy6v+Wui1NUQ==}
-    dev: false
 
   /longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
