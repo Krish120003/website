@@ -61,5 +61,11 @@ body,
 
 .prose a {
   text-wrap: wrap;
-  word-break: break-all;
+}
+
+.prose code {
+  white-space: pre-wrap;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.1em;
+  padding: 0.1em 0.3em;
 }
