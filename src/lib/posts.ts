@@ -9,6 +9,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import rehypePrism from "rehype-prism-plus";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -99,6 +100,7 @@ export async function getPostData(id: string) {
     .use(remarkParse)
     .use(remarkMath)
     .use(remarkRehype)
+    .use(rehypePrism)
     .use(rehypeKatex)
     .use(rehypeStringify)
     .process(matterResult.content);

@@ -5,6 +5,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "~/styles/globals.css";
 import { useEffect } from "react";
 
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
 const isProd = process.env.NODE_ENV === "production";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
