@@ -11,6 +11,8 @@ interface LayoutProps {
 const Background = () => {
   const imgSrc = "/k.png";
 
+  return <></>;
+
   return (
     <aside className="fixed -z-10 h-full max-h-full w-full overflow-hidden opacity-50 invert dark:bg-black dark:invert-0">
       <img src={imgSrc} className="bg-big" />

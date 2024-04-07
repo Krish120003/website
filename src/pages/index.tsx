@@ -1,12 +1,13 @@
 import Head from "next/head";
-import Link from "next/link";
-import React from "react";
+import Link, { LinkProps } from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 
 import { MdArrowOutward, MdOutlineLibraryBooks } from "react-icons/md";
 import { projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
+import { PopoverLink } from "~/components/PopoverLink";
 
 interface ProjectItemProps {
   title: string;
@@ -21,12 +22,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
 }) => {
   return (
     <>
-      <Link href={link} className="flex items-end pb-2 underline">
+      <PopoverLink href={link} className="flex w-fit items-end pb-2 underline">
         <h3>{title}</h3>
         <div className="pb-1">
           <MdArrowOutward />
         </div>
-      </Link>
+      </PopoverLink>
       <p>{description}</p>
     </>
   );
@@ -68,7 +69,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="space-y-6 pb-6">
+        <section className="space-y-6  pb-6">
           <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
             Hi There, {"I'm"} Krish
           </h1>
@@ -79,12 +80,13 @@ export default function Home() {
           </p>
           <p className="dark:text-neutral-200">
             Currently, I lead a team of developers at{" "}
-            <Link
+            <PopoverLink
               href="https://deltahacks.com"
               className="inline-flex items-center font-semibold underline dark:text-white"
+              image="/popovers/deltahacks.png"
             >
               DeltaHacks <MdArrowOutward />
-            </Link>
+            </PopoverLink>
             hosting a hackathon, and teach Python Programming at{" "}
             <span className="font-semibold dark:text-white">
               McMaster University
