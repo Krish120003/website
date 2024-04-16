@@ -46,10 +46,10 @@ export default function Post({
       </Head>
       <Layout blog>
         <div className="">
-          <h1 className="font-serif-condensed text-3xl font-semibold leading-tight tracking-tight">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight font-serif-condensed">
             {title}
           </h1>
-          <div className="font-serif-condensed py-1 text-sm dark:opacity-80">
+          <div className="py-1 text-sm font-serif-condensed dark:opacity-80">
             Published {publishDateFormatted} • {readTime} minute read 
           </div>
 

@@ -26,7 +26,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     <>
       <PopoverLink
         href={link}
-        className="flex w-fit items-end pb-2 underline"
+        className="flex items-end pb-2 underline w-fit"
         image={image}
       >
         <h3>{title}</h3>
@@ -75,12 +75,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="space-y-6 pb-6">
-          <h1 className="font-serif-condensed text-2xl font-bold md:pt-16 md:text-4xl">
+        <section className="pb-6 space-y-6">
+          <h1 className="text-2xl font-bold font-serif-condensed md:pt-16 md:text-4xl">
             <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
-            A cs undergrad weaving code into complex systems.
+            cs undergrad weaving code into complex systems
           </p>
           <p className="dark:text-neutral-200">
             Incoming @{" "}
@@ -124,10 +124,10 @@ export default function Home() {
             <li>
               <Link
                 href="/blog"
-                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-red-500 md:flex-row md:items-center md:gap-2 md:py-0"
+                className="flex flex-col justify-between w-full py-1 transition-all  hover:text-red-600 md:flex-row md:items-center md:gap-2 md:py-0"
               >
                 writings
-                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                <span className="flex items-center font-sans text-sm opacity-50 gap-2">
                   <MdOutlineLibraryBooks />
                   Personal Blog
                 </span>
@@ -136,10 +136,10 @@ export default function Home() {
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
-                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-blue-500 md:flex-row md:items-center md:gap-2 md:py-0"
+                className="flex flex-col justify-between w-full py-1 transition-all  hover:text-blue-700 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-blue-500"
               >
                 linkedin.com/in/krish-krish
-                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                <span className="flex items-center font-sans text-sm opacity-50 gap-2">
                   <SiLinkedin />
                   LinkedIn
                 </span>
@@ -148,10 +148,10 @@ export default function Home() {
             <li>
               <Link
                 href="https://github.com/Krish120003"
-                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-purple-500 md:flex-row md:items-center md:gap-2 md:py-0"
+                className="flex flex-col justify-between w-full py-1 transition-all  hover:text-purple-600 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-purple-500"
               >
                 github.com/Krish120003
-                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                <span className="flex items-center font-sans text-sm opacity-50 gap-2">
                   <SiGithub />
                   Github
                 </span>
@@ -160,10 +160,10 @@ export default function Home() {
             <li>
               <Link
                 href="/krish_resume.pdf"
-                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-yellow-400 md:flex-row md:items-center md:gap-2 md:py-0"
+                className="flex flex-col justify-between w-full py-1 transition-all hover:text-yellow-500 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-yellow-400"
               >
                 resume.pdf
-                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                <span className="flex items-center font-sans text-sm opacity-50 gap-2 ">
                   <FaFilePdf />
                   Resume
                 </span>
@@ -171,11 +171,11 @@ export default function Home() {
             </li>
           </ul>
 
-          {/* <ul className="space-y-1 underline dark:text-neutral-300">
+          {/* <ul className="underline space-y-1 dark:text-neutral-300">
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
-                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
+                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
               >
                 <span className="flex items-center gap-1">
                   <SiLinkedin />
@@ -187,7 +187,7 @@ export default function Home() {
             <li>
               <Link
                 href="https://github.com/Krish120003"
-                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
+                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
               >
                 <span className="flex items-center gap-1">
                   <SiGithub />
@@ -199,7 +199,7 @@ export default function Home() {
             <li>
               <Link
                 href="/krish_resume.pdf"
-                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
+                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
               >
                 <span className="flex items-center gap-1">
                   <FaFilePdf />
@@ -211,7 +211,7 @@ export default function Home() {
             <li>
               <Link
                 href="/blog"
-                className="flex w-fit items-center gap-0 py-1 transition-all hover:gap-2 md:py-0"
+                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
               >
                 <span className="flex items-center gap-1">
                   <MdOutlineLibraryBooks />
@@ -223,7 +223,7 @@ export default function Home() {
           </ul> */}
         </section>
         <section className="py-6">
-          <h2 className="pb-6  font-serif text-xl  font-thin md:text-2xl  dark:opacity-65">
+          <h2 className="pb-6 font-serif text-xl font-thin  md:text-2xl dark:opacity-65">
             Projects
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 dark:text-neutral-300">
@@ -235,10 +235,10 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <h2 className="pb-1 font-serif  text-xl font-thin  md:text-2xl dark:opacity-65">
+          <h2 className="pb-1 font-serif text-xl font-thin  md:text-2xl dark:opacity-65">
             Technologies I Use
           </h2>
-          <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">
+          <ul className="pt-4 grid grid-cols-2 space-y-1 md:grid-cols-3 dark:text-neutral-300">
             {technologies.map((tech) => (
               <li key={tech.name} className="flex items-center gap-2">
                 {<tech.icon />}

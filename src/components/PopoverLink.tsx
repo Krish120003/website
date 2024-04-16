@@ -70,7 +70,7 @@ export const PopoverLink: React.FC<PopoverLinkProps> = ({
         //       : "circle(0% at 50% 75%)",
         //     transition: "all 0.25s",
         //   }}
-        //   className="rounded-lg border border-neutral-300 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-900  "
+        //   className="p-1 bg-white border rounded-lg border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 "
         // >
         //   <img className="w-64 rounded-md" src={image ?? "/og.jpg"} />
         // </div>
