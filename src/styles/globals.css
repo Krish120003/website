@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  src:
+    url("/fonts/LibreCaslonCondensed[wght].woff2")
+      format("woff2 supports variations"),
+    url("/fonts/LibreCaslonCondensed[wght].woff2") format("woff2-variations");
+  font-weight: 100 1000;
+}
+
+@font-face {
+  font-family: "Libre Caslon Text";
+  src:
+    url("/fonts/LibreCaslonText[wght].ttf") format("ttf supports variations"),
+    url("/fonts/LibreCaslonText[wght].ttf") format("ttf-variations");
+  font-weight: 100 1000;
+}
+
 /* set root to full height and width */
 
 html,

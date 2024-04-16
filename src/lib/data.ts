@@ -21,6 +21,7 @@ interface ProjectItem {
   title: string;
   description: string;
   link: string;
+  image?: string;
 }
 
 export const projects: ProjectItem[] = [
@@ -29,6 +30,7 @@ export const projects: ProjectItem[] = [
     description:
       "A unified hackathon platform for streamlined interaction between attendees and organizers",
     link: "https://github.com/deltahacks/portal",
+    image: "/popovers/portal.png",
   },
   {
     title: "Dash",
