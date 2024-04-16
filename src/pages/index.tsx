@@ -2,10 +2,14 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
-import { MdArrowOutward, MdOutlineLibraryBooks } from "react-icons/md";
+import {
+  MdAlternateEmail,
+  MdArrowOutward,
+  MdOutlineLibraryBooks,
+} from "react-icons/md";
 import { projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiEbox, SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
 import { PopoverLink } from "~/components/PopoverLink";
 
@@ -26,7 +30,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     <>
       <PopoverLink
         href={link}
-        className="flex items-end pb-2 underline w-fit"
+        className="flex w-fit items-end pb-2 underline"
         image={image}
       >
         <h3>{title}</h3>
@@ -75,8 +79,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="pb-6 space-y-6">
-          <h1 className="text-2xl font-bold font-serif-condensed md:pt-16 md:text-4xl">
+        <section className="space-y-6 pb-6">
+          <h1 className="font-serif-condensed text-2xl font-bold md:pt-16 md:text-4xl">
             <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
@@ -92,27 +96,6 @@ export default function Home() {
             </a>{" "}
             as an AI & Data Engineer Intern
           </p>
-          {/* <p className="dark:text-neutral-200">
-            Currently, I lead a team of developers at{" "}
-            <PopoverLink
-              href="https://deltahacks.com"
-              className="inline-flex items-center font-semibold underline dark:text-white"
-              image="/popovers/deltahacks.png"
-            >
-              DeltaHacks <MdArrowOutward />
-            </PopoverLink>
-            hosting a hackathon, and teach Python Programming at{" "}
-            <span className="font-semibold dark:text-white">
-              McMaster University
-            </span>{" "}
-            as a teaching assistant. I&apos;m looking for internship
-            opportunities to learn and grow as a developer.
-          </p>
-          <p className="dark:text-neutral-200">
-            Previously, I worked as a junior software developer at Synergy
-            Machines, responsible for developing full stack dashboards for
-            evironmental data analytics.
-          </p> */}
         </section>
         <hr className="opacity-10" />
         <section className="py-6">
@@ -124,10 +107,10 @@ export default function Home() {
             <li>
               <Link
                 href="/blog"
-                className="flex flex-col justify-between w-full py-1 transition-all  hover:text-red-600 md:flex-row md:items-center md:gap-2 md:py-0"
+                className="flex w-full flex-col justify-between transition-all hover:text-red-600 md:flex-row md:items-center md:gap-2 md:py-0"
               >
                 writings
-                <span className="flex items-center font-sans text-sm opacity-50 gap-2">
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
                   <MdOutlineLibraryBooks />
                   Personal Blog
                 </span>
@@ -136,10 +119,10 @@ export default function Home() {
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
-                className="flex flex-col justify-between w-full py-1 transition-all  hover:text-blue-700 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-blue-500"
+                className="flex w-full flex-col justify-between transition-all hover:text-blue-700 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-blue-500"
               >
                 linkedin.com/in/krish-krish
-                <span className="flex items-center font-sans text-sm opacity-50 gap-2">
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
                   <SiLinkedin />
                   LinkedIn
                 </span>
@@ -148,10 +131,10 @@ export default function Home() {
             <li>
               <Link
                 href="https://github.com/Krish120003"
-                className="flex flex-col justify-between w-full py-1 transition-all  hover:text-purple-600 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-purple-500"
+                className="flex w-full flex-col justify-between transition-all hover:text-purple-600 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-purple-500"
               >
                 github.com/Krish120003
-                <span className="flex items-center font-sans text-sm opacity-50 gap-2">
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
                   <SiGithub />
                   Github
                 </span>
@@ -160,70 +143,31 @@ export default function Home() {
             <li>
               <Link
                 href="/krish_resume.pdf"
-                className="flex flex-col justify-between w-full py-1 transition-all hover:text-yellow-500 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-yellow-400"
+                className="flex w-full flex-col justify-between transition-all hover:text-yellow-500 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-yellow-400"
               >
                 resume.pdf
-                <span className="flex items-center font-sans text-sm opacity-50 gap-2 ">
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse ">
                   <FaFilePdf />
                   Resume
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="mailto:krish120003@gmail.com"
+                className="flex w-full flex-col justify-between transition-all hover:text-green-600 md:flex-row md:items-center md:gap-2 md:py-0 dark:hover:text-green-500"
+              >
+                krish120003@gmail.com
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
+                  <MdAlternateEmail />
+                  Email
                 </span>
               </Link>
             </li>
           </ul>
-
-          {/* <ul className="underline space-y-1 dark:text-neutral-300">
-            <li>
-              <Link
-                href="https://www.linkedin.com/in/krish-krish/"
-                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
-              >
-                <span className="flex items-center gap-1">
-                  <SiLinkedin />
-                  LinkedIn
-                </span>
-                <MdArrowOutward />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://github.com/Krish120003"
-                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
-              >
-                <span className="flex items-center gap-1">
-                  <SiGithub />
-                  GitHub
-                </span>
-                <MdArrowOutward />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/krish_resume.pdf"
-                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
-              >
-                <span className="flex items-center gap-1">
-                  <FaFilePdf />
-                  Resume
-                </span>
-                <MdArrowOutward />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog"
-                className="flex items-center py-1 w-fit gap-0 transition-all hover:gap-2 md:py-0"
-              >
-                <span className="flex items-center gap-1">
-                  <MdOutlineLibraryBooks />
-                  Blog
-                </span>{" "}
-                <MdArrowOutward />
-              </Link>
-            </li>
-          </ul> */}
         </section>
         <section className="py-6">
-          <h2 className="pb-6 font-serif text-xl font-thin  md:text-2xl dark:opacity-65">
+          <h2 className="pb-6 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
             Projects
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 dark:text-neutral-300">
@@ -235,10 +179,10 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <h2 className="pb-1 font-serif text-xl font-thin  md:text-2xl dark:opacity-65">
+          <h2 className="pb-1 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
             Technologies I Use
           </h2>
-          <ul className="pt-4 grid grid-cols-2 space-y-1 md:grid-cols-3 dark:text-neutral-300">
+          <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">
             {technologies.map((tech) => (
               <li key={tech.name} className="flex items-center gap-2">
                 {<tech.icon />}
