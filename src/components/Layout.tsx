@@ -55,7 +55,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
           {children}
           <footer className="mt-8 flex flex-col justify-between border-t border-black py-8 opacity-20 transition-opacity hover:opacity-50 md:flex-row dark:border-white">
             <div>&copy; {new Date().getFullYear()} Krish Krish</div>
-            <Link href="mailto:hello@krishkrish.com">hello@krishkrish.com</Link>
+            <Link href="mailto:krish120003@gmail.com">
+              krish120003@gmail.com
+            </Link>
           </footer>
         </main>
       </div>
