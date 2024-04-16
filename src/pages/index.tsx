@@ -9,7 +9,7 @@ import {
 } from "react-icons/md";
 import { projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
-import { SiEbox, SiGithub, SiLinkedin } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
 import { PopoverLink } from "~/components/PopoverLink";
 
@@ -33,12 +33,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
         className="flex w-fit items-end pb-2 underline"
         image={image}
       >
-        <h3>{title}</h3>
+        <h3 className="">{title}</h3>
         <div className="pb-1">
           <MdArrowOutward />
         </div>
       </PopoverLink>
-      <p>{description}</p>
+      <p className="text-neutral-600 dark:text-neutral-500">{description}</p>
     </>
   );
 };
@@ -170,7 +170,7 @@ export default function Home() {
           <h2 className="pb-6 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
             Projects
           </h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 dark:text-neutral-300">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 dark:text-neutral-300">
             {projects.map((project) => (
               <div className="" key={project.title}>
                 <ProjectItem {...project} />
