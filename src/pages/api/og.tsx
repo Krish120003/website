@@ -47,7 +47,7 @@ export default async function handler(request: NextRequest) {
       (
         <div
           style={{
-            backgroundColor: "#171717",
+            backgroundColor: "#0A0A0A",
             backgroundSize: "150px 150px",
             height: "100%",
             width: "100%",
