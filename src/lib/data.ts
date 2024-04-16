@@ -44,12 +44,12 @@ export const projects: ProjectItem[] = [
       "A simple implementation of fully connected neural networks in C++",
     link: "https://github.com/Krish120003/CPP_Neural_Network",
   },
-  {
-    title: "Website",
-    description:
-      "My personal website and blog, built with Next.js and Tailwind",
-    link: "https://github.com/Krish120003/website",
-  },
+  // {
+  //   title: "Website",
+  //   description:
+  //     "My personal website and blog, built with Next.js and Tailwind",
+  //   link: "https://github.com/Krish120003/website",
+  // },
   {
     title: "River",
     description: "A simplified and user-friendly RSVP collection platform",
