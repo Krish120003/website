@@ -13,16 +13,22 @@ interface ProjectItemProps {
   title: string;
   description: string;
   link: string;
+  image?: string;
 }
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
   title,
   description,
   link,
+  image,
 }) => {
   return (
     <>
-      <PopoverLink href={link} className="flex w-fit items-end pb-2 underline">
+      <PopoverLink
+        href={link}
+        className="flex w-fit items-end pb-2 underline"
+        image={image}
+      >
         <h3>{title}</h3>
         <div className="pb-1">
           <MdArrowOutward />
@@ -69,16 +75,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="space-y-6  pb-6">
-          <h1 className="text-2xl font-bold md:pt-16 md:text-4xl">
-            Hi There, {"I'm"} Krish
+        <section className="space-y-6 pb-6">
+          <h1 className="font-serif-condensed text-2xl font-bold md:pt-16 md:text-4xl">
+            <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
-            {"I'm"} a 20 year old computer science undergrad student from
-            Canada. I spend my time learning and experimenting with web and
-            machine learning technologies.
+            A cs undergrad weaving code into complex systems.
           </p>
           <p className="dark:text-neutral-200">
+            Incoming @{" "}
+            <a
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7185751055345876992/"
+              className="underline"
+            >
+              Bell
+            </a>{" "}
+            as an AI & Data Engineer Intern
+          </p>
+          {/* <p className="dark:text-neutral-200">
             Currently, I lead a team of developers at{" "}
             <PopoverLink
               href="https://deltahacks.com"
@@ -98,11 +112,66 @@ export default function Home() {
             Previously, I worked as a junior software developer at Synergy
             Machines, responsible for developing full stack dashboards for
             evironmental data analytics.
-          </p>
+          </p> */}
         </section>
+        <hr className="opacity-10" />
         <section className="py-6">
-          <h2 className="pb-1 text-xl font-semibold md:text-2xl">Links</h2>
-          <ul className="space-y-1 underline dark:text-neutral-300">
+          <h2 className="pb-1 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
+            Links
+          </h2>
+
+          <ul className="font-mono">
+            <li>
+              <Link
+                href="/blog"
+                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-red-500 md:flex-row md:items-center md:gap-2 md:py-0"
+              >
+                writings
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                  <MdOutlineLibraryBooks />
+                  Personal Blog
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.linkedin.com/in/krish-krish/"
+                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-blue-500 md:flex-row md:items-center md:gap-2 md:py-0"
+              >
+                linkedin.com/in/krish-krish
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                  <SiLinkedin />
+                  LinkedIn
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://github.com/Krish120003"
+                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-purple-500 md:flex-row md:items-center md:gap-2 md:py-0"
+              >
+                github.com/Krish120003
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                  <SiGithub />
+                  Github
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/krish_resume.pdf"
+                className="flex w-full flex-col justify-between py-1 transition-all  hover:text-yellow-400 md:flex-row md:items-center md:gap-2 md:py-0"
+              >
+                resume.pdf
+                <span className="flex items-center gap-2 font-sans text-sm opacity-50">
+                  <FaFilePdf />
+                  Resume
+                </span>
+              </Link>
+            </li>
+          </ul>
+
+          {/* <ul className="space-y-1 underline dark:text-neutral-300">
             <li>
               <Link
                 href="https://www.linkedin.com/in/krish-krish/"
@@ -151,10 +220,12 @@ export default function Home() {
                 <MdArrowOutward />
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </section>
         <section className="py-6">
-          <h2 className="pb-6 text-xl font-semibold md:text-2xl">Projects</h2>
+          <h2 className="pb-6  font-serif text-xl  font-thin md:text-2xl  dark:opacity-65">
+            Projects
+          </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 dark:text-neutral-300">
             {projects.map((project) => (
               <div className="" key={project.title}>
@@ -164,7 +235,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <h2 className="text-xl font-semibold md:text-2xl">
+          <h2 className="pb-1 font-serif  text-xl font-thin  md:text-2xl dark:opacity-65">
             Technologies I Use
           </h2>
           <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">

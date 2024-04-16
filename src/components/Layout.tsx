@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
 interface LayoutProps {
@@ -8,24 +8,28 @@ interface LayoutProps {
   blog?: boolean;
 }
 
-const Background = () => {
-  const imgSrc = "/k.png";
+const ScrollIndicator = () => {
+  const handleScroll = () => {
+    const scroll = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (scroll / height) * 100;
+    document.documentElement.style.setProperty("--scroll", `${scrolled}%`);
+  };
 
-  return <></>;
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <aside className="fixed -z-10 h-full max-h-full w-full overflow-hidden opacity-50 invert dark:bg-black dark:invert-0">
-      <img src={imgSrc} className="bg-big" />
-
-      <img
-        src={imgSrc}
-        className="bg-small absolute w-1/2 animate-spin-20s mix-blend-screen"
-      />
-      <img
-        src={imgSrc}
-        className="bg-small absolute bottom-0 right-0 w-full animate-spin-20s mix-blend-screen animation-delay--5000"
-      />
-    </aside>
+    <div
+      className="fixed right-0 h-full w-1 origin-top transform-gpu bg-gradient-to-b from-neutral-800 to-neutral-950 md:left-0 dark:from-orange-50 dark:to-orange-200"
+      style={{
+        transform: "scaleY(var(--scroll))",
+        transition: "transform 0.01s",
+      }}
+    ></div>
   );
 };
 
@@ -37,9 +41,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
 
   return (
     <>
-      <div className="h-fit dark:text-white">
-        <Background key="background" />
-        <main className="m-auto min-h-full max-w-4xl px-12 pt-12">
+      <ScrollIndicator />
+      <div className="h-fit font-serif dark:text-white">
+        <main className="m-auto min-h-full max-w-2xl px-12 pt-12">
           {blog ? (
             <Link
               href={parentRoute}
@@ -50,7 +54,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog }) => {
             </Link>
           ) : null}
           {children}
-          <footer className="mt-8 flex flex-col justify-between border-t border-black py-8 opacity-35 transition-opacity hover:opacity-75 md:flex-row dark:border-white">
+          <footer className="mt-8 flex flex-col justify-between border-t border-black py-8 opacity-20 transition-opacity hover:opacity-50 md:flex-row dark:border-white">
             <div>&copy; {new Date().getFullYear()} Krish Krish</div>
             <Link href="mailto:hello@krishkrish.com">hello@krishkrish.com</Link>
           </footer>
