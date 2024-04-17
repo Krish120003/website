@@ -27,7 +27,7 @@ const postMetadataWithId = postMetadataSchema.extend({
 
 const postSchema = postMetadataWithId.extend({
   contentHtml: z.string(),
-  tableOfContents: z.any(),
+  tableOfContents: z.string(),
   readTime: z.number(),
 });
 
@@ -126,12 +126,10 @@ export async function getPostData(id: string) {
 
   let tableOfContents = "";
   if (tableOfContentsTree) {
-    tableOfContents = await unified()
+    tableOfContents = unified()
       .use(rehypeStringify)
       .stringify(tableOfContentsTree);
   }
-
-  console.log(tableOfContents);
 
   const contentHtml = processedContent.toString();
 

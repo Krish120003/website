@@ -32,7 +32,7 @@ export const PopoverLink: React.FC<PopoverLinkProps> = ({
   }, []);
 
   const startTracking = () => {
-    console.log("start tracking");
+    // console.log("start tracking");
     setIsHovered(true);
     setMouseXVelocity(0);
     document.body.addEventListener("mousemove", callback);

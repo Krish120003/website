@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Link, { LinkProps } from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import React from "react";
 
 import {
   MdAlternateEmail,
