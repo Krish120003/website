@@ -10,6 +10,8 @@ import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypePrism from "rehype-prism-plus";
+import slug from "rehype-slug";
+import toc from "@jsdevtools/rehype-toc";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -25,6 +27,7 @@ const postMetadataWithId = postMetadataSchema.extend({
 
 const postSchema = postMetadataWithId.extend({
   contentHtml: z.string(),
+  tableOfContents: z.any(),
   readTime: z.number(),
 });
 
@@ -95,6 +98,8 @@ export async function getPostData(id: string) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
+  let tableOfContentsTree = null;
+
   // Use remark to convert markdown into HTML string
   const processedContent = await unified()
     .use(remarkParse)
@@ -102,8 +107,32 @@ export async function getPostData(id: string) {
     .use(remarkRehype)
     .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeKatex)
+    .use(slug)
+    .use(toc, {
+      headings: ["h1", "h2", "h3"],
+      cssClasses: {
+        toc: "",
+        list: "pl-4 list-disc",
+        link: "",
+        listItem: "",
+      },
+      customizeTOC: (t) => {
+        tableOfContentsTree = t;
+        return false;
+      },
+    })
     .use(rehypeStringify)
     .process(matterResult.content);
+
+  let tableOfContents = "";
+  if (tableOfContentsTree) {
+    tableOfContents = await unified()
+      .use(rehypeStringify)
+      .stringify(tableOfContentsTree);
+  }
+
+  console.log(tableOfContents);
+
   const contentHtml = processedContent.toString();
 
   const readTime = Math.ceil(contentHtml.split(" ").length / 200);
@@ -113,6 +142,7 @@ export async function getPostData(id: string) {
     id,
     contentHtml,
     readTime,
+    tableOfContents,
     ...matterResult.data,
   });
 }

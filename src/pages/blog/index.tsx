@@ -10,7 +10,7 @@ interface BlogProps {
 
 export default function Blog({ allPostsData }: BlogProps) {
   return (
-    <Layout blog>
+    <Layout back>
       <Head>
         <title>krish&apos;s blog</title>
       </Head>
@@ -20,7 +20,7 @@ export default function Blog({ allPostsData }: BlogProps) {
       <p className="text-neutral-600 dark:text-neutral-400">
         I make occasional posts about what I&apos;m learning
       </p>
-      <ul className="pt-8 space-y-8">
+      <ul className="space-y-8 pt-8">
         {allPostsData.map(({ id, date, title, description }) => (
           <li key={id} className="transition-all">
             <Link
