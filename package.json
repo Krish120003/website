@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
@@ -18,6 +19,7 @@
     "date-fns": "^3.2.0",
     "gray-matter": "^4.0.3",
     "next": "^14.0.4",
+    "next-sitemap": "^4.2.3",
     "posthog-js": "^1.117.2",
     "prismjs": "^1.29.0",
     "react": "18.2.0",
@@ -53,6 +55,5 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.25.1"
-  },
-  "packageManager": "pnpm@8.9.0"
+  }
 }
