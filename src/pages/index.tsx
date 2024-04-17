@@ -79,7 +79,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="space-y-6 pb-6">
+        <section className="space-y-2 pb-6">
           <h1 className="font-serif-condensed text-2xl font-bold md:pt-16 md:text-4xl">
             <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
