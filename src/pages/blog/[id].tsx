@@ -75,7 +75,7 @@ export default function Post({
       </Head>
       {/* <ScrollToTopButton /> */}
       <Layout blog back>
-        <div className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 md:gap-0">
+        <div className="m-auto grid max-w-6xl grid-cols-1 gap-8 py-12 md:grid-cols-2 md:gap-0">
           <div className="md:pr-16">
             <h1 className="text-balance font-serif-condensed text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
               {title}
@@ -85,7 +85,7 @@ export default function Post({
             </div>
           </div>
 
-          <aside className="md:pl-12">
+          <aside className="text-xl md:pl-12">
             <span className="font-serif opacity-70">Table of Contents</span>
             <div
               dangerouslySetInnerHTML={{
@@ -98,7 +98,7 @@ export default function Post({
 
         <div
           dangerouslySetInnerHTML={{ __html: contentHtml }}
-          className="prose-md prose prose-neutral m-auto w-full max-w-2xl dark:prose-invert [&>p>img]:m-auto"
+          className="prose-md prose prose-neutral m-auto w-full max-w-2xl text-xl dark:prose-invert [&>p>img]:m-auto"
         />
       </Layout>
     </>
