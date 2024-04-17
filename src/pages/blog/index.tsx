@@ -14,13 +14,16 @@ export default function Blog({ allPostsData }: BlogProps) {
       <Head>
         <title>krish&apos;s blog</title>
       </Head>
-      <h1 className="text-lg text-neutral-800 dark:text-neutral-100">
-        Krish&apos;s Blog
-      </h1>
-      <p className="text-neutral-600 dark:text-neutral-400">
-        I make occasional posts about what I&apos;m learning
-      </p>
-      <ul className="space-y-8 pt-8">
+      <div>
+        <div className="text-lg text-neutral-800 opacity-70 dark:text-neutral-100">
+          Krish&apos;s Blog
+        </div>
+        <p className="text-neutral-600 opacity-70 dark:text-neutral-400">
+          I make occasional posts about what I&apos;m learning
+        </p>
+        <hr className="m-auto my-4 border-neutral-400 dark:border-white dark:opacity-10" />
+      </div>
+      <ul className="space-y-8">
         {allPostsData.map(({ id, date, title, description }) => (
           <li key={id} className="transition-all">
             <Link
