@@ -98,7 +98,7 @@ export default function Post({
 
         <div
           dangerouslySetInnerHTML={{ __html: contentHtml }}
-          className="prose-md prose prose-neutral m-auto w-full max-w-2xl text-xl dark:prose-invert [&>p>img]:m-auto"
+          className="prose-md prose prose-neutral m-auto w-full max-w-2xl dark:prose-invert [&>p>img]:m-auto"
         />
       </Layout>
     </>
