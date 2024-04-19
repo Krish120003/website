@@ -75,31 +75,31 @@ export default function Post({
       </Head>
       {/* <ScrollToTopButton /> */}
       <Layout blog back>
-        <div className="m-auto grid max-w-6xl grid-cols-1 gap-8 py-12 md:grid-cols-2 md:gap-0">
-          <div className="md:pr-16">
-            <h1 className="text-balance font-serif-condensed text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="top-10 col-span-1 self-baseline py-4 lg:sticky ">
+            <h1 className="text-balance font-serif-condensed text-4xl font-semibold leading-tight tracking-tight">
               {title}
             </h1>
-            <div className="py-1 font-serif text-sm dark:opacity-80">
+            <div className="py-2 font-serif dark:opacity-80">
               Published {publishDateFormatted} • {readTime} minute read 
             </div>
+
+            <aside className="lg:py-4">
+              <span className="font-serif opacity-80">Table of Contents</span>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: tableOfContents,
+                }}
+              ></div>
+            </aside>
+            <hr className="m-auto my-4 border-neutral-400 lg:hidden dark:border-white dark:opacity-10" />
           </div>
 
-          <aside className="text-xl md:pl-12">
-            <span className="font-serif opacity-70">Table of Contents</span>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: tableOfContents,
-              }}
-            ></div>
-          </aside>
+          <div
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+            className="prose-md prose prose-neutral col-span-2 m-auto w-full dark:prose-invert [&>p>img]:m-auto"
+          />
         </div>
-        <hr className="m-auto  border-neutral-400 py-4 dark:border-white dark:opacity-10" />
-
-        <div
-          dangerouslySetInnerHTML={{ __html: contentHtml }}
-          className="prose-md prose prose-neutral m-auto w-full max-w-2xl dark:prose-invert [&>p>img]:m-auto"
-        />
       </Layout>
     </>
   );

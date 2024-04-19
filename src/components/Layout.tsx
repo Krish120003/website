@@ -50,9 +50,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
       <ScrollIndicator />
       <div className="h-fit font-serif dark:text-white">
         <main
-          className={cn("m-auto min-h-full px-8 pt-12 md:px-0", {
-            "max-w-2xl ": !blog,
-            "md:px-24": blog,
+          className={cn("m-auto min-h-full px-8 pt-12", {
+            "max-w-2xl": !blog,
+            "max-w-6xl": blog,
           })}
         >
           {back ? (
