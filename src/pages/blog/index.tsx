@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { type PostMetadataType, getSortedPostsData } from "../../lib/posts";
 import { Layout } from "~/components/Layout";
-import { format } from "date-fns";
+
 import Head from "next/head";
+import { formatDate } from "~/lib/utils";
 
 interface BlogProps {
   allPostsData: PostMetadataType[];
@@ -33,7 +34,7 @@ export default function Blog({ allPostsData }: BlogProps) {
               {title}
             </Link>
             <div className="text-md text-neutral-800 dark:text-white dark:opacity-65">
-              {format(date, "LLL d, y")}
+              {formatDate(date)}
             </div>
             <p className="dark:text-neutral-300">{description}</p>
           </li>

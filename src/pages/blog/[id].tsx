@@ -2,27 +2,7 @@ import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { InferGetStaticPropsType } from "next";
 import { Layout } from "~/components/Layout";
-import { format } from "date-fns";
-import { FaArrowUp } from "react-icons/fa";
-
-const ScrollToTopButton = () => {
-  // use the --scroll custom property to show/hide the button
-
-  return (
-    <button
-      onClick={() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }}
-      className="fixed bottom-8 right-8 rounded-md bg-neutral-100 p-2 text-2xl shadow-md dark:bg-slate-800 dark:text-white dark:shadow-lg"
-      style={{
-        // use clever calc, if scroll is 0, opacity is 0, if scroll is more than 0.01, opacity is 1
-        opacity: "var(--scroll)",
-      }}
-    >
-      <FaArrowUp />
-    </button>
-  );
-};
+import { formatDate } from "~/lib/utils";
 
 export default function Post({
   postData: {
@@ -35,7 +15,9 @@ export default function Post({
     tableOfContents,
   },
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const publishDateFormatted = format(date, "LLL d, y");
+  const publishDateFormatted = formatDate(date);
+  console.log("publishDateFormatted", publishDateFormatted);
+
   const hostUrl = "https://krishkrish.com";
   // const hostUrl = "http://localhost:3000";
 
