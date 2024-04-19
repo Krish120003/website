@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { type PostMetadataType, getSortedPostsData } from "../../lib/posts";
 import { Layout } from "~/components/Layout";
-
 import Head from "next/head";
 import { formatDate } from "~/lib/utils";
 
