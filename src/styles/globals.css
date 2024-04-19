@@ -67,10 +67,15 @@ body,
 }
 
 .katex-mathml {
-  display: inline-block;
+  display: inline;
   max-width: 100%;
-  width: 100%;
+  /* width: 100%; */
   overflow: scroll;
+}
+
+.katex-mathml > math {
+  max-width: 100%;
+  /* width: 100%; */
 }
 
 .prose * {
