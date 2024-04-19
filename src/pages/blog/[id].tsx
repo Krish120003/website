@@ -81,7 +81,7 @@ export default function Post({
               {title}
             </h1>
             <div className="py-2 font-serif dark:opacity-80">
-              Published {publishDateFormatted} • {readTime} minute read 
+              {publishDateFormatted} • {readTime} minute read 
             </div>
 
             <aside className="lg:py-4">
