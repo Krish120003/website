@@ -19,6 +19,7 @@ const postMetadataSchema = z.object({
   title: z.string(),
   date: z.string(),
   description: z.string(),
+  hidden: z.boolean().optional(),
 });
 
 const postMetadataWithId = postMetadataSchema.extend({
@@ -37,23 +38,31 @@ export type PostType = z.infer<typeof postSchema>;
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, "");
+  const allPostsData = fileNames
+    .map((fileName) => {
+      // Remove ".md" from file name to get id
+      const id = fileName.replace(/\.md$/, "");
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+      // Use gray-matter to parse the post metadata section
+      const matterResult = matter(fileContents);
 
-    // Combine the data with the id
-    return {
-      id,
-      ...postMetadataSchema.parse(matterResult.data),
-    };
-  });
+      const parsedData = postMetadataSchema.parse(matterResult.data);
+
+      if (parsedData.hidden) {
+        return null;
+      }
+
+      // Combine the data with the id
+      return {
+        id,
+        ...parsedData,
+      };
+    })
+    .filter((x) => x !== null) as PostMetadataType[];
   // Sort posts by date
   return postMetadataWithId.array().parse(
     allPostsData.sort((a, b) => {
