@@ -16,7 +16,6 @@ export default function Post({
   },
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const publishDateFormatted = formatDate(date);
-  console.log("publishDateFormatted", publishDateFormatted);
 
   const hostUrl = "https://krishkrish.com";
   // const hostUrl = "http://localhost:3000";
