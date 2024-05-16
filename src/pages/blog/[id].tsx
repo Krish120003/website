@@ -65,14 +65,16 @@ export default function Post({
               {publishDateFormatted} • {readTime} minute read 
             </div>
 
-            <aside className="lg:py-4">
-              <span className="font-serif opacity-80">Table of Contents</span>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: tableOfContents,
-                }}
-              ></div>
-            </aside>
+            {tableOfContents && tableOfContents.length > 60 && (
+              <aside className="lg:py-4">
+                <span className="font-serif opacity-80">Table of Contents</span>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: tableOfContents,
+                  }}
+                ></div>
+              </aside>
+            )}
             <hr className="m-auto my-4 border-neutral-400 lg:hidden dark:border-white dark:opacity-10" />
           </div>
 
