@@ -5,7 +5,7 @@ description: "Or why Google's Gemini is perfectly position to dominate the AI sp
 hidden: false
 ---
 
-<!-- ![Rabbit R1 vs Android](/assets/rabbit-has-a-moat-problem/rabbit_vs_android.jpeg) -->
+![Rabbit R1 vs Android](/assets/rabbit-has-a-moat-problem/rabbit_vs_android.jpeg)
 
 The recent [Google I/O 2024](https://io.google/2024/) keynote highlighted some of Google's new integrations of Gemini into Android. While I'm an Apple fanboy myself, the demos showcasing the cohesive integration of Gemini into the native interface were very impressive. Google has set a high bar for my expectations from WWDC, but I couldn't stop thinking about the effects of these integrations in some of the fancy new AI gizmo startups.
 
