@@ -113,7 +113,7 @@ export async function getPostData(id: string) {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkMath)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeKatex)
     .use(slug)
@@ -130,7 +130,7 @@ export async function getPostData(id: string) {
         return false;
       },
     })
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(matterResult.content);
 
   let tableOfContents = "";

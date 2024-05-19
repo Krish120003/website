@@ -2,7 +2,7 @@
 title: "Ok, I made an AI app"
 date: "2024-05-19"
 description: "My rollercoaster journey making a hackathon project to detect plagiarism in hackathon submissions."
-hidden: true
+hidden: false
 ---
 
 ## How did we get here?
@@ -72,7 +72,7 @@ I need to find out if I need to investigate these projects due to plagarism. Are
 
 This worked... sometimes. Gemini output was usually good, but often off. Mistral was unusable and just blabbering. And Llama3 was... confused? Here's an example of the best Llama3 output after trying hundreds of different prompt variations.
 
-![[Pasted image 20240519144624.png]]
+![Llama3 confusing output](/assets/i-made-an-ai-app/llama3_is_confused.png)
 
 So.... I gave up on the open-source LLMs. Maybe the 70b models are better, but my laptop doesn't have enough RAM to run those.
 
@@ -82,7 +82,8 @@ The new Gemini 1.5 Flash model is [free of charge](https://ai.google.dev/pricing
 
 While this model was better, it still wasn't accurate enough. So after being tired of prompt engineering, I hooked up a basic [DSPy](https://github.com/stanfordnlp/dspy) setup to create a prompt for me. DSPy is mostly for RAG stuff, but it worked surprisingly well. With a new pipeline in DSPy, our accuracy for whether to investigate projects for plagiarism increased significantly.
 
-> [!NOTE] Gemini might be awesome, but GCP is still annoying
+> **Gemini might be awesome, but GCP is still annoying**
+>
 > While the model is free, the rate limit on it made it really slow to compare hundreds of projects quickly. I was satisfied with the quality, so I tried linking it to a paid billing account to get a higher quota.... but it was much more complicated than that and in the end I didn't have enough time to actually get the increased quota.
 
 ## Putting it all together
@@ -95,6 +96,10 @@ So, by the end, I had the ability to:
 
 Using all these, my team and I put together a simple [streamlit](https://streamlit.io/) app to show each project and any red flags about them.
 
+![Integrity App](/assets/i-made-an-ai-app/integrity_final_app.jpeg)
+
 ## Final thoughts
 
 This was a pretty fun hackathon project, where we built something that works decently well and solves a major problem in hosting hackathons. I learned a lot about embeddings, prompts, DSPy, and the general ecosystem around AI apps. I will probably keep working on improving this project to use it at DeltaHacks next year.
+
+If you want to check out the project, it's open-source on [GitHub](https://github.com/Shivermist/integrity). Feel free to contribute or use it for your own hackathons!
