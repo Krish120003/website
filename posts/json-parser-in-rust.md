@@ -2,7 +2,7 @@
 title: "Parsing JSON in 500 lines of Rust"
 date: "2024-06-05"
 description: "Finally sitting down to learn Rust and how to write parsers."
-hidden: true
+hidden: false
 ---
 
 Last semester at university, I took a course called "Syntax-Based Tools and Compilers". It focused on building a scanner, parser, compiler, and so on for a language called [PL0](https://en.wikipedia.org/wiki/PL/0). We used Python in the course, but I was really interested in learning Rust at the time.
