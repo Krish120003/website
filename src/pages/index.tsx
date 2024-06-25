@@ -87,14 +87,13 @@ export default function Home() {
             cs undergrad weaving code into complex systems
           </p>
           <p className="dark:text-neutral-200">
-            Incoming @{" "}
+            AI & Data Engineering Intern @{" "}
             <a
               href="https://www.linkedin.com/feed/update/urn:li:activity:7185751055345876992/"
               className="underline"
             >
-              Bell
-            </a>{" "}
-            as an AI & Data Engineer Intern
+              Bell Canada
+            </a>
           </p>
         </section>
         <hr className="opacity-10" />

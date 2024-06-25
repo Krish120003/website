@@ -30,7 +30,17 @@ export const projects: ProjectItem[] = [
     description:
       "A unified hackathon platform for streamlined interaction between attendees and organizers",
     link: "https://github.com/deltahacks/portal",
-    image: "/popovers/portal.png",
+  },
+  {
+    title: "JSON Parser",
+    description: "A hand written JSON parser in 500 lines of Rust",
+    link: "https://github.com/krish120003/jsonparser",
+  },
+  {
+    title: "Integrity",
+    description:
+      "A simple tool to scan a hackathon project gallery for misconduct",
+    link: "https://github.com/Shivermist/integrity",
   },
   {
     title: "Dash",
