@@ -2,7 +2,7 @@
 title: "Rabbit R1's LAM has a moat problem"
 date: "2024-05-16"
 description: "Or why Google's Gemini is perfectly position to dominate the AI space"
-hidden: false
+hidden: true
 ---
 
 ![Rabbit R1 vs Android](/assets/rabbit-has-a-moat-problem/rabbit_vs_android.jpeg)
