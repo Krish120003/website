@@ -9,6 +9,7 @@
       format("woff2 supports variations"),
     url("/fonts/LibreCaslonCondensed[wght].woff2") format("woff2-variations");
   font-weight: 100 1000;
+  font-display: fallback;
 }
 
 @font-face {
@@ -17,6 +18,7 @@
     url("/fonts/LibreCaslonText[wght].ttf") format("ttf supports variations"),
     url("/fonts/LibreCaslonText[wght].ttf") format("ttf-variations");
   font-weight: 100 1000;
+  font-display: fallback;
 }
 
 /* set root to full height and width */
