@@ -14,8 +14,9 @@ export default {
         "spin-20s": "spin 20s linear infinite",
       },
       fontFamily: {
-        serif: ["Libre Caslon Text", ...fontFamily.serif],
-        "serif-condensed": ["Libre Caslon Condensed", ...fontFamily.serif],
+        serif: ["Poppins", ...fontFamily.serif],
+        "serif-display": ["bluu", ...fontFamily.serif],
+        sans: ["Poppins", ...fontFamily.sans],
       },
     },
   },

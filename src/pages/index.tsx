@@ -67,7 +67,7 @@ export default function Home() {
       </Head>
       <Layout>
         <section className="space-y-2 pb-6">
-          <h1 className="font-serif-condensed text-2xl font-bold md:pt-16 md:text-4xl">
+          <h1 className="font-serif-display text-2xl font-bold md:pt-16 md:text-4xl">
             <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
@@ -85,7 +85,7 @@ export default function Home() {
         </section>
         <hr className="opacity-10" />
         <section className="py-6">
-          <h2 className="pb-1 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
+          <h2 className="pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
             Links
           </h2>
 
@@ -153,7 +153,7 @@ export default function Home() {
           </ul>
         </section>
         <section className="py-6">
-          <h2 className="pb-6 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
+          <h2 className="pb-6 font-sans text-xl font-thin md:text-2xl dark:opacity-65">
             Projects
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 dark:text-neutral-300">
@@ -165,7 +165,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <h2 className="pb-1 font-serif text-xl font-thin md:text-2xl dark:opacity-65">
+          <h2 className="pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
             Technologies I Use
           </h2>
           <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">

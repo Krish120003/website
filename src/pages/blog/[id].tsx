@@ -56,7 +56,7 @@ export default function Post({
       <Layout blog back>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           <div className="top-10 col-span-1 self-baseline py-4 lg:sticky ">
-            <h1 className="text-balance font-serif-condensed text-4xl font-semibold leading-tight tracking-tight">
+            <h1 className="font-serif-display text-balance text-4xl font-semibold leading-tight tracking-tight">
               {title}
             </h1>
             <div className="py-2 font-serif dark:opacity-80">
