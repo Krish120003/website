@@ -30,9 +30,9 @@ export default function Blog({ allPostsData }: BlogProps) {
         <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />
       </Head>
       <div>
-        <div className="text-lg text-neutral-800 opacity-70 dark:text-neutral-100">
+        <h1 className="text-lg text-neutral-800 opacity-70 dark:text-neutral-100">
           Krish&apos;s Blog
-        </div>
+        </h1>
         <p className="text-neutral-600 opacity-70 dark:text-neutral-400">
           I make occasional posts about what I&apos;m learning
         </p>
