@@ -13,6 +13,12 @@ export default function Blog({ allPostsData }: BlogProps) {
     <Layout back>
       <Head>
         <title>krish&apos;s blog</title>
+        {/* seo meta tags */}
+        <meta name="description" content="krish's technical blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.krish.gg/blog" />
+        <meta property="og:title" content="krish's blog" />
+        <meta property="og:description" content="krish's technical blog" />
       </Head>
       <div>
         <div className="text-lg text-neutral-800 opacity-70 dark:text-neutral-100">
