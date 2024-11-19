@@ -17,7 +17,7 @@ export default function Post({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const publishDateFormatted = formatDate(date);
 
-  const hostUrl = "https://krishkrish.com";
+  const hostUrl = "https://krish.gg";
   // const hostUrl = "http://localhost:3000";
 
   const escapedTitle = encodeURIComponent(title);
@@ -35,14 +35,11 @@ export default function Post({
         <meta property="og:title" content={`krish's blog • ${title}`} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={`https://krishkrish.com/blog/${id}`} />
+        <meta property="og:url" content={`https://krish.gg/blog/${id}`} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="krishkrish.com" />
-        <meta
-          property="twitter:url"
-          content={`https://krishkrish.com/blog/${id}`}
-        />
+        <meta property="twitter:domain" content="krish.gg" />
+        <meta property="twitter:url" content={`https://krish.gg/blog/${id}`} />
         <meta property="twitter:description" content={description} />
 
         <meta name="robots" content="index, follow" />

@@ -128,7 +128,7 @@ export default async function handler(request: NextRequest) {
                 fontSize: "1.5em",
               }}
             >
-              krish&apos;s blog • krishkrish.com
+              krish&apos;s blog • krish.gg
             </p>
           </div>
         </div>
