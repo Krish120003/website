@@ -84,7 +84,7 @@ export default function Home() {
             <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
-            cs undergrad weaving code into complex systems
+            i like to write code that runs fast
           </p>
           <p className="dark:text-neutral-200">
             software engineering intern @{" "}
