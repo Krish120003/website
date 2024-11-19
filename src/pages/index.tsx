@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>krish's personal website • home</title>
+        <title>{"krish's personal website • home"}</title>
         <meta property="og:title" content="krish's personal website • home" />
       </Head>
       <Layout>

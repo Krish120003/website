@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>krish's website</title>
+        <title>krish&apos;s website</title>
         <meta name="description" content="krish's personal website" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.krish.gg" />
