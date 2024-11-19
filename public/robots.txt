@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://krishkrish.com
+Host: https://www.krish.gg
 
 # Sitemaps
-Sitemap: https://krishkrish.com/sitemap.xml
+Sitemap: https://www.krish.gg/sitemap.xml
