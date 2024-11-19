@@ -47,36 +47,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>krish krish • home</title>
-        <meta name="description" content="krish krish's personal website" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://krishkrish.com" />
-        <meta property="og:title" content="krish krish • home" />
-
-        <meta
-          property="og:description"
-          content="krish krish's personal website"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="krishkrish.com" />
-        <meta property="twitter:url" content="https://krishkrish.com" />
-        <meta name="twitter:title" content="krish krish • home" />
-        <meta
-          name="twitter:description"
-          content="krish krish's personal website"
-        />
-
-        <meta name="robots" content="index, follow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="viewport" content="width=device-width" />
-
-        {/* meta images */}
-        <meta property="og:image" content="https://krishkrish.com/og.jpg" />
-        <meta name="twitter:image" content="https://krishkrish.com/og.jpg" />
-
-        <link rel="icon" href="/favicon.ico" />
+        <title>krish's personal website • home</title>
+        <meta property="og:title" content="krish's personal website • home" />
       </Head>
       <Layout>
         <section className="space-y-2 pb-6">
