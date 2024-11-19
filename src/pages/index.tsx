@@ -49,6 +49,15 @@ export default function Home() {
       <Head>
         <title>{"krish's personal website • home"}</title>
         <meta property="og:title" content="krish's personal website • home" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="www.krish.gg" />
+        <meta property="twitter:url" content="https://www.krish.gg" />
+        <meta name="twitter:title" content="krish's personal website" />
+        <meta name="twitter:description" content="krish's personal website" />
+        {/* meta images */}
+        <meta property="og:image" content="https://www.krish.gg/og.jpg" />
+        <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />
       </Head>
       <Layout>
         <section className="space-y-2 pb-6">

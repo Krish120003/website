@@ -18,6 +18,15 @@ export default function Blog({ allPostsData }: BlogProps) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.krish.gg/blog" />
         <meta property="og:description" content="krish's technical blog" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="www.krish.gg" />
+        <meta property="twitter:url" content="https://www.krish.gg" />
+        <meta name="twitter:title" content="krish's technical blog" />
+        <meta name="twitter:description" content="krish's technical blog" />
+        {/* meta images */}
+        <meta property="og:image" content="https://www.krish.gg/og.jpg" />
+        <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />
       </Head>
       <div>
         <div className="text-lg text-neutral-800 opacity-70 dark:text-neutral-100">
