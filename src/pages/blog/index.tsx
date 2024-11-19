@@ -18,6 +18,7 @@ export default function Blog({ allPostsData }: BlogProps) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.krish.gg/blog" />
         <meta property="og:description" content="krish's technical blog" />
+        <meta name="description" content="krish's technical website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="www.krish.gg" />

@@ -28,12 +28,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <PostHogProvider client={posthog}>
         <Head>
           <title>krish&apos;s website</title>
-          <meta name="description" content="krish's personal website" />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://www.krish.gg" />
-          <meta property="og:title" content="krish's personal website" />
-
-          <meta property="og:description" content="krish's personal website" />
 
           <meta name="robots" content="index, follow" />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

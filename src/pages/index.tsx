@@ -50,6 +50,12 @@ export default function Home() {
         <title>{"krish's personal website • home"}</title>
         <meta property="og:title" content="krish's personal website • home" />
 
+        <meta name="description" content="krish's personal website" />
+        <meta property="og:description" content="krish's personal website" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.krish.gg" />
+        <meta property="og:title" content="krish's personal website" />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="www.krish.gg" />
         <meta property="twitter:url" content="https://www.krish.gg" />
