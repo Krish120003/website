@@ -31,6 +31,7 @@ export default function Post({
     <>
       <Head>
         <title>{`krish's blog • ${title}`}</title>
+        <meta property="description" content={description} />
         <meta property="og:title" content={`krish's blog • ${title}`} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={description} />
