@@ -67,7 +67,7 @@ export default function Home() {
       </Head>
       <Layout>
         <section className="space-y-2 pb-6">
-          <h1 className="font-serif-display text-2xl font-bold md:pt-16 md:text-4xl">
+          <h1 className="font-serif-display text-4xl font-bold md:pt-16 md:text-6xl">
             <div className="text-lg opacity-50">Hi there,</div> {"I'm"} Krish
           </h1>
           <p className="dark:text-neutral-200">
