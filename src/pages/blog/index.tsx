@@ -38,15 +38,15 @@ export default function Blog({ allPostsData }: BlogProps) {
         </p>
         <hr className="m-auto my-4 border-neutral-400 dark:border-white dark:opacity-10" />
       </div>
-      <ul className="grid grid-cols-12 gap-4">
+      <ul className="">
         {allPostsData.map(({ id, date, title, description }) => (
-          <li key={id} className="contents">
-            <div className="text-md col-span-4 font-mono text-neutral-800 md:col-span-2 dark:text-white dark:opacity-65">
+          <li key={id} className="flex gap-4">
+            <div className="text-md font-mono text-neutral-800  dark:text-white dark:opacity-65">
               {formatDateDigits(date)}
             </div>
             <Link
               href={`/blog/${id}`}
-              className="col-span-8 underline decoration-neutral-500 transition-all hover:decoration-black md:col-span-9 dark:decoration-neutral-600 dark:hover:decoration-neutral-400"
+              className="flex-1 underline decoration-neutral-500 transition-all hover:decoration-black  dark:decoration-neutral-600 dark:hover:decoration-neutral-400"
             >
               {title}
             </Link>
