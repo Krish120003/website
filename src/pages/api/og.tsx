@@ -10,14 +10,20 @@ export const config = {
 // ).then((res) => res.arrayBuffer());
 
 const interBold = fetch(
-  new URL("../../../public/fonts/LibreCaslonText-Regular.ttf", import.meta.url),
+  // new URL("../../../public/fonts/LibreCaslonText-Regular.ttf", import.meta.url),
+  new URL("../../../public/fonts/bluu/bluunext-bold.ttf", import.meta.url),
+).then((res) => res.arrayBuffer());
+
+const poppinsRegular = fetch(
+  new URL("../../../public/fonts/Poppins/Poppins-Regular.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(request: NextRequest) {
   try {
-    const [interBoldD] = await Promise.all([
+    const [interBoldD, poppinsRegularD] = await Promise.all([
       //   interRegular,
       interBold,
+      poppinsRegular,
     ]);
 
     const { searchParams } = new URL(request.url);
@@ -58,6 +64,7 @@ export default async function handler(request: NextRequest) {
             flexDirection: "column",
             flexWrap: "nowrap",
             padding: "4em",
+            fontFamily: "Poppins",
           }}
         >
           <div
@@ -85,6 +92,7 @@ export default async function handler(request: NextRequest) {
               style={{
                 fontSize: "2em",
                 opacity: 0.45,
+                fontFamily: "Poppins",
               }}
             >
               {description}
@@ -100,7 +108,7 @@ export default async function handler(request: NextRequest) {
             <p
               style={{
                 margin: "0",
-                fontFamily: "unset",
+                fontFamily: "Poppins",
                 color: "white",
                 opacity: 0.75,
                 fontSize: "1.5em",
@@ -111,7 +119,7 @@ export default async function handler(request: NextRequest) {
             <p
               style={{
                 margin: "0",
-                fontFamily: "sans-serif",
+                fontFamily: "Poppins",
                 color: "white",
                 opacity: 0.75,
                 fontSize: "1.5em",
@@ -122,7 +130,7 @@ export default async function handler(request: NextRequest) {
             <p
               style={{
                 margin: "0",
-                fontFamily: "sans-serif",
+                fontFamily: "Poppins",
                 color: "white",
                 opacity: 0.75,
                 fontSize: "1.5em",
@@ -148,6 +156,12 @@ export default async function handler(request: NextRequest) {
             data: interBoldD,
             style: "normal",
             weight: 700,
+          },
+          {
+            name: "Poppins",
+            data: poppinsRegularD,
+            style: "normal",
+            weight: 400,
           },
         ],
       },
