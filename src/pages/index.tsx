@@ -12,6 +12,7 @@ import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
 import { PopoverLink } from "~/components/PopoverLink";
+import WorkListItem from "~/components/WorkListItem";
 
 interface ProjectItemProps {
   title: string;
@@ -152,6 +153,45 @@ export default function Home() {
             </li>
           </ul>
         </section>
+
+        <section>
+          <h2 className=" pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
+            Work
+          </h2>
+          <ul className="-mx-2">
+            <li className="">
+              <WorkListItem
+                company="Robinhood"
+                position="Incoming Summer SWE Intern"
+                startYear={2025}
+                endYear={2025}
+                logoSrc={"/logos/robinhood.png"}
+                themeColor={[200, 200, 0]}
+                themeColorHex="#C80000"
+              />
+            </li>
+
+            <li className="">
+              <WorkListItem
+                company="Bell Canada"
+                position="Software Engineering Intern"
+                startYear={2024}
+                endYear={2024}
+                logoSrc={"/logos/bell.png"}
+              />
+            </li>
+            <li className="">
+              <WorkListItem
+                company="McMaster University"
+                position="Teaching Assistant"
+                startYear={2023}
+                endYear={2024}
+                logoSrc={"/logos/mcmaster.png"}
+              />
+            </li>
+          </ul>
+        </section>
+
         <section className="py-6">
           <h2 className="pb-6 font-sans text-xl font-thin md:text-2xl dark:opacity-65">
             Projects
