@@ -170,6 +170,15 @@ export default function Home() {
                 themeColorHex="#C80000"
               />
             </li>
+            <li>
+              <WorkListItem
+                company="Hitachi Rail"
+                position="Incoming Software Analyst Intern"
+                startYear={2025}
+                endYear={2025}
+                logoSrc={"/logos/hitachirail.png"}
+              />
+            </li>
 
             <li className="">
               <WorkListItem
