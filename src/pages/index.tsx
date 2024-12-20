@@ -154,7 +154,7 @@ export default function Home() {
           </ul>
         </section>
 
-        <section>
+        {/* <section>
           <h2 className=" pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
             Work
           </h2>
@@ -199,7 +199,7 @@ export default function Home() {
               />
             </li>
           </ul>
-        </section>
+        </section> */}
 
         <section className="py-6">
           <h2 className="pb-6 font-sans text-xl font-thin md:text-2xl dark:opacity-65">
