@@ -26,33 +26,43 @@ interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
-    title: "Portal",
+    title: "Lane Centering Bracketbot",
     description:
-      "A unified hackathon platform for streamlined interaction between attendees and organizers",
+      "Hackathon-winning autonomous robot navigation using vision and lane centering",
+    link: "https://github.com/Krish120003/lane-centering-bracketbot",
+    image: "/work/bracketbot.png",
+  },
+  {
+    title: "Deltahacks",
+    description: "McMaster University's biggest hackathon",
     link: "https://github.com/deltahacks/portal",
+    image: "/popovers/deltahacks.png",
   },
   {
     title: "JSON Parser",
     description: "A hand written JSON parser in 500 lines of Rust",
     link: "https://github.com/krish120003/jsonparser",
+    image: "/assets/json-parser-in-rust/json_number.png",
   },
   {
     title: "Integrity",
-    description:
-      "A simple tool to scan a hackathon project gallery for misconduct",
-    link: "https://github.com/Shivermist/integrity",
+    description: "Scan a hackathon project gallery for misconduct",
+    link: "https://github.com/krish120003/integrity",
+    image: "/work/integrity.jpg",
   },
   {
     title: "Dash",
     description:
       "A smart new tab page that acts like a central hub for all your web tools",
     link: "https://github.com/Krish120003/dash",
+    image:
+      "https://github.com/Krish120003/dash/raw/main/assets/dash-banner.png",
   },
   {
     title: "C++ Neural Network",
-    description:
-      "A simple implementation of fully connected neural networks in C++",
+    description: "Fully connected neural networks in C++",
     link: "https://github.com/Krish120003/CPP_Neural_Network",
+    image: "/work/cpp_neural_network.png",
   },
   // {
   //   title: "Website",
@@ -62,31 +72,34 @@ export const projects: ProjectItem[] = [
   // },
   {
     title: "River",
-    description: "A simplified and user-friendly RSVP collection platform",
+    description: "User-friendly event RSVP collection platform",
     link: "https://github.com/Krish120003/rsvp",
+    image:
+      "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/407/729/datas/original.png",
   },
   {
     title: "SheepIt Client",
-    description: "A cross-platform Python/Qt GUI client for SheepIt Renderfarm",
+    description: "Cross-platform Python/Qt GUI client for SheepIt Renderfarm",
     link: "https://github.com/Krish120003/SheepIt-Client",
+    image: "/work/sheepit.png",
   },
   {
     title: "Advent of Code solutions",
-    description:
-      "My solutions to Advent of Code since 2022, implemented in Python",
+    description: "My solutions to Advent of Code since 2022",
     link: "https://github.com/Krish120003/AdventOfCode",
+    image: "/work/aoc.png",
   },
-  {
-    title: "BitTorrent Client",
-    description:
-      "A simple BitTorrent client written in Python, following the codecrafters BitTorrent challenge",
-    link: "https://github.com/Krish120003/codecrafters-bittorrent-python",
-  },
+  // {
+  //   title: "BitTorrent Client",
+  //   description:
+  //     "A simple BitTorrent client written in Python, following the codecrafters BitTorrent challenge",
+  //   link: "https://github.com/Krish120003/codecrafters-bittorrent-python",
+  // },
   {
     title: "Spiral Particle System",
-    description:
-      "A simple particle system that draws a spiral using particles in C++",
+    description: "A C++ particle animation that creates spiral patterns",
     link: "https://github.com/Krish120003/Spiral-Particle-System",
+    image: "work/particle_system.png",
   },
 ];
 
