@@ -50,14 +50,7 @@ export const projects: ProjectItem[] = [
     link: "https://github.com/krish120003/integrity",
     image: "/work/integrity.jpg",
   },
-  {
-    title: "Dash",
-    description:
-      "A smart new tab page that acts like a central hub for all your web tools",
-    link: "https://github.com/Krish120003/dash",
-    image:
-      "https://github.com/Krish120003/dash/raw/main/assets/dash-banner.png",
-  },
+
   {
     title: "C++ Neural Network",
     description: "Fully connected neural networks in C++",
@@ -70,13 +63,7 @@ export const projects: ProjectItem[] = [
   //     "My personal website and blog, built with Next.js and Tailwind",
   //   link: "https://github.com/Krish120003/website",
   // },
-  {
-    title: "River",
-    description: "User-friendly event RSVP collection platform",
-    link: "https://github.com/Krish120003/rsvp",
-    image:
-      "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/407/729/datas/original.png",
-  },
+
   {
     title: "SheepIt Client",
     description: "Cross-platform Python/Qt GUI client for SheepIt Renderfarm",
@@ -100,6 +87,21 @@ export const projects: ProjectItem[] = [
     description: "A C++ particle animation that creates spiral patterns",
     link: "https://github.com/Krish120003/Spiral-Particle-System",
     image: "work/particle_system.png",
+  },
+  {
+    title: "Dash",
+    description:
+      "A smart new tab page that acts like a central hub for all your web tools",
+    link: "https://github.com/Krish120003/dash",
+    image:
+      "https://github.com/Krish120003/dash/raw/main/assets/dash-banner.png",
+  },
+  {
+    title: "River",
+    description: "User-friendly event RSVP collection platform",
+    link: "https://github.com/Krish120003/rsvp",
+    image:
+      "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/407/729/datas/original.png",
   },
 ];
 
