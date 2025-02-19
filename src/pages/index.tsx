@@ -12,6 +12,7 @@ import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
 import { PopoverLink } from "~/components/PopoverLink";
+import Image from "next/image";
 
 interface ProjectItemProps {
   title: string;
@@ -34,10 +35,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
         image={image}
       >
         {image && (
-          <img
+          <Image
             src={image}
             alt={title}
             className="mb-4 aspect-video rounded-lg object-cover object-center"
+            width={800}
+            height={450}
           />
         )}
         <div className="flex items-end justify-between gap-2 underline">

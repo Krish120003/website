@@ -86,22 +86,20 @@ export const projects: ProjectItem[] = [
     title: "Spiral Particle System",
     description: "A C++ particle animation that creates spiral patterns",
     link: "https://github.com/Krish120003/Spiral-Particle-System",
-    image: "work/particle_system.png",
+    image: "/work/particle_system.png",
   },
   {
     title: "Dash",
     description:
       "A smart new tab page that acts like a central hub for all your web tools",
     link: "https://github.com/Krish120003/dash",
-    image:
-      "https://github.com/Krish120003/dash/raw/main/assets/dash-banner.png",
+    image: "/work/dash-banner.png",
   },
   {
     title: "River",
     description: "User-friendly event RSVP collection platform",
     link: "https://github.com/Krish120003/rsvp",
-    image:
-      "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/407/729/datas/original.png",
+    image: "/work/river.png",
   },
 ];
 
