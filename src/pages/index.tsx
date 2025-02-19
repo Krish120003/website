@@ -41,6 +41,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
             className="mb-4 aspect-video rounded-lg object-cover object-center"
             width={800}
             height={450}
+            placeholder="blur"
           />
         )}
         <div className="flex items-end justify-between gap-2 underline">

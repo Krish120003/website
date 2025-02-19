@@ -14,14 +14,26 @@ import {
   SiTypescript,
   SiVisualstudiocode,
 } from "react-icons/si";
-
 import { FaJava } from "react-icons/fa";
+
+// Static image imports
+import bracketbotImg from "../../public/work/bracketbot.png";
+import deltahacksImg from "../../public/popovers/deltahacks.png";
+import jsonParserImg from "../../public/assets/json-parser-in-rust/json_number.png";
+import integrityImg from "../../public/work/integrity.jpg";
+import cppNeuralNetworkImg from "../../public/work/cpp_neural_network.png";
+import sheepitImg from "../../public/work/sheepit.png";
+import aocImg from "../../public/work/aoc.png";
+import spiralParticleImg from "../../public/work/particle_system.png";
+import dashImg from "../../public/work/dash-banner.png";
+import riverImg from "../../public/work/river.png";
+import { StaticImageData } from "next/image";
 
 interface ProjectItem {
   title: string;
   description: string;
   link: string;
-  image?: string;
+  image?: StaticImageData;
 }
 
 export const projects: ProjectItem[] = [
@@ -30,32 +42,31 @@ export const projects: ProjectItem[] = [
     description:
       "Hackathon-winning autonomous robot navigation using vision and lane centering",
     link: "https://github.com/Krish120003/lane-centering-bracketbot",
-    image: "/work/bracketbot.png",
+    image: bracketbotImg,
   },
   {
     title: "Deltahacks",
     description: "McMaster University's biggest hackathon",
     link: "https://github.com/deltahacks/portal",
-    image: "/popovers/deltahacks.png",
+    image: deltahacksImg,
   },
   {
     title: "JSON Parser",
     description: "A hand written JSON parser in 500 lines of Rust",
     link: "https://github.com/krish120003/jsonparser",
-    image: "/assets/json-parser-in-rust/json_number.png",
+    image: jsonParserImg,
   },
   {
     title: "Integrity",
     description: "Scan a hackathon project gallery for misconduct",
     link: "https://github.com/krish120003/integrity",
-    image: "/work/integrity.jpg",
+    image: integrityImg,
   },
-
   {
     title: "C++ Neural Network",
     description: "Fully connected neural networks in C++",
     link: "https://github.com/Krish120003/CPP_Neural_Network",
-    image: "/work/cpp_neural_network.png",
+    image: cppNeuralNetworkImg,
   },
   // {
   //   title: "Website",
@@ -63,18 +74,17 @@ export const projects: ProjectItem[] = [
   //     "My personal website and blog, built with Next.js and Tailwind",
   //   link: "https://github.com/Krish120003/website",
   // },
-
   {
     title: "SheepIt Client",
     description: "Cross-platform Python/Qt GUI client for SheepIt Renderfarm",
     link: "https://github.com/Krish120003/SheepIt-Client",
-    image: "/work/sheepit.png",
+    image: sheepitImg,
   },
   {
     title: "Advent of Code solutions",
     description: "My solutions to Advent of Code since 2022",
     link: "https://github.com/Krish120003/AdventOfCode",
-    image: "/work/aoc.png",
+    image: aocImg,
   },
   // {
   //   title: "BitTorrent Client",
@@ -86,20 +96,20 @@ export const projects: ProjectItem[] = [
     title: "Spiral Particle System",
     description: "A C++ particle animation that creates spiral patterns",
     link: "https://github.com/Krish120003/Spiral-Particle-System",
-    image: "/work/particle_system.png",
+    image: spiralParticleImg,
   },
   {
     title: "Dash",
     description:
       "A smart new tab page that acts like a central hub for all your web tools",
     link: "https://github.com/Krish120003/dash",
-    image: "/work/dash-banner.png",
+    image: dashImg,
   },
   {
     title: "River",
     description: "User-friendly event RSVP collection platform",
     link: "https://github.com/Krish120003/rsvp",
-    image: "/work/river.png",
+    image: riverImg,
   },
 ];
 
