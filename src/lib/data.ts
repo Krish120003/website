@@ -29,14 +29,14 @@ import dashImg from "../../public/work/dash-banner.png";
 import riverImg from "../../public/work/river.png";
 import { StaticImageData } from "next/image";
 
-interface ProjectItem {
+export interface ProjectItemType {
   title: string;
   description: string;
   link: string;
   image?: StaticImageData;
 }
 
-export const projects: ProjectItem[] = [
+export const projects: ProjectItemType[] = [
   {
     title: "Lane Centering Bracketbot",
     description:

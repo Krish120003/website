@@ -7,21 +7,13 @@ import {
   MdArrowOutward,
   MdOutlineLibraryBooks,
 } from "react-icons/md";
-import { projects, technologies } from "../lib/data";
+import { ProjectItemType, projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
-import { PopoverLink } from "~/components/PopoverLink";
 import Image from "next/image";
 
-interface ProjectItemProps {
-  title: string;
-  description: string;
-  link: string;
-  image?: string;
-}
-
-const ProjectItem: React.FC<ProjectItemProps> = ({
+const ProjectItem: React.FC<ProjectItemType> = ({
   title,
   description,
   link,
@@ -29,11 +21,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
 }) => {
   return (
     <>
-      <PopoverLink
-        href={link}
-        className="flex w-fit flex-col  p-2 pb-2"
-        image={image}
-      >
+      <Link href={link} className="flex w-fit flex-col  p-2 pb-2">
         {image && (
           <Image
             src={image}
@@ -51,7 +39,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
           </div>
         </div>
         <p className="text-neutral-600 dark:text-neutral-500">{description}</p>
-      </PopoverLink>
+      </Link>
     </>
   );
 };
