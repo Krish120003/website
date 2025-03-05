@@ -56,13 +56,15 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
           })}
         >
           {back ? (
-            <Link
-              href={parentRoute}
-              className="mb-8 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90"
-            >
-              <IoMdArrowBack />
-              {blog ? "All Posts" : "Home"}
-            </Link>
+            <div className="lg:mb-16">
+              <Link
+                href={parentRoute}
+                className="mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 md:fixed lg:mb-8"
+              >
+                <IoMdArrowBack />
+                {blog ? "All Posts" : "Home"}
+              </Link>
+            </div>
           ) : null}
           {children}
           <footer className="mt-8 flex flex-col justify-between border-t border-black py-8 opacity-20 transition-opacity hover:opacity-50 md:flex-row dark:border-white">

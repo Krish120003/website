@@ -9,7 +9,7 @@ import {
 } from "react-icons/md";
 import { ProjectItemType, projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
 import Image from "next/image";
 
@@ -68,8 +68,8 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="grid grid-cols-12 gap-4 md:pt-8">
-          <div className="col-span-12 md:col-span-4">
-            <div className="top-35 py-6 md:fixed">
+          <div className="col-span-12  md:col-span-4">
+            <div className="top-35  py-6 md:fixed">
               <section className="space-y-2 pb-6">
                 <h1 className="font-serif-display text-4xl font-bold  md:text-6xl">
                   {/* <div className="text-lg opacity-50">Hi there,</div> {"I'm"}{" "} */}
@@ -79,11 +79,11 @@ export default function Home() {
                   i like to write code that runs fast
                 </p>
               </section>
-              <section className="py-6">
+              <section className=" py-6 ">
                 <h2 className="pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
                   Links
                 </h2>
-                <ul className="space-y-2 [&>li]:underline">
+                <ul className="space-y-2 [&>li:hover]:underline">
                   <li>
                     <Link
                       href="/blog"
@@ -102,6 +102,18 @@ export default function Home() {
                       /resume.pdf
                       {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse ">
                         Resume
+                      </span> */}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://x.com/n0tkr1sh"
+                      className="flex w-full items-center gap-2 transition-all hover:text-blue-400 dark:hover:text-blue-500"
+                    >
+                      <SiX />
+                      @n0tkr1sh
+                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
+                        Twitter
                       </span> */}
                     </Link>
                   </li>
@@ -144,6 +156,9 @@ export default function Home() {
                 </ul>
               </section>
             </div>
+            {/* <div className="bottom-20  max-w-64   py-6 md:fixed">
+              Hey I'm looking for a swe internshp for summer 2025, react out!
+            </div> */}
           </div>
           <div className="col-span-12 md:col-span-8">
             <section className="py-6">

@@ -169,6 +169,8 @@ body,
 
 .prose a {
   text-wrap: wrap;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .prose code {

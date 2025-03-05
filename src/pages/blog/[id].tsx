@@ -3,6 +3,31 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { InferGetStaticPropsType } from "next";
 import { Layout } from "~/components/Layout";
 import { formatDate } from "~/lib/utils";
+import Link from "next/link";
+
+function Author() {
+  return (
+    <Link className="-mb-4 lg:mt-32 " href="/">
+      <div className="max-w-full rounded-xl border border-neutral-400 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-900">
+        <div className="flex items-center gap-3">
+          <img
+            src="/me.jpg"
+            alt="Author photo"
+            className="h-12 w-12 rounded-full"
+          />
+          <div>
+            <h3 className="font-serif-display text-lg font-medium">Krish</h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              CS @ McMaster
+              <br />
+              looking for summer internships
+            </p>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 export default function Post({
   postData: {
@@ -54,9 +79,9 @@ export default function Post({
       </Head>
       {/* <ScrollToTopButton /> */}
       <Layout blog back>
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <div className="top-10 col-span-1 self-baseline py-4 lg:sticky ">
-            <h1 className="font-serif-display text-balance text-4xl font-semibold leading-tight tracking-tight">
+        <div className="grid grid-cols-1 gap-4  lg:grid-cols-3">
+          <div className="top-28 col-span-1 self-baseline py-4 lg:sticky">
+            <h1 className="text-balance font-serif-display text-4xl font-semibold leading-tight tracking-tight">
               {title}
             </h1>
             <div className="py-2 font-serif dark:opacity-80">
@@ -74,12 +99,19 @@ export default function Post({
               </aside>
             )}
             <hr className="m-auto my-4 border-neutral-400 lg:hidden dark:border-white dark:opacity-10" />
+
+            <div className="-mb-4 mt-32 hidden lg:block ">
+              <Author />
+            </div>
           </div>
 
           <div
             dangerouslySetInnerHTML={{ __html: contentHtml }}
             className="prose-md prose prose-neutral col-span-2 m-auto w-full dark:prose-invert [&>p>img]:m-auto"
           />
+          <div className="lg:hidden">
+            <Author />
+          </div>
         </div>
       </Layout>
     </>
