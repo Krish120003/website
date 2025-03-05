@@ -17,6 +17,7 @@ import {
 import { FaJava } from "react-icons/fa";
 
 // Static image imports
+import zercelImg from "../../public/work/zercel.png";
 import bracketbotImg from "../../public/work/bracketbot.png";
 import deltahacksImg from "../../public/popovers/deltahacks.png";
 import jsonParserImg from "../../public/assets/json-parser-in-rust/json_number.png";
@@ -37,6 +38,13 @@ export interface ProjectItemType {
 }
 
 export const projects: ProjectItemType[] = [
+  {
+    title: "Zercel",
+    description:
+      "Open-source Vercel clone with Fluid Compute and automatic deployments.",
+    link: "https://github.com/Krish120003/zercel",
+    image: zercelImg,
+  },
   {
     title: "Lane Centering Bracketbot",
     description:
