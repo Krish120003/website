@@ -56,7 +56,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
           })}
         >
           {back ? (
-            <div className="lg:mb-16">
+            <div className="md:mb-16">
               <Link
                 href={parentRoute}
                 className="mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 md:fixed lg:mb-8"

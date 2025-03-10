@@ -18,9 +18,7 @@ function Author() {
           <div>
             <h3 className="font-serif-display text-lg font-medium">Krish</h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              CS @ McMaster
-              <br />
-              looking for summer internships
+              software tinkerer
             </p>
           </div>
         </div>
@@ -79,7 +77,7 @@ export default function Post({
       </Head>
       {/* <ScrollToTopButton /> */}
       <Layout blog back>
-        <div className="grid grid-cols-1 gap-4  lg:grid-cols-3">
+        <div className="m-auto grid w-auto max-w-2xl grid-cols-1 gap-4  lg:max-w-none lg:grid-cols-3">
           <div className="top-28 col-span-1 self-baseline py-4 lg:sticky">
             <h1 className="text-balance font-serif-display text-4xl font-semibold leading-tight tracking-tight">
               {title}
@@ -99,19 +97,12 @@ export default function Post({
               </aside>
             )}
             <hr className="m-auto my-4 border-neutral-400 lg:hidden dark:border-white dark:opacity-10" />
-
-            <div className="-mb-4 mt-32 hidden lg:block ">
-              <Author />
-            </div>
           </div>
 
           <div
             dangerouslySetInnerHTML={{ __html: contentHtml }}
             className="prose-md prose prose-neutral col-span-2 m-auto w-full dark:prose-invert [&>p>img]:m-auto"
           />
-          <div className="lg:hidden">
-            <Author />
-          </div>
         </div>
       </Layout>
     </>
