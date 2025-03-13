@@ -38,9 +38,9 @@ export default function Blog({ allPostsData }: BlogProps) {
         </p>
         <hr className="m-auto my-4 border-neutral-400 dark:border-white dark:opacity-10" />
       </div>
-      <ul className="">
+      <ul className="space-y-2 md:space-y-0">
         {allPostsData.map(({ id, date, title, description }) => (
-          <li key={id} className="flex gap-4">
+          <li key={id} className="flex flex-col md:flex-row md:gap-8">
             <div className="text-md font-mono text-neutral-800  dark:text-white dark:opacity-65">
               {formatDateDigits(date)}
             </div>
