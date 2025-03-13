@@ -2,7 +2,7 @@ import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: ["./src/**/*.tsx", "./src/**/*.ts"],
+  content: ["./src/**/*.tsx", "./src/**/*.ts", "posts/**/*.md"],
   theme: {
     extend: {
       animationDelay: {
