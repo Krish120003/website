@@ -11,7 +11,7 @@ So... I made [Zercel](https://github.com/Krish120003/zercel). It's like Vercel. 
 
 ## Vercel? What's that?
 
-[Vercel](https://vercel.com/home) is a platform that allows you to deploy your web projects with ease. It's a CI/CD platform that can deploy static sites, server sites, and APIs. It's a great tool for developers who want to focus on building their projects rather than worrying about the infrastructure. I use it for a lot of my projects - it _just works_ and keeps me from worrying about the nitty-gritty details of deployment.
+[Vercel](https://vercel.com/home) is a platform that allows you to deploy your web projects with ease. It's a CI/CD platform that can deploy static sites, server sites, and APIs. It's a great tool for developers who want to focus on building their projects rather than worrying about the infrastructure. I use Vercel for a lot of my projects - it _just works_ and keeps me from worrying about the nitty-gritty details of deployment.
 
 ### But how does Vercel work?
 
