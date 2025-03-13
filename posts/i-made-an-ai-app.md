@@ -1,5 +1,5 @@
 ---
-title: "Ok, I made an AI app"
+title: "Can we catch plagarism in hackathons?"
 date: "2024-05-19"
 description: "My rollercoaster journey making a hackathon project to detect plagiarism in hackathon submissions."
 hidden: false
