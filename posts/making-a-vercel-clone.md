@@ -150,7 +150,7 @@ Here's an overview of what the final architecture looks like:
 
 Building Zercel has been one of the most fun and challenging projects I’ve worked on so far. It's given me a newfound respect for the folks at Vercel and the complexity of building such a platform.
 
-I'm gonna host this project on [zercel.dev](https://zercel.dev) for a few days, until I run out of money to pay for the GCP services. If you're interested in checking it out, feel free to deploy your site and let me know how it goes! You can also checkout the source at [github.com/Krish120003/zercel](github.com/Krish120003/zercel).
+I'm gonna host this project on [zercel.dev](https://zercel.dev) for a few days, until I run out of money to pay for the GCP services. If you're interested in checking it out, feel free to deploy your site and let me know how it goes! You can also checkout the source at [github.com/Krish120003/zercel](https://github.com/Krish120003/zercel).
 
 If you have any questions or feedback, feel free to [reach out to me on X @n0tkr1sh](https://x.com/n0tkr1sh). I'd love to chat about this project or anything else you're working on.
 
