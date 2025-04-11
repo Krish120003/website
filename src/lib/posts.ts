@@ -20,6 +20,7 @@ const postMetadataSchema = z.object({
   date: z.string(),
   description: z.string(),
   hidden: z.boolean().optional(),
+  micro: z.boolean().default(false),
 });
 
 const postMetadataWithId = postMetadataSchema.extend({

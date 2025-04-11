@@ -36,6 +36,7 @@
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animation-delay": "^1.2.0",
     "unified": "^11.0.4",
@@ -59,5 +60,10 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.25.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
