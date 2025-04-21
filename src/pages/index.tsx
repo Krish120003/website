@@ -141,18 +141,18 @@ export default function Home() {
                       </span> */}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       href="mailto:krish120003@gmail.com"
                       className="flex w-full  items-center gap-2 transition-all hover:text-green-600 dark:hover:text-green-500"
                     >
                       <MdAlternateEmail />
                       krish120003@gmail.com
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
+                      <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
                         Email
-                      </span> */}
+                      </span> 
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </section>
             </div>
