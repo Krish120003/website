@@ -17,6 +17,7 @@ import {
 import { FaJava } from "react-icons/fa";
 
 // Static image imports
+import gitfasterImg from "../../public/work/gitfaster.png";
 import zercelImg from "../../public/work/zercel.png";
 import bracketbotImg from "../../public/work/bracketbot.png";
 import deltahacksImg from "../../public/popovers/deltahacks.png";
@@ -38,6 +39,13 @@ export interface ProjectItemType {
 }
 
 export const projects: ProjectItemType[] = [
+  {
+    title: "GitFaster",
+    description:
+      "A minimal, blazing fast client to make GitHub feel modern again.",
+    link: "https://github.com/Krish120003/gitfaster",
+    image: gitfasterImg,
+  },
   {
     title: "Zercel",
     description:
