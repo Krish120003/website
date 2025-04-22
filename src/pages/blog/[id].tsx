@@ -77,8 +77,8 @@ export default function Post({
       </Head>
       {/* <ScrollToTopButton /> */}
       <Layout blog back>
-        <div className="m-auto grid w-auto max-w-2xl grid-cols-1 gap-4  lg:max-w-none lg:grid-cols-3">
-          <div className="top-28 col-span-1 self-baseline py-4 lg:sticky">
+        <div className="grid w-auto grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="top-28 col-span-1 self-baseline py-4 md:top-12 lg:sticky">
             <h1 className="text-balance font-serif-display text-4xl font-semibold leading-tight tracking-tight">
               {title}
             </h1>
@@ -101,7 +101,7 @@ export default function Post({
 
           <div
             dangerouslySetInnerHTML={{ __html: contentHtml }}
-            className="prose-md prose prose-neutral col-span-2 m-auto w-full dark:prose-invert [&>p>img]:m-auto"
+            className="prose prose-neutral col-span-2 m-auto w-full max-w-none dark:prose-invert [&>p>img]:m-auto"
           />
         </div>
       </Layout>

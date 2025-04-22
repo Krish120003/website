@@ -50,16 +50,15 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
       <ScrollIndicator />
       <div className="h-fit font-serif dark:text-white">
         <main
-          className={cn("m-auto min-h-full max-w-7xl px-8 pt-12", {
-            // "max-w-4xl": !blog,
-            // "max-w-7xl": blog,
-          })}
+          className={cn(
+            "m-auto flex min-h-full max-w-screen-2xl flex-col px-8",
+          )}
         >
           {back ? (
-            <div className="md:mb-16">
+            <div className="py-8">
               <Link
                 href={parentRoute}
-                className="mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 md:fixed lg:mb-8"
+                className="mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 lg:fixed lg:mb-8"
               >
                 <IoMdArrowBack />
                 {blog ? "All Posts" : "Home"}
