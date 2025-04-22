@@ -24,6 +24,10 @@ import deltahacksImg from "../../public/popovers/deltahacks.png";
 import jsonParserImg from "../../public/assets/json-parser-in-rust/json_number.png";
 import integrityImg from "../../public/work/integrity.jpg";
 import cppNeuralNetworkImg from "../../public/work/cpp_neural_network.png";
+
+import liMeterGif from "../../public/work/limeter.gif";
+import liMeterImg from "../../public/work/limeter.jpeg";
+
 import sheepitImg from "../../public/work/sheepit.png";
 import aocImg from "../../public/work/aoc.png";
 import spiralParticleImg from "../../public/work/particle_system.png";
@@ -89,7 +93,17 @@ export const projects: ProjectItemType[] = [
   //   description:
   //     "My personal website and blog, built with Next.js and Tailwind",
   //   link: "https://github.com/Krish120003/website",
+  //   image: websie
   // },
+  {
+    title: "LiMeter",
+    description: "Rainmeter, but for Linux",
+    link: "https://www.reddit.com/r/unixporn/comments/i3bfq6/oc_i_made_myself_a_rainmeterlike_theme_in_ubuntu/",
+    image: {
+      ...liMeterGif,
+      blurDataURL: liMeterImg.blurDataURL,
+    },
+  },
   {
     title: "SheepIt Client",
     description: "Cross-platform Python/Qt GUI client for SheepIt Renderfarm",
