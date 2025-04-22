@@ -51,8 +51,15 @@ export default function Home() {
         <title>{"krish's personal website • home"}</title>
         <meta property="og:title" content="krish's personal website • home" />
 
-        <meta name="description" content="krish's personal website" />
-        <meta property="og:description" content="krish's personal website" />
+        <meta
+          name="description"
+          content="I'm Krish — software engineer focused on writing code that runs fast. Explore my work, blog, and ways to connect."
+        />
+
+        <meta
+          property="og:description"
+          content="I'm Krish — software engineer focused on writing code that runs fast. Explore my work, blog, and ways to connect."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.krish.gg" />
         <meta property="og:title" content="krish's personal website" />
@@ -61,7 +68,10 @@ export default function Home() {
         <meta property="twitter:domain" content="www.krish.gg" />
         <meta property="twitter:url" content="https://www.krish.gg" />
         <meta name="twitter:title" content="krish's personal website" />
-        <meta name="twitter:description" content="krish's personal website" />
+        <meta
+          name="twitter:description"
+          content="I'm Krish — software engineer focused on writing code that runs fast. Explore my work, blog, and ways to connect."
+        />
         {/* meta images */}
         <meta property="og:image" content="https://www.krish.gg/og.jpg" />
         <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />

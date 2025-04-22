@@ -13,18 +13,29 @@ export default function Blog({ allPostsData }: BlogProps) {
     <Layout back>
       <Head>
         <title>krish&apos;s technical blog</title>
+        <meta
+          name="description"
+          content="I'm Krish — software engineer focused on writing code that runs fast. Explore my work, blog, and ways to connect."
+        />
+
         <meta property="og:title" content="krish's technical blog" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.krish.gg/blog" />
-        <meta property="og:description" content="krish's technical blog" />
+        <meta
+          property="og:description"
+          content="I'm Krish — software engineer focused on writing code that runs fast. Explore my work, blog, and ways to connect."
+        />
         <meta name="description" content="krish's technical website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="www.krish.gg" />
         <meta property="twitter:url" content="https://www.krish.gg" />
         <meta name="twitter:title" content="krish's technical blog" />
-        <meta name="twitter:description" content="krish's technical blog" />
+        <meta
+          name="twitter:description"
+          content="I'm Krish — software engineer focused on writing code that runs fast. Explore my work, blog, and ways to connect."
+        />
         {/* meta images */}
         <meta property="og:image" content="https://www.krish.gg/og.jpg" />
         <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />
