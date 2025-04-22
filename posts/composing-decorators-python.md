@@ -2,6 +2,7 @@
 title: Composing Decorators in Python
 date: "2024-04-04"
 description: "An experiment in abusing syntactic sugar"
+micro: true
 ---
 
 While implementing a [PEG](https://www.wikiwand.com/en/Parsing_expression_grammar) parser, my friend and I stumbled upon a weird-looking yet valid Python program. It looked something like this:
