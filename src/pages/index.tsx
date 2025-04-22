@@ -78,7 +78,7 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="grid grid-cols-12 gap-4 md:pt-8">
-          <div className="col-span-12  md:col-span-4">
+          <div className="col-span-12 md:col-span-4 lg:col-span-3">
             <div className="top-35  py-6 md:fixed">
               <section className="space-y-2 pb-6">
                 <h1 className="font-serif-display text-4xl font-bold  md:text-6xl">
@@ -170,12 +170,12 @@ export default function Home() {
               Hey I'm looking for a swe internshp for summer 2025, react out!
             </div> */}
           </div>
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-12 md:col-span-8 lg:col-span-9">
             <section className="py-6">
               <h2 className="pb-6 font-sans text-xl font-thin md:text-2xl dark:opacity-65">
                 Work
               </h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 dark:text-neutral-300">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 dark:text-neutral-300">
                 {projects.map((project) => (
                   <div className="" key={project.title}>
                     <ProjectItem {...project} />
