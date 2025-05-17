@@ -2,30 +2,12 @@ import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { InferGetStaticPropsType } from "next";
 import { Layout } from "~/components/Layout";
-import { formatDate } from "~/lib/utils";
+import { formatDate, formatDateISO } from "~/lib/utils";
 import Link from "next/link";
-
-function Author() {
-  return (
-    <Link className="-mb-4 lg:mt-32 " href="/">
-      <div className="max-w-full rounded-xl border border-neutral-400 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-900">
-        <div className="flex items-center gap-3">
-          <img
-            src="/me.jpg"
-            alt="Author photo"
-            className="h-12 w-12 rounded-full"
-          />
-          <div>
-            <h3 className="font-serif-display text-lg font-medium">Krish</h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              software tinkerer
-            </p>
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
+import { BlogPosting, BreadcrumbList } from "schema-dts";
+import { WithContext } from "schema-dts";
+import { jsonLdPerson } from "../_app";
+import { jsonLdWebSite } from "../_app";
 
 export default function Post({
   postData: {
@@ -50,6 +32,49 @@ export default function Post({
 
   const ogImageUrl = `${hostUrl}/api/og?title=${escapedTitle}&description=${escapedDescription}&publishTime=${escapedPublishDate}&readingTime=${escapedReadTime}`;
 
+  const jsonLdBlogPosting: WithContext<BlogPosting> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    name: title,
+    headline: title,
+    url: `${hostUrl}/blog/${id}`,
+    author: jsonLdPerson,
+    publisher: jsonLdPerson,
+    isPartOf: jsonLdWebSite,
+    mainEntityOfPage: jsonLdWebSite,
+    datePublished: formatDateISO(date),
+    dateModified: formatDateISO(date),
+    description: description,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+    image: ogImageUrl,
+  };
+
+  const jsonLdBreadcrumbList: WithContext<BreadcrumbList> = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: hostUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${hostUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: title,
+        item: `${hostUrl}/blog/${id}`,
+      },
+    ],
+  };
+
   return (
     <>
       <Head>
@@ -58,11 +83,11 @@ export default function Post({
         <meta property="og:title" content={`krish's blog • ${title}`} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={`https://krish.gg/blog/${id}`} />
+        <meta property="og:url" content={`${hostUrl}/blog/${id}`} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="krish.gg" />
-        <meta property="twitter:url" content={`https://krish.gg/blog/${id}`} />
+        <meta property="twitter:url" content={`${hostUrl}/blog/${id}`} />
         <meta property="twitter:description" content={description} />
 
         <meta name="robots" content="index, follow" />
@@ -74,6 +99,23 @@ export default function Post({
         {/* meta images */}
         <meta property="og:image" content={ogImageUrl} />
         <meta property="twitter:image" content={ogImageUrl} />
+
+        <script
+          type="application/ld+json"
+          id="jsonLdBlogPosting"
+          key="jsonLdBlogPosting"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdBlogPosting),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          id="jsonLdBreadcrumbList"
+          key="jsonLdBreadcrumbList"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdBreadcrumbList),
+          }}
+        />
       </Head>
       {/* <ScrollToTopButton /> */}
       <Layout blog back>

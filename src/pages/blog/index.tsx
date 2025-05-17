@@ -2,13 +2,68 @@ import Link from "next/link";
 import { type PostMetadataType, getSortedPostsData } from "../../lib/posts";
 import { Layout } from "~/components/Layout";
 import Head from "next/head";
-import { formatDate, formatDateDigits } from "~/lib/utils";
+import { formatDateDigits, formatDateISO } from "~/lib/utils";
+import { WithContext, Blog as BlogType, CollectionPage } from "schema-dts";
+import { BreadcrumbList } from "schema-dts";
+import { jsonLdPerson } from "../_app";
+import { jsonLdWebSite } from "../_app";
 
 interface BlogProps {
   allPostsData: PostMetadataType[];
 }
 
 export default function Blog({ allPostsData }: BlogProps) {
+  const hostUrl = "https://krish.gg";
+  const jsonLdBreadcrumbList: WithContext<BreadcrumbList> = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: hostUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${hostUrl}/blog`,
+      },
+    ],
+  };
+
+  const jsonLdBlog: WithContext<BlogType> = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Krish's Blog",
+    url: `${hostUrl}/blog`,
+    author: jsonLdPerson,
+    publisher: jsonLdPerson,
+    isPartOf: jsonLdWebSite,
+    mainEntityOfPage: jsonLdWebSite,
+  };
+
+  const jsonLdCollectionPage: WithContext<CollectionPage> = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Krish's Blog",
+    url: `${hostUrl}/blog`,
+    author: jsonLdPerson,
+    hasPart: allPostsData
+      .filter((e) => e.hidden !== true)
+      .map((e) => ({
+        "@type": "BlogPosting",
+        name: e.title,
+        headline: e.title,
+        description: e.description,
+        url: `${hostUrl}/blog/${e.id}`,
+        author: jsonLdPerson,
+        publisher: jsonLdPerson,
+        datePublished: formatDateISO(e.date),
+      })),
+  };
+
   return (
     <Layout back>
       <Head>
@@ -39,6 +94,31 @@ export default function Blog({ allPostsData }: BlogProps) {
         {/* meta images */}
         <meta property="og:image" content="https://www.krish.gg/og.jpg" />
         <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />
+
+        <script
+          type="application/ld+json"
+          id="jsonLdBreadcrumbList"
+          key="jsonLdBreadcrumbList"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdBreadcrumbList),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          id="jsonLdBlog"
+          key="jsonLdBlog"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdBlog),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          id="jsonLdCollectionPage"
+          key="jsonLdCollectionPage"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdCollectionPage),
+          }}
+        />
       </Head>
       <div>
         <h1 className="font-serif-display text-2xl text-neutral-800 dark:text-neutral-100">

@@ -36,6 +36,7 @@
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
+    "schema-dts": "^1.1.5",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animation-delay": "^1.2.0",

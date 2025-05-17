@@ -9,6 +9,7 @@ import "prismjs/themes/prism-okaidia.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import { env } from "~/env";
 import Head from "next/head";
+import { Person, ProfilePage, WebSite, WithContext } from "schema-dts";
 
 if (typeof window !== "undefined" && process.env.NODE_ENV !== "development") {
   // checks that we are client-side
@@ -20,6 +21,60 @@ if (typeof window !== "undefined" && process.env.NODE_ENV !== "development") {
     },
   });
 }
+
+export const jsonLdWebSite: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Krish's Website",
+  url: "https://krish.gg",
+  author: {
+    "@type": "Person",
+    name: "Krish",
+    url: "https://krish.gg",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Krish",
+    url: "https://krish.gg",
+  },
+  keywords: [
+    "krish",
+    "krish krish",
+    "software engineer",
+    "full-stack developer",
+    "high performance",
+    "web applications",
+    "typescript",
+  ],
+};
+
+export const jsonLdPerson: WithContext<Person> = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Krish",
+  additionalName: "Krish Krish",
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "McMaster University",
+      url: "https://mcmaster.ca",
+    },
+  ],
+  jobTitle: "Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Robinhood",
+    url: "https://robinhood.com",
+  },
+  description:
+    "Krish is a software engineer focused on high performance full-stack web applications.",
+  url: "https://krish.gg",
+  sameAs: [
+    "https://www.linkedin.com/in/krish-krish",
+    "https://github.com/Krish120003",
+  ],
+  image: "https://krish.gg/profile.jpeg",
+};
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -35,6 +90,19 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           <meta name="viewport" content="width=device-width" />
 
           <link rel="icon" href="/favicon.ico" />
+
+          <script
+            type="application/ld+json"
+            id="jsonLdWebSite"
+            key="jsonLdWebSite"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+          />
+          <script
+            type="application/ld+json"
+            id="jsonLdPerson"
+            key="jsonLdPerson"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+          />
         </Head>
         <Component {...pageProps} />
       </PostHogProvider>

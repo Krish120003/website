@@ -15,6 +15,11 @@ export function formatDate(dateString: string) {
   });
 }
 
+export function formatDateISO(dateString: string) {
+  const date = new Date(dateString);
+  return date.toISOString();
+}
+
 export function formatDateDigits(dateString: string) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {

@@ -12,6 +12,9 @@ import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { FaFilePdf } from "react-icons/fa";
 import Image from "next/image";
+import { ProfilePage, WithContext } from "schema-dts";
+import { jsonLdWebSite } from "./_app";
+import { jsonLdPerson } from "./_app";
 
 const ProjectItem: React.FC<ProjectItemType> = ({
   title,
@@ -45,6 +48,31 @@ const ProjectItem: React.FC<ProjectItemType> = ({
 };
 
 export default function Home() {
+  const jsonLdProfilePage: WithContext<ProfilePage> = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: "Krish's Website",
+    url: "https://krish.gg",
+    author: jsonLdPerson,
+    publisher: jsonLdPerson,
+    isPartOf: jsonLdWebSite,
+    mainEntityOfPage: jsonLdWebSite,
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://krish.gg",
+        },
+      ],
+    },
+    about:
+      "Krish is a software engineer focused on high performance full-stack web applications.",
+    isAccessibleForFree: true,
+  };
+
   return (
     <>
       <Head>
@@ -75,6 +103,15 @@ export default function Home() {
         {/* meta images */}
         <meta property="og:image" content="https://www.krish.gg/og.jpg" />
         <meta name="twitter:image" content="https://www.krish.gg/og.jpg" />
+
+        <script
+          type="application/ld+json"
+          id="jsonLdProfilePage"
+          key="jsonLdProfilePage"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdProfilePage),
+          }}
+        />
       </Head>
       <Layout>
         <div className="grid grid-cols-12 gap-4 md:pt-8">
