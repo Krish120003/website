@@ -17,6 +17,7 @@ import {
 import { FaJava } from "react-icons/fa";
 
 // Static image imports
+import legendImage from "../../public/work/robinhood-legend.webp";
 import gitfasterImg from "../../public/work/gitfaster.png";
 import zercelImg from "../../public/work/zercel.png";
 import bracketbotImg from "../../public/work/bracketbot.png";
@@ -43,6 +44,13 @@ export interface ProjectItemType {
 }
 
 export const projects: ProjectItemType[] = [
+  {
+    title: "Robinhood Legend",
+    description:
+      "Worked on high performance charts on Robinhood's professional trading platform.",
+    link: "https://robinhood.com/legend",
+    image: legendImage,
+  },
   {
     title: "GitFaster",
     description:
