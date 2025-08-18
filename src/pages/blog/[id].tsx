@@ -118,14 +118,14 @@ export default function Post({
         />
       </Head>
       {/* <ScrollToTopButton /> */}
-      <Layout blog back>
+      <Layout blog back sticky>
         <div className="m-auto grid w-auto max-w-2xl grid-cols-1 gap-4  lg:max-w-none lg:grid-cols-3">
           <div className="top-28 col-span-1 self-baseline py-4 lg:sticky">
             <h1 className="text-balance font-serif-display text-4xl font-semibold leading-tight tracking-tight">
               {title}
             </h1>
             <div className="py-2 font-serif dark:opacity-80">
-              {publishDateFormatted} • {readTime} minute read 
+              {publishDateFormatted} • {readTime} minute read
             </div>
 
             {tableOfContents && tableOfContents.length > 60 && (

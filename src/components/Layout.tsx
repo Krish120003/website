@@ -8,6 +8,7 @@ interface LayoutProps {
   children: React.ReactNode | React.ReactNode[] | string;
   back?: boolean;
   blog?: boolean;
+  sticky?: boolean;
 }
 
 const ScrollIndicator = () => {
@@ -39,7 +40,7 @@ const ScrollIndicator = () => {
   );
 };
 
-export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
+export const Layout: React.FC<LayoutProps> = ({ children, blog, back, sticky }) => {
   const router = useRouter();
   // get the parent route, so we can use it to go back
   const parentRoute =
@@ -59,7 +60,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
             <div className="md:mb-16">
               <Link
                 href={parentRoute}
-                className="mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 md:fixed lg:mb-8"
+                className={cn("mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 lg:mb-8", {
+                  "md:fixed": sticky,
+                })}
               >
                 <IoMdArrowBack />
                 {blog ? "All Posts" : "Home"}

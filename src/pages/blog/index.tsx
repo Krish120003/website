@@ -8,12 +8,26 @@ import { WithContext, Blog as BlogType, CollectionPage } from "schema-dts";
 import { BreadcrumbList } from "schema-dts";
 import { jsonLdPerson } from "../_app";
 import { jsonLdWebSite } from "../_app";
+import { useState } from "react";
 
 interface BlogProps {
   allPostsData: PostMetadataType[];
 }
 
 export default function Blog({ allPostsData }: BlogProps) {
+  // Temporary image mapping for prototyping
+  const postImageMap: Record<string, string> = {
+    "blur-placeholders-for-gifs-nextjs": "/work/gitfaster.png",
+    "composing-decorators-python": "/work/particle_system.png",
+    "cpp-neural-nets": "/work/cpp_neural_network.png",
+    "i-made-an-ai-app": "/work/integrity.jpg",
+    "json-parser-in-rust": "/assets/json-parser-in-rust/json_number.png",
+    "making-a-vercel-clone": "/work/zercel.png",
+    "zercel_gcp_batch_builds": "/work/zercel.png",
+  };
+
+  const [hoveredPostId, setHoveredPostId] = useState<string | null>(null);
+
   const hostUrl = "https://krish.gg";
   const jsonLdBreadcrumbList: WithContext<BreadcrumbList> = {
     "@context": "https://schema.org",
@@ -70,10 +84,18 @@ export default function Blog({ allPostsData }: BlogProps) {
   const longformPosts = visiblePosts.filter((p) => p.micro !== true);
   const microPosts = visiblePosts.filter((p) => p.micro === true);
 
-  const featured = longformPosts[0];
-  const moreStories = longformPosts.slice(6);
+  const defaultFeatured = longformPosts[0];
+  const hoveredPost = hoveredPostId ? longformPosts.find(p => p.id === hoveredPostId) : null;
+  const featured = hoveredPost || defaultFeatured;
+  const moreStories = [...longformPosts, ...longformPosts]
 
-  const featureImg = "/work/zercel.png"; // generic fallback hero
+  // left column is half, right is half
+  const middle = Math.ceil(moreStories.length / 2);
+  const leftCol = moreStories.slice(0, middle + 1);
+  // right column is the second half
+  const rightCol = moreStories.slice(middle + 1);
+
+  const featureImg = featured ? (postImageMap[featured.id] || "/work/zercel.png") : "/work/zercel.png"; // generic fallback hero
 
   return (
     <Layout back>
@@ -133,7 +155,7 @@ export default function Blog({ allPostsData }: BlogProps) {
       </Head>
 
       {/* News masthead */}
-      <div className="mb-6 flex items-end justify-between border-b border-neutral-300 pb-2 dark:border-neutral-800">
+      <div className="flex items-end justify-between border-b border-neutral-300 pb-2 dark:border-neutral-800">
         <h1 className="font-serif-display text-4xl tracking-tight text-neutral-800 dark:text-neutral-100">
           Krish's Blog
         </h1>
@@ -148,16 +170,21 @@ export default function Blog({ allPostsData }: BlogProps) {
       </div>
 
       {/* Top grid: left rail / feature / right rail */}
-      <section className="grid grid-cols-1 gap-6 md:grid-cols-12">
+      <section className="grid grid-cols-1 gap-6 md:grid-cols-12 border-b min-h-[75vh]">
         {/* Left rail: recents */}
-        <aside className="hidden md:col-span-3 md:block">
+        <aside className="hidden md:col-span-3 md:block border-r">
           <div className="sticky top-4 space-y-3">
-            <h2 className="font-serif-display text-xl text-neutral-800 dark:text-neutral-100">
+            <h2 className="font-serif-display text-xl text-neutral-800 dark:text-neutral-100 pt-8">
               Recents
             </h2>
             <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
               {longformPosts.slice(0, 6).map((p) => (
-                <li key={p.id} className="py-3">
+                <li
+                  key={p.id}
+                  className="py-3 pr-2"
+                  onMouseEnter={() => setHoveredPostId(p.id)}
+                  onMouseLeave={() => setHoveredPostId(null)}
+                >
                   <Link
                     href={`/blog/${p.id}`}
                     className="block text-sm font-medium text-neutral-900 underline decoration-neutral-400 underline-offset-2 hover:decoration-neutral-800 dark:text-neutral-100 dark:decoration-neutral-700 dark:hover:decoration-neutral-400"
@@ -174,10 +201,10 @@ export default function Blog({ allPostsData }: BlogProps) {
         </aside>
 
         {/* Feature */}
-        <div className="md:col-span-6">
+        <div className="md:col-span-9">
           {featured ? (
             <Link href={`/blog/${featured.id}`} className="group block">
-              <div className="relative overflow-hidden rounded-md">
+              <div className="relative overflow-hidden rounded-md pt-8">
                 <div className="relative aspect-[16/9] w-full">
                   <Image
                     src={featureImg}
@@ -188,20 +215,7 @@ export default function Blog({ allPostsData }: BlogProps) {
                     priority
                   />
                   {/* grid overlay light mode */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 opacity-30 mix-blend-overlay dark:hidden [background-size:12px_12px] [background-image:linear-gradient(to_right,rgba(0,0,0,0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.18)_1px,transparent_1px)]"
-                  />
-                  {/* grid overlay dark mode */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 hidden opacity-30 mix-blend-overlay dark:block [background-size:12px_12px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)]"
-                  />
-                  {/* gentle vignette for readability */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"
-                  />
+
                 </div>
                 <div className="space-y-3 p-4 md:p-6">
                   <h2 className="font-serif-display text-3xl leading-tight tracking-tight text-neutral-900 group-hover:underline dark:text-neutral-100 md:text-4xl">
@@ -223,10 +237,10 @@ export default function Blog({ allPostsData }: BlogProps) {
           )}
         </div>
 
-        {/* Right rail: micro blogs (styled like recents) */}
-        <aside className="md:col-span-3">
+        {/* Right rail: micro blogs (styled like recents)
+        <aside className="md:col-span-3 border-l pl-4">
           <div className="sticky top-4 space-y-3">
-            <h2 className="font-serif-display text-xl text-neutral-800 dark:text-neutral-100">
+            <h2 className="font-serif-display text-xl text-neutral-800 dark:text-neutral-100 pt-8 ">
               Micro blogs
             </h2>
             <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
@@ -245,35 +259,60 @@ export default function Blog({ allPostsData }: BlogProps) {
               ))}
             </ul>
           </div>
-        </aside>
+        </aside> */}
       </section>
 
       {/* More stories grid */}
       {moreStories.length > 0 && (
         <section className="mt-10">
-          <h2 className="mb-4 font-serif-display text-xl text-neutral-800 dark:text-neutral-100">
-            More stories
+          <h2 className="mb-4 font-serif-display text-xl text-neutral-800 dark:text-neutral-100 opacity-50">
+            More?
           </h2>
-          <ul className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-x-8">
-            {moreStories.map((p) => (
-              <li
-                key={p.id}
-                className="border-t border-neutral-200 py-4 first:border-t-0 dark:border-neutral-800"
-              >
-                <Link href={`/blog/${p.id}`} className="group block">
-                  <h3 className="font-serif-display text-lg leading-snug text-neutral-900 group-hover:underline dark:text-neutral-100 md:text-xl">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-neutral-700 dark:text-neutral-300">
-                    {p.description}
-                  </p>
-                  <div className="mt-1 text-[11px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                    {formatDateDigits(p.date)}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Left column on md+, single column on mobile */}
+            <ul className="divide-y divide-neutral-200 dark:divide-neutral-800 md:border-r">
+              {leftCol.slice(1).map((p) => (
+                <li key={p.id} className="py-4 first:pt-0">
+                  <Link
+                    href={`/blog/${p.id}`}
+                    className="group block"
+                  >
+                    <h3 className="text-lg font-medium text-neutral-900 group-hover:underline dark:text-neutral-100">
+                      {p.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                      {p.description}
+                    </p>
+                    <div className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+                      {formatDateDigits(p.date)}
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Right column - flows below on mobile, side-by-side on md+ */}
+            <ul className="divide-y divide-neutral-200 dark:divide-neutral-800 ">
+              {rightCol.map((p) => (
+                <li key={p.id} className="py-4 first:pt-0 pl-6">
+                  <Link
+                    href={`/blog/${p.id}`}
+                    className="group block"
+                  >
+                    <h3 className="text-lg font-medium text-neutral-900 group-hover:underline dark:text-neutral-100">
+                      {p.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                      {p.description}
+                    </p>
+                    <div className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+                      {formatDateDigits(p.date)}
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       )}
 
