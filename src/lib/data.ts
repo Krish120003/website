@@ -17,6 +17,7 @@ import {
 import { FaJava } from "react-icons/fa";
 
 // Static image imports
+import tangoImg from "../../public/work/tango.png";
 import legendImage from "../../public/work/robinhood-legend.webp";
 import gitfasterImg from "../../public/work/gitfaster.png";
 import zercelImg from "../../public/work/zercel.png";
@@ -44,6 +45,13 @@ export interface ProjectItemType {
 }
 
 export const projects: ProjectItemType[] = [
+  {
+    title: "Tango",
+    description:
+      "Siri if it actually worked on your Mac. Winner of Hack the North 2025.",
+    link: "https://devpost.com/software/tango-q37d4z",
+    image: tangoImg,
+  },
   {
     title: "Robinhood Legend",
     description:
