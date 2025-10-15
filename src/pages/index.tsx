@@ -154,11 +154,11 @@ export default function Home() {
                   </li>
                   <li>
                     <Link
-                      href="https://x.com/n0tkr1sh"
+                      href="https://x.com/dotkrish"
                       className="flex w-full items-center gap-2 transition-all hover:text-blue-400 dark:hover:text-blue-500"
                     >
                       <SiX />
-                      @n0tkr1sh
+                      @dotkrish
                       {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
                         Twitter
                       </span> */}
