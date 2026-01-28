@@ -35,6 +35,7 @@ import aocImg from "../../public/work/aoc.png";
 import spiralParticleImg from "../../public/work/particle_system.png";
 import dashImg from "../../public/work/dash-banner.png";
 import riverImg from "../../public/work/river.png";
+
 import { StaticImageData } from "next/image";
 
 export interface ProjectItemType {
@@ -42,6 +43,7 @@ export interface ProjectItemType {
   description: string;
   link: string;
   image?: StaticImageData;
+  hidden?: boolean;
 }
 
 export const projects: ProjectItemType[] = [
@@ -79,6 +81,7 @@ export const projects: ProjectItemType[] = [
       "Hackathon-winning autonomous robot navigation using vision and lane centering",
     link: "https://github.com/Krish120003/lane-centering-bracketbot",
     image: bracketbotImg,
+    hidden: true,
   },
   {
     title: "Deltahacks",
@@ -97,6 +100,7 @@ export const projects: ProjectItemType[] = [
     description: "Scan a hackathon project gallery for misconduct",
     link: "https://github.com/krish120003/integrity",
     image: integrityImg,
+    hidden: true,
   },
   {
     title: "C++ Neural Network",
@@ -104,13 +108,7 @@ export const projects: ProjectItemType[] = [
     link: "https://github.com/Krish120003/CPP_Neural_Network",
     image: cppNeuralNetworkImg,
   },
-  // {
-  //   title: "Website",
-  //   description:
-  //     "My personal website and blog, built with Next.js and Tailwind",
-  //   link: "https://github.com/Krish120003/website",
-  //   image: websie
-  // },
+
   {
     title: "LiMeter",
     description: "Rainmeter, but for Linux",
@@ -150,12 +148,14 @@ export const projects: ProjectItemType[] = [
       "A smart new tab page that acts like a central hub for all your web tools",
     link: "https://github.com/Krish120003/dash",
     image: dashImg,
+    hidden: true,
   },
   {
     title: "River",
     description: "User-friendly event RSVP collection platform",
     link: "https://github.com/Krish120003/rsvp",
     image: riverImg,
+    hidden: true,
   },
 ];
 
@@ -184,10 +184,10 @@ export const technologies: TechnologyItem[] = [
     name: "Tailwind",
     icon: SiTailwindcss as React.FC,
   },
-  {
-    name: "C++",
-    icon: SiCplusplus as React.FC,
-  },
+  // {
+  //   name: "C++",
+  //   icon: SiCplusplus as React.FC,
+  // },
   {
     name: "Next.js",
     icon: SiNextdotjs as React.FC,
@@ -212,14 +212,14 @@ export const technologies: TechnologyItem[] = [
     name: "Google Cloud",
     icon: SiGooglecloud as React.FC,
   },
-  {
-    name: "Jupyter",
-    icon: SiJupyter as React.FC,
-  },
-  {
-    name: "Java",
-    icon: FaJava as React.FC,
-  },
+  // {
+  //   name: "Jupyter",
+  //   icon: SiJupyter as React.FC,
+  // },
+  // {
+  //   name: "Java",
+  //   icon: FaJava as React.FC,
+  // },
   {
     name: "VS Code",
     icon: SiVisualstudiocode as React.FC,

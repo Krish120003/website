@@ -15,6 +15,7 @@ import Image from "next/image";
 import { ProfilePage, WithContext } from "schema-dts";
 import { jsonLdWebSite } from "./_app";
 import { jsonLdPerson } from "./_app";
+import WorkListItem from "~/components/WorkListItem";
 
 const ProjectItem: React.FC<ProjectItemType> = ({
   title,
@@ -24,7 +25,7 @@ const ProjectItem: React.FC<ProjectItemType> = ({
 }) => {
   return (
     <>
-      <Link href={link} className="flex w-fit flex-col  p-2 pb-2">
+      <a href={link} className="flex w-fit flex-col p-2 pb-2" target="_blank">
         {image && (
           <Image
             src={image}
@@ -42,7 +43,7 @@ const ProjectItem: React.FC<ProjectItemType> = ({
           </div>
         </div>
         <p className="text-neutral-600 dark:text-neutral-500">{description}</p>
-      </Link>
+      </a>
     </>
   );
 };
@@ -147,9 +148,6 @@ export default function Home() {
                     >
                       <FaFilePdf />
                       /resume.pdf
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse ">
-                        Resume
-                      </span> */}
                     </Link>
                   </li>
                   <li>
@@ -159,9 +157,6 @@ export default function Home() {
                     >
                       <SiX />
                       @dotkrish
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        Twitter
-                      </span> */}
                     </Link>
                   </li>
                   <li>
@@ -171,9 +166,6 @@ export default function Home() {
                     >
                       <SiLinkedin />
                       linkedin.com/in/krish-krish
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        LinkedIn
-                      </span> */}
                     </Link>
                   </li>
                   <li>
@@ -183,41 +175,54 @@ export default function Home() {
                     >
                       <SiGithub />
                       github.com/Krish120003
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        Github
-                      </span> */}
                     </Link>
                   </li>
-                  {/* <li>
-                    <Link
-                      href="mailto:krish120003@gmail.com"
-                      className="flex w-full  items-center gap-2 transition-all hover:text-green-600 dark:hover:text-green-500"
-                    >
-                      <MdAlternateEmail />
-                      krish120003@gmail.com
-                      <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        Email
-                      </span> 
-                    </Link>
-                  </li> */}
                 </ul>
               </section>
             </div>
-            {/* <div className="bottom-20  max-w-64   py-6 md:fixed">
-              Hey I'm looking for a swe internshp for summer 2025, react out!
-            </div> */}
           </div>
           <div className="col-span-12 md:col-span-8">
             <section className="py-6">
               <h2 className="pb-6 font-sans text-xl font-thin md:text-2xl dark:opacity-65">
                 Work
               </h2>
+              <div className="pb-8">
+                <WorkListItem
+                  logoSrc={"/logos/vercel-dark.svg"}
+                  company={"Vercel"}
+                  position={"Software Engineer"}
+                  startYear={"Soon"}
+                />
+                <WorkListItem
+                  logoSrc={"/logos/robinhood.png"}
+                  company={"Robinhood"}
+                  position={"Software Developer Intern"}
+                  startYear={2025}
+                  endYear={2025}
+                />
+                <WorkListItem
+                  logoSrc={"/logos/hitachirail.png"}
+                  company={"Hitachi Rail"}
+                  position={"Software Analyst Intern"}
+                  startYear={2025}
+                  endYear={2025}
+                />
+                <WorkListItem
+                  logoSrc={"/logos/bell.png"}
+                  company={"Bell Canada"}
+                  position={"AI & Data Engineering Intern"}
+                  startYear={2024}
+                  endYear={2024}
+                />
+              </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 dark:text-neutral-300">
-                {projects.map((project) => (
-                  <div className="" key={project.title}>
-                    <ProjectItem {...project} />
-                  </div>
-                ))}
+                {projects
+                  .filter((project) => !project.hidden)
+                  .map((project) => (
+                    <div className="" key={project.title}>
+                      <ProjectItem {...project} />
+                    </div>
+                  ))}
               </div>
             </section>
             <section>

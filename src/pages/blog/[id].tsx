@@ -8,6 +8,7 @@ import { BlogPosting, BreadcrumbList } from "schema-dts";
 import { WithContext } from "schema-dts";
 import { jsonLdPerson } from "../_app";
 import { jsonLdWebSite } from "../_app";
+import Image from "next/image";
 
 export default function Post({
   postData: {
@@ -118,10 +119,20 @@ export default function Post({
         />
       </Head>
       {/* <ScrollToTopButton /> */}
-      <Layout blog back>
-        <div className="m-auto grid w-auto max-w-2xl grid-cols-1 gap-4  lg:max-w-none lg:grid-cols-3">
+      <div className="relative -mb-16 flex w-full items-center  justify-center [&>img]:!shadow-none">
+        <Image
+          src="/kdsconcept.jpeg"
+          alt="Kitchen Display System Concept"
+          width={1408}
+          height={584}
+          className="w-full rounded-none [-webkit-mask-image:linear-gradient(to_top,transparent,black_20%)]
+         [mask-image:linear-gradient(to_top,transparent,black_20%)]"
+        ></Image>
+      </div>
+      <Layout blog>
+        <div className="m-auto grid w-auto max-w-2xl grid-cols-1 gap-4  lg:max-w-none lg:grid-cols-1">
           <div className="top-28 col-span-1 self-baseline py-4 lg:sticky">
-            <h1 className="text-balance font-serif-display text-4xl font-semibold leading-tight tracking-tight">
+            <h1 className="text-balance font-serif-display text-5xl font-semibold leading-tight tracking-tight lg:text-6xl">
               {title}
             </h1>
             <div className="py-2 font-serif dark:opacity-80">
@@ -143,7 +154,7 @@ export default function Post({
 
           <div
             dangerouslySetInnerHTML={{ __html: contentHtml }}
-            className="prose-md prose prose-neutral col-span-2 m-auto w-full dark:prose-invert [&>p>img]:m-auto"
+            className="prose-md prose prose-neutral col-span-2  w-full dark:prose-invert [&>p>img]:m-auto"
           />
         </div>
       </Layout>

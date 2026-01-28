@@ -6,10 +6,8 @@ interface WorkListItemProps {
   company: string;
   companyWebsite?: string;
   position: string;
-  startYear: number;
-  endYear: number;
-  themeColor?: [number, number, number];
-  themeColorHex?: string;
+  startYear: number | string;
+  endYear?: number;
 }
 
 const WorkListItem: React.FC<WorkListItemProps> = ({
@@ -22,20 +20,20 @@ const WorkListItem: React.FC<WorkListItemProps> = ({
 }) => {
   return (
     <div
-      className={clsx("flex justify-between overflow-hidden rounded-md p-2", {
-        [`hover:bg-white hover:text-black`]:
-          company === "McMaster University" || company === "Hitachi Rail",
-        [`hover:bg-[#CCFF00] hover:text-black`]: company === "Robinhood",
-        [`hover:bg-[#01549A] hover:text-white`]: company === "Bell Canada",
-      })}
+      className={clsx(
+        "flex justify-between overflow-hidden rounded-md p-2",
+        {},
+      )}
     >
       <div className="flex items-center gap-2">
-        <div className="relative h-10 w-10 overflow-hidden rounded-md">
+        <div className="relative h-10 w-10 overflow-hidden rounded-lg [&_>img]:!shadow-none">
           <Image
             src={logoSrc}
             fill
             alt={`${company} logo`}
-            className="pointer-events-none"
+            className={clsx("pointer-events-none", {
+              "dark:invert": company === "Vercel",
+            })}
           ></Image>
         </div>
         <div style={{}}>
@@ -45,7 +43,7 @@ const WorkListItem: React.FC<WorkListItemProps> = ({
       </div>
       <div style={{}}>
         {startYear}
-        {startYear !== endYear ? `-${endYear}` : ""}
+        {endYear && startYear !== endYear ? `-${endYear}` : ""}
       </div>
     </div>
   );
