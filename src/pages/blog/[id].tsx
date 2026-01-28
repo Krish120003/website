@@ -119,14 +119,14 @@ export default function Post({
         />
       </Head>
       {/* <ScrollToTopButton /> */}
-      <div className="relative -mb-16 flex w-full items-center  justify-center [&>img]:!shadow-none">
+      <div className="relative z-10 -mb-16 flex w-full  items-center justify-center [&>img]:!shadow-none">
         <Image
           src="/kdsconcept.jpeg"
           alt="Kitchen Display System Concept"
           width={1408}
           height={584}
-          className="w-full rounded-none [-webkit-mask-image:linear-gradient(to_top,transparent,black_20%)]
-         [mask-image:linear-gradient(to_top,transparent,black_20%)]"
+          className="z-10 w-full rounded-none
+         [-webkit-mask-image:linear-gradient(to_top,transparent,black_20%)] [mask-image:linear-gradient(to_top,transparent,black_20%)]"
         ></Image>
       </div>
       <Layout blog>

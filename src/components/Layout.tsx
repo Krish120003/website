@@ -31,7 +31,7 @@ const ScrollIndicator = () => {
 
   return (
     <div
-      className="fixed  h-full w-1 origin-top transform-gpu bg-gradient-to-b from-neutral-800 to-neutral-950  dark:from-orange-50 dark:to-sky-400"
+      className="fixed top-0 z-50 h-screen w-1 origin-top transform-gpu bg-gradient-to-b from-neutral-800 to-neutral-950  dark:from-orange-50 dark:to-sky-400"
       style={{
         clipPath: "inset(0 0 var(--scroll-indicator) 0)",
       }}
