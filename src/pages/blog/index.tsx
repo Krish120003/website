@@ -120,15 +120,23 @@ export default function Blog({ allPostsData }: BlogProps) {
           }}
         />
       </Head>
-      <div>
-        <h1 className="font-serif-display text-2xl text-neutral-800 dark:text-neutral-100">
-          {"Krish's Blog"}
-        </h1>
-        <p className="text-neutral-600 opacity-70 dark:text-neutral-400">
-          I make occasional posts about what I&apos;m learning
-        </p>
-        <hr className="m-auto my-4 border-neutral-400 dark:border-white dark:opacity-10" />
+      <div className="flex justify-between">
+        <div>
+          <h1 className="font-serif-display text-2xl text-neutral-800 dark:text-neutral-100">
+            {"Krish's Blog"}
+          </h1>
+          <p className="text-neutral-600 opacity-70 dark:text-neutral-400">
+            I make occasional posts about what I&apos;m learning
+          </p>
+        </div>
+        <a
+          href="/rss.xml"
+          className="underline hover:decoration-black dark:hover:decoration-neutral-400"
+        >
+          RSS
+        </a>
       </div>
+      <hr className="m-auto my-4 border-neutral-400 dark:border-white dark:opacity-10" />
       {/* <h2>Posts</h2> */}
       <ul className="space-y-2 md:space-y-0">
         {allPostsData
