@@ -28,6 +28,7 @@ const postMetadataWithId = postMetadataSchema.extend({
 });
 
 const postSchema = postMetadataWithId.extend({
+  contentMd: z.string(),
   contentHtml: z.string(),
   tableOfContents: z.string(),
   readTime: z.number(),
@@ -148,6 +149,7 @@ export async function getPostData(id: string) {
   // Combine the data with the id and contentHtml
   return postSchema.parse({
     id,
+    contentMd: matterResult.content,
     contentHtml,
     readTime,
     tableOfContents,
