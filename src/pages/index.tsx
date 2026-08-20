@@ -2,11 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-import {
-  MdAlternateEmail,
-  MdArrowOutward,
-  MdOutlineLibraryBooks,
-} from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import { ProjectItemType, projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -16,38 +12,49 @@ import { ProfilePage, WithContext } from "schema-dts";
 import { jsonLdWebSite } from "./_app";
 import { jsonLdPerson } from "./_app";
 
-const ProjectItem: React.FC<ProjectItemType> = ({
+interface HomeProps {
+  edition: string;
+}
+
+/* A single work "story" laid out like a newspaper article. */
+const WorkStory: React.FC<ProjectItemType & { kicker: string }> = ({
   title,
   description,
   link,
   image,
+  kicker,
 }) => {
   return (
-    <>
-      <Link href={link} className="flex w-fit flex-col  p-2 pb-2">
+    <article className="border-t border-current/20 pt-4">
+      <Link href={link} className="group block">
+        <p className="mb-1 font-news text-[0.7rem] uppercase tracking-[0.2em] opacity-60">
+          {kicker}
+        </p>
+        <h3 className="flex items-start justify-between gap-2 font-serif-display text-2xl leading-tight group-hover:underline">
+          <span className="text-balance">{title}</span>
+          <MdArrowOutward className="mt-1 shrink-0 text-base opacity-50" />
+        </h3>
         {image && (
-          <Image
-            src={image}
-            alt={title}
-            className="mb-4 aspect-video rounded-lg object-cover object-center"
-            width={800}
-            height={450}
-            placeholder="blur"
-          />
-        )}
-        <div className="flex items-end justify-between gap-2 underline">
-          <h3 className="">{title}</h3>
-          <div className="pb-1">
-            <MdArrowOutward />
+          <div className="news-photo my-3">
+            <Image
+              src={image}
+              alt={title}
+              className="aspect-video w-full object-cover object-center"
+              width={800}
+              height={450}
+              placeholder="blur"
+            />
           </div>
-        </div>
-        <p className="text-neutral-600 dark:text-neutral-500">{description}</p>
+        )}
+        <p className="font-news text-[0.95rem] leading-snug opacity-80">
+          {description}
+        </p>
       </Link>
-    </>
+    </article>
   );
 };
 
-export default function Home() {
+export default function Home({ edition }: HomeProps) {
   const jsonLdProfilePage: WithContext<ProfilePage> = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
@@ -72,6 +79,8 @@ export default function Home() {
       "Krish is a software engineer focused on high performance full-stack web applications.",
     isAccessibleForFree: true,
   };
+
+  const [lead, ...rest] = projects;
 
   return (
     <>
@@ -114,140 +123,210 @@ export default function Home() {
         />
       </Head>
       <Layout>
-        <div className="grid grid-cols-12 gap-4 md:pt-8">
-          <div className="col-span-12  md:col-span-4">
-            <div className="top-35  py-6 md:fixed">
-              <section className="space-y-2 pb-6">
-                <h1 className="font-serif-display text-4xl font-bold  md:text-6xl">
-                  {/* <div className="text-lg opacity-50">Hi there,</div> {"I'm"}{" "} */}
-                  Krish
-                </h1>
-                <p className="dark:text-neutral-200">
-                  i like to write code that runs fast
-                </p>
-              </section>
-              <section className=" py-6 ">
-                <h2 className="pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
-                  Links
-                </h2>
-                <ul className="space-y-2 [&>li:hover]:underline">
-                  <li>
-                    <Link
-                      href="/blog"
-                      className="flex w-full items-center gap-2 transition-all hover:text-red-600"
-                    >
-                      <MdOutlineLibraryBooks />
-                      /blog
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/krish_resume.pdf"
-                      className="flex w-full items-center gap-2 transition-all hover:text-yellow-500 dark:hover:text-yellow-400"
-                    >
-                      <FaFilePdf />
-                      /resume.pdf
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse ">
-                        Resume
-                      </span> */}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://x.com/dotkrish"
-                      className="flex w-full items-center gap-2 transition-all hover:text-blue-400 dark:hover:text-blue-500"
-                    >
-                      <SiX />
-                      @dotkrish
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        Twitter
-                      </span> */}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://www.linkedin.com/in/krish-krish/"
-                      className="flex w-full  items-center gap-2 transition-all hover:text-blue-700 dark:hover:text-blue-500"
-                    >
-                      <SiLinkedin />
-                      linkedin.com/in/krish-krish
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        LinkedIn
-                      </span> */}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://github.com/Krish120003"
-                      className="flex w-full  items-center gap-2 transition-all hover:text-purple-600 dark:hover:text-purple-500"
-                    >
-                      <SiGithub />
-                      github.com/Krish120003
-                      {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        Github
-                      </span> */}
-                    </Link>
-                  </li>
-                  {/* <li>
-                    <Link
-                      href="mailto:krish120003@gmail.com"
-                      className="flex w-full  items-center gap-2 transition-all hover:text-green-600 dark:hover:text-green-500"
-                    >
-                      <MdAlternateEmail />
-                      krish120003@gmail.com
-                      <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
-                        Email
-                      </span> 
-                    </Link>
-                  </li> */}
-                </ul>
-              </section>
+        <div className="mx-auto max-w-6xl font-news">
+          {/* ---------------- Masthead ---------------- */}
+          <header className="pt-2">
+            <div className="flex items-center justify-between border-b border-current pb-1 text-[0.7rem] uppercase tracking-[0.18em] opacity-70">
+              <span>Vol. MMXXVI — No. 1</span>
+              <span className="hidden sm:inline">krish.gg</span>
+              <span>{edition}</span>
             </div>
-            {/* <div className="bottom-20  max-w-64   py-6 md:fixed">
-              Hey I'm looking for a swe internshp for summer 2025, react out!
-            </div> */}
-          </div>
-          <div className="col-span-12 md:col-span-8">
-            <section className="py-6">
-              <h2 className="pb-6 font-sans text-xl font-thin md:text-2xl dark:opacity-65">
-                Work
+
+            <h1 className="border-b-4 border-double border-current py-3 text-center font-serif-display text-6xl leading-none md:text-8xl">
+              The Krish Times
+            </h1>
+
+            <div className="flex items-center justify-between border-b border-current py-1 text-[0.7rem] uppercase tracking-[0.18em] opacity-70">
+              <span>Late Edition</span>
+              <span className="italic">
+                &ldquo;i like to write code that runs fast&rdquo;
+              </span>
+              <span className="hidden sm:inline">Price: Free</span>
+            </div>
+          </header>
+
+          {/* ---------------- Top section: lead + rails ---------------- */}
+          <div className="grid grid-cols-1 gap-6 py-6 md:grid-cols-12 md:divide-x md:divide-current/30">
+            {/* Left rail — directory / links */}
+            <aside className="md:col-span-3 md:pr-6">
+              <h2 className="mb-2 border-b border-current pb-1 text-center font-serif-display text-lg uppercase tracking-widest">
+                Directory
               </h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 dark:text-neutral-300">
-                {projects.map((project) => (
-                  <div className="" key={project.title}>
-                    <ProjectItem {...project} />
-                  </div>
-                ))}
+              <ul className="space-y-2 text-[0.95rem]">
+                <li>
+                  <Link
+                    href="/blog"
+                    className="flex items-center gap-2 hover:text-red-600 hover:underline"
+                  >
+                    <FaFilePdf className="opacity-0" />
+                    the blog &rarr; /blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/krish_resume.pdf"
+                    className="flex items-center gap-2 hover:underline"
+                  >
+                    <FaFilePdf />
+                    /resume.pdf
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://x.com/dotkrish"
+                    className="flex items-center gap-2 hover:underline"
+                  >
+                    <SiX />
+                    @dotkrish
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.linkedin.com/in/krish-krish/"
+                    className="flex items-center gap-2 hover:underline"
+                  >
+                    <SiLinkedin />
+                    in/krish-krish
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://github.com/Krish120003"
+                    className="flex items-center gap-2 hover:underline"
+                  >
+                    <SiGithub />
+                    Krish120003
+                  </Link>
+                </li>
+              </ul>
+
+              <div className="mt-6 border-y border-current py-3 text-center">
+                <p className="font-serif-display text-sm uppercase tracking-widest">
+                  Weather
+                </p>
+                <p className="mt-1 text-[0.85rem] opacity-75">
+                  Terminal, dark mode. Coffee likely.
+                </p>
+              </div>
+            </aside>
+
+            {/* Center — the lead story */}
+            <section className="md:col-span-9 md:pl-6">
+              <p className="text-center text-[0.7rem] uppercase tracking-[0.25em] opacity-60">
+                Profile &middot; Engineering
+              </p>
+              <h2 className="mt-1 text-balance text-center font-serif-display text-4xl leading-[0.95] md:text-6xl">
+                Engineer Builds Software That Runs Fast
+              </h2>
+              <p className="mt-2 text-center text-[0.8rem] uppercase tracking-widest opacity-70">
+                By Krish Krish &middot; Staff Correspondent
+              </p>
+              <hr className="my-4 border-current opacity-30" />
+              <div className="news-columns font-news text-[1rem] leading-relaxed">
+                <p className="dropcap">
+                  Krish is a software engineer focused on high performance,
+                  full-stack web applications — the kind of work where
+                  milliseconds are measured and every render is accounted for.
+                  His days are spent chasing the shortest path between an idea
+                  and a fast, reliable product.
+                </p>
+                <p className="mt-3">
+                  His recent dispatches range from high-performance trading
+                  charts at Robinhood to hand-written parsers, open-source
+                  infrastructure clones, and hackathon-winning robots. A running
+                  theme unites them: code that respects the machine and the
+                  person waiting on it. Read on for the full record of ventures
+                  below, or consult the Directory for ways to reach the desk.
+                </p>
               </div>
             </section>
-            <section>
-              <h2 className="pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
-                Technologies I Use
-              </h2>
-              <ul className="grid grid-cols-2 space-y-1 pt-4 md:grid-cols-3 dark:text-neutral-300">
-                {technologies.map((tech) => (
-                  <li key={tech.name} className="flex items-center gap-2">
-                    {<tech.icon />}
-                    {tech.name}
-                  </li>
-                ))}
-              </ul>
-            </section>
           </div>
-        </div>
 
-        {/* <div className="fixed right-4 top-4 rounded-lg bg-black/10 px-2 py-1 text-sm backdrop-blur-sm dark:bg-white/10">
-          <span className="sm:hidden">sm</span>
-          <span className="hidden sm:inline md:hidden">md</span>
-          <span className="hidden md:inline">lg</span>
-        </div> */}
+          {/* ---------------- Work section ---------------- */}
+          <section className="border-t-4 border-double border-current pt-4">
+            <div className="mb-6 flex items-center justify-between border-b border-current pb-2">
+              <h2 className="font-serif-display text-2xl uppercase tracking-widest">
+                Work &amp; Ventures
+              </h2>
+              <span className="hidden text-[0.7rem] uppercase tracking-[0.2em] opacity-60 sm:inline">
+                Selected Reports
+              </span>
+            </div>
+
+            {/* Lead work story */}
+            {lead && (
+              <div className="mb-6 grid grid-cols-1 gap-5 border-b border-current pb-6 md:grid-cols-12">
+                <div className="md:col-span-7">
+                  <p className="mb-1 font-news text-[0.7rem] uppercase tracking-[0.2em] opacity-60">
+                    Front Page
+                  </p>
+                  <Link href={lead.link} className="group block">
+                    <h3 className="flex items-start justify-between gap-3 text-balance font-serif-display text-3xl leading-tight group-hover:underline md:text-5xl">
+                      <span>{lead.title}</span>
+                      <MdArrowOutward className="mt-2 shrink-0 text-2xl opacity-50" />
+                    </h3>
+                    <p className="mt-3 font-news text-lg leading-snug opacity-85">
+                      {lead.description}
+                    </p>
+                  </Link>
+                </div>
+                {lead.image && (
+                  <div className="md:col-span-5">
+                    <Link href={lead.link} className="news-photo block">
+                      <Image
+                        src={lead.image}
+                        alt={lead.title}
+                        className="aspect-video w-full object-cover object-center"
+                        width={800}
+                        height={450}
+                        placeholder="blur"
+                      />
+                    </Link>
+                    <p className="mt-1 font-news text-[0.75rem] italic opacity-60">
+                      Pictured: {lead.title}.
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Remaining stories in a newspaper grid */}
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+              {rest.map((project) => (
+                <WorkStory key={project.title} {...project} kicker="Report" />
+              ))}
+            </div>
+          </section>
+
+          {/* ---------------- Technologies ---------------- */}
+          <section className="mt-4 border-y-4 border-double border-current py-4">
+            <h2 className="mb-3 text-center font-serif-display text-xl uppercase tracking-[0.3em]">
+              Tools of the Trade
+            </h2>
+            <ul className="mx-auto grid max-w-4xl grid-cols-2 gap-x-8 gap-y-1 text-[0.95rem] sm:grid-cols-3 md:grid-cols-5">
+              {technologies.map((tech) => (
+                <li key={tech.name} className="flex items-center gap-2">
+                  <tech.icon />
+                  {tech.name}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </Layout>
     </>
   );
 }
 
 export async function getStaticProps() {
+  const edition = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return {
-    props: {},
+    props: { edition },
   };
 }

@@ -11,7 +11,11 @@ import { env } from "~/env";
 import Head from "next/head";
 import { Person, ProfilePage, WebSite, WithContext } from "schema-dts";
 
-if (typeof window !== "undefined" && process.env.NODE_ENV !== "development") {
+if (
+  typeof window !== "undefined" &&
+  process.env.NODE_ENV !== "development" &&
+  env.NEXT_PUBLIC_POSTHOG_KEY
+) {
   // checks that we are client-side
   posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
     api_host: env.NEXT_PUBLIC_POSTHOG_HOST || "https://app.posthog.com",

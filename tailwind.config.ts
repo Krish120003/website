@@ -17,6 +17,7 @@ export default {
         serif: ["Poppins", ...fontFamily.serif],
         "serif-display": ["bluu", ...fontFamily.serif],
         sans: ["Poppins", ...fontFamily.sans],
+        news: ["Georgia", "Times New Roman", "Times", "serif"],
       },
     },
   },

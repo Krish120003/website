@@ -189,3 +189,49 @@ img {
       0 0 0 6px rgb(96, 96, 96);
   }
 }
+
+/* ---------- Newspaper front page ---------- */
+
+/* Print-style photos: flat, halftone-ish, thin keyline. Overrides the
+   global soft-shadow treatment when inside a .news-photo wrapper. */
+.news-photo img {
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid currentColor;
+  filter: grayscale(1) contrast(1.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .news-photo img {
+    box-shadow: none;
+    filter: grayscale(1) contrast(1.05) brightness(0.95);
+  }
+}
+
+/* Drop cap for the lead paragraph */
+.dropcap::first-letter {
+  float: left;
+  font-family: "bluu", Georgia, serif;
+  font-size: 3.6rem;
+  line-height: 0.72;
+  padding: 0.08em 0.08em 0 0;
+  margin-right: 0.02em;
+}
+
+/* Justified, columnar body copy like a real newspaper */
+.news-columns {
+  text-align: justify;
+  hyphens: auto;
+}
+@media (min-width: 768px) {
+  .news-columns {
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 1px solid rgba(0, 0, 0, 0.25);
+  }
+}
+@media (min-width: 768px) and (prefers-color-scheme: dark) {
+  .news-columns {
+    column-rule: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
