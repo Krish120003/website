@@ -120,67 +120,12 @@ export default function Blog({ allPostsData }: BlogProps) {
           }}
         />
       </Head>
-      <div className="flex justify-between">
-        <div>
-          <h1 className="font-serif-display text-2xl text-neutral-800 dark:text-neutral-100">
-            {"Krish's Blog"}
-          </h1>
-          <p className="text-neutral-600 opacity-70 dark:text-neutral-400">
-            I make occasional posts about what I&apos;m learning
-          </p>
-        </div>
-        <a
-          href="/rss.xml"
-          className="underline hover:decoration-black dark:hover:decoration-neutral-400"
-        >
-          RSS
-        </a>
+      <div className="flex items-end justify-between gap-4 border-b border-[var(--rule)] pb-5">
+        <div><p className="mb-2 font-mono text-xs font-bold uppercase tracking-[.18em] text-[var(--accent)]">The technical edition</p><h1 className="m-0 font-serif text-5xl leading-none md:text-7xl">Krish&apos;s Blog</h1><p className="mt-3 text-sm text-[var(--muted-ink)]">Occasional dispatches about what I&apos;m learning.</p></div>
+        <a href="/rss.xml" className="font-mono text-xs font-bold uppercase tracking-widest underline">RSS</a>
       </div>
-      <hr className="m-auto my-4 border-neutral-400 dark:border-white dark:opacity-10" />
-      {/* <h2>Posts</h2> */}
-      <ul className="space-y-2 md:space-y-0">
-        {allPostsData
-          .filter((e) => e.micro !== true && e.hidden !== true)
-          .map(({ id, date, title, description }) => (
-            <li key={id} className="flex flex-col md:flex-row md:gap-8">
-              <div className="text-md font-mono text-neutral-800  dark:text-white dark:opacity-65">
-                {formatDateDigits(date)}
-              </div>
-              <Link
-                href={`/blog/${id}`}
-                className="flex-1 underline decoration-neutral-500 transition-all hover:decoration-black  dark:decoration-neutral-600 dark:hover:decoration-neutral-400"
-              >
-                {title}
-              </Link>
-              {/* <p className="dark:text-neutral-300">{description}</p> */}
-            </li>
-          ))}
-      </ul>
-
-      <hr className="m-auto  my-8 max-w-xl border-transparent" />
-
-      <h2>Micro blogs</h2>
-      <p className="mb-2 text-sm text-neutral-600 opacity-70 dark:text-neutral-400">
-        Concise technical snippets from my experiences
-      </p>
-      <ul className="space-y-2 md:space-y-0">
-        {allPostsData
-          .filter((e) => e.micro === true && e.hidden !== true)
-          .map(({ id, date, title, description }) => (
-            <li key={id} className="flex flex-col md:flex-row md:gap-8">
-              <div className="text-md font-mono text-neutral-800  dark:text-white dark:opacity-65">
-                {formatDateDigits(date)}
-              </div>
-              <Link
-                href={`/blog/${id}`}
-                className="flex-1 underline decoration-neutral-500 transition-all hover:decoration-black  dark:decoration-neutral-600 dark:hover:decoration-neutral-400"
-              >
-                {title}
-              </Link>
-              {/* <p className="dark:text-neutral-300">{description}</p> */}
-            </li>
-          ))}
-      </ul>
+      <section className="py-8"><div className="mb-4 flex items-baseline justify-between border-b-4 border-double border-[var(--ink)] pb-2"><h2 className="m-0 font-serif text-3xl">Latest stories</h2><span className="font-mono text-xs uppercase text-[var(--muted-ink)]">Filed chronologically</span></div><ul className="m-0 flex flex-col p-0">{allPostsData.filter((e) => e.micro !== true && e.hidden !== true).map(({ id, date, title }) => <li key={id} className="grid gap-2 border-b border-[var(--rule)] py-4 md:grid-cols-[9rem_1fr]"><div className="font-mono text-xs uppercase tracking-wider text-[var(--muted-ink)]">{formatDateDigits(date)}</div><Link href={`/blog/${id}`} className="font-serif text-2xl leading-tight underline decoration-[var(--rule)] underline-offset-4 hover:decoration-[var(--accent)]">{title}</Link></li>)}</ul></section>
+      <section className="border-t border-[var(--ink)] pt-6"><p className="mb-1 font-mono text-xs font-bold uppercase tracking-[.18em] text-[var(--accent)]">Notebook</p><h2 className="m-0 font-serif text-3xl">Micro blogs</h2><p className="mb-4 text-sm text-[var(--muted-ink)]">Concise technical snippets from my experiences.</p><ul className="m-0 flex flex-col p-0">{allPostsData.filter((e) => e.micro === true && e.hidden !== true).map(({ id, date, title }) => <li key={id} className="grid gap-2 border-b border-[var(--rule)] py-3 md:grid-cols-[9rem_1fr]"><div className="font-mono text-xs uppercase text-[var(--muted-ink)]">{formatDateDigits(date)}</div><Link href={`/blog/${id}`} className="underline decoration-[var(--rule)] underline-offset-4 hover:decoration-[var(--accent)]">{title}</Link></li>)}</ul></section>
     </Layout>
   );
 }

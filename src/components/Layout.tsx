@@ -12,63 +12,39 @@ interface LayoutProps {
 
 const ScrollIndicator = () => {
   const handleScroll = () => {
-    const scroll = window.scrollY;
     const height = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = (scroll / height) * 100;
-    const inverseScrolled = 100 - scrolled;
-    document.documentElement.style.setProperty("--scroll", `${scrolled}`);
-    document.documentElement.style.setProperty(
-      "--scroll-indicator",
-      `${inverseScrolled}%`,
-    );
+    const scrolled = height > 0 ? (window.scrollY / height) * 100 : 0;
+    document.documentElement.style.setProperty("--scroll-indicator", `${100 - scrolled}%`);
   };
 
   useEffect(() => {
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <div
-      className="fixed  h-full w-1 origin-top transform-gpu bg-gradient-to-b from-neutral-800 to-neutral-950  dark:from-orange-50 dark:to-sky-400"
-      style={{
-        clipPath: "inset(0 0 var(--scroll-indicator) 0)",
-      }}
-    ></div>
-  );
+  return <div aria-hidden="true" className="scroll-indicator" style={{ clipPath: "inset(0 0 var(--scroll-indicator) 0)" }} />;
 };
 
 export const Layout: React.FC<LayoutProps> = ({ children, blog, back }) => {
   const router = useRouter();
-  // get the parent route, so we can use it to go back
-  const parentRoute =
-    router.asPath.split("/").slice(0, -1).join("/").trim() || "/";
+  const parentRoute = router.asPath.split("/").slice(0, -1).join("/").trim() || "/";
 
   return (
     <>
       <ScrollIndicator />
-      <div className="h-fit font-serif dark:text-white">
-        <main
-          className={cn("m-auto min-h-full max-w-7xl px-8 pt-12", {
-            // "max-w-4xl": !blog,
-            // "max-w-7xl": blog,
-          })}
-        >
-          {back ? (
-            <div className="md:mb-16">
-              <Link
-                href={parentRoute}
-                className="mb-2 flex items-center gap-1 opacity-60 transition-all hover:gap-2 hover:opacity-90 md:fixed lg:mb-8"
-              >
-                <IoMdArrowBack />
-                {blog ? "All Posts" : "Home"}
-              </Link>
-            </div>
-          ) : null}
+      <div className="newspaper-shell">
+        <header className="site-masthead">
+          <div className="masthead-meta"><span>VOL. 01</span><span>{blog ? "THE TECHNICAL EDITION" : "EST. 2020"}</span><span>KRISH.GG</span></div>
+          <Link href="/" className="masthead-name">The Krish Journal</Link>
+          <div className="masthead-rule" />
+        </header>
+        <main className={cn("newspaper-main", { "article-context": blog })}>
+          {back ? <Link href={parentRoute} className="back-link"><IoMdArrowBack aria-hidden="true" />{blog ? "All Posts" : "Home"}</Link> : null}
           {children}
-          <footer className="mt-8 flex flex-col justify-between border-t border-black py-8 opacity-20 transition-opacity hover:opacity-50 md:flex-row dark:border-white">
-            <div>&copy; {new Date().getFullYear()} Krish Krish</div>
+          <footer className="site-footer">
+            <span>© {new Date().getFullYear()} Krish Krish</span>
+            <span>Printed on the internet · krish.gg</span>
           </footer>
         </main>
       </div>

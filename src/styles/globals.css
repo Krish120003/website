@@ -2,190 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
-  font-family: "Libre Caslon Condensed";
-  src:
-    url("/fonts/LibreCaslonCondensed[wght].woff2")
-      format("woff2 supports variations"),
-    url("/fonts/LibreCaslonCondensed[wght].woff2") format("woff2-variations");
-  font-weight: 100 1000;
-  font-display: fallback;
-}
+@font-face { font-family: "bluu"; src: url("/fonts/bluu/bluunext-bold-webfont.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("/fonts/Poppins/Poppins-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("/fonts/Poppins/Poppins-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 
-@font-face {
-  font-family: "Libre Caslon Text";
-  src:
-    url("/fonts/LibreCaslonText[wght].ttf") format("ttf supports variations"),
-    url("/fonts/LibreCaslonText[wght].ttf") format("ttf-variations");
-  font-weight: 100 1000;
-  font-display: fallback;
-} */
-
-@font-face {
-  font-family: "bluu";
-  src:
-    url("/fonts/bluu/bluunext-bold-webfont.woff2") format("woff2"),
-    url("/fonts/bluu/bluunext-bold-webfont.woff") format("woff"),
-    url("/fonts/bluu/bluunext-bold.ttf") format("truetype"),
-    url("/fonts/bluu/bluunext-bold-webfont.svg#bluu_nextbold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
-}
-
-/* @font-face {
-  font-family: "bluu";
-  src:
-    url("/fonts/bluu/bluunext-bolditalic-webfont.woff2") format("woff2"),
-    url("/fonts/bluu/bluunext-bolditalic-webfont.woff") format("woff"),
-    url("/fonts/bluu/bluunext-bolditalic.ttf") format("truetype"),
-    url("/fonts/bluu/bluunext-bolditalic-webfont.svg#bluu_nextbold_italic")
-      format("svg");
-  font-weight: normal;
-  font-style: italic;
-  font-display: fallback;
-} */
-
-/* @font-face {
-  font-family: "bluu_nexttitling";
-  src:
-    url("/fonts/bluu/BluuNext-Titling.ttf") format("truetype"),
-    url("/fonts/bluu/bluunext-titling.woff2") format("woff2"),
-    url("/fonts/bluu/bluunext-titling.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
-} */
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src:
-    url("/fonts/Poppins/Poppins-Italic.woff2") format("woff2"),
-    url("/fonts/Poppins/Poppins-Italic.woff") format("woff"),
-    url("/fonts/Poppins/Poppins-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src:
-    url("/fonts/Poppins/Poppins-Bold.woff2") format("woff2"),
-    url("/fonts/Poppins/Poppins-Bold.woff") format("woff"),
-    url("/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src:
-    url("/fonts/Poppins/Poppins-BoldItalic.woff2") format("woff2"),
-    url("/fonts/Poppins/Poppins-BoldItalic.woff") format("woff"),
-    url("/fonts/Poppins/Poppins-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: fallback;
-}
-/* set root to full height and width */
-
-html,
-body,
-#__next {
-  height: 100%;
-}
-
-.bg-big {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background-color: red;
-  object-fit: cover;
-  scale: 1.4;
-  animation: rotate 45s infinite linear;
-  filter: blur(120px);
-}
-
-.bg-small {
-  filter: blur(70px);
-}
-
-/* dark mode */
-@media (prefers-color-scheme: light) {
-  .bg-big {
-    filter: hue-rotate(210deg) saturate(0.5) blur(120px);
-  }
-  .bg-small {
-    filter: hue-rotate(210deg) saturate(0.5) blur(70px);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.katex-html {
-  display: none;
-  visibility: hidden;
-}
-
-.katex-mathml {
-  display: inline;
-  max-width: 100%;
-  /* width: 100%; */
-  overflow: scroll;
-}
-
-.katex-mathml > math {
-  max-width: 100%;
-  /* width: 100%; */
-}
-
-.prose * {
-  max-width: 100%;
-  text-wrap: wrap;
-}
-
-.prose a {
-  text-wrap: wrap;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-}
-
-.prose code {
-  white-space: pre-wrap;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 0.1em;
-}
-
-img {
-  box-shadow:
-    0 0 0 1px rgb(192, 192, 192),
-    0 0 0 5px rgb(245, 245, 245),
-    0 0 0 6px rgb(192, 192, 192);
-  border-radius: 0.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  img {
-    box-shadow:
-      0 0 0 1px rgb(96, 96, 96),
-      0 0 0 5px rgb(24, 24, 24),
-      0 0 0 6px rgb(96, 96, 96);
-  }
-}
+:root { --paper: #f2efe7; --ink: #1c1b19; --muted-ink: #706d66; --rule: #aaa69c; --accent: #9f2f25; --scroll-indicator: 100%; }
+html, body, #__next { min-height: 100%; }
+html { background: var(--paper); }
+body { margin: 0; background-color: var(--paper); color: var(--ink); font-family: Poppins, sans-serif; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .22; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); z-index: 20; }
+.font-serif, .font-serif-display { font-family: bluu, Georgia, serif; }
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.newspaper-shell { position: relative; min-height: 100vh; }
+.site-masthead, .newspaper-main { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+.site-masthead { padding-top: 1.5rem; text-align: center; }
+.masthead-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted-ink); font: 700 .65rem/1 Poppins, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.masthead-name { display: block; color: var(--ink); font: 700 clamp(2.8rem, 8vw, 6.6rem)/.95 bluu, Georgia, serif; letter-spacing: -.045em; text-decoration: none; padding: 1rem 0 .8rem; }
+.masthead-rule { border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); height: 5px; }
+.newspaper-main { padding-top: 1.25rem; }
+.back-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--muted-ink); font: 700 .7rem Poppins, sans-serif; text-transform: uppercase; letter-spacing: .1em; text-decoration: none; }
+.back-link:hover, a:hover { color: var(--accent); }
+.scroll-indicator { position: fixed; inset: 0 auto 0 0; width: 3px; background: var(--accent); z-index: 30; transform-origin: top; }
+.site-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding: 1rem 0 2.5rem; border-top: 1px solid var(--rule); color: var(--muted-ink); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; }
+.prose { font-family: Georgia, serif; }
+.prose a { color: var(--accent); }
+.prose code { background: #dedbd2; }
+img { box-shadow: 0 0 0 1px var(--rule); border-radius: 0; }
+@media (max-width: 640px) { .masthead-meta span:nth-child(2) { display: none; } .site-footer { flex-direction: column; } }
+@media (prefers-color-scheme: dark) { :root { --paper: #20201e; --ink: #eeeae0; --muted-ink: #aaa69c; --rule: #5f5c56; --accent: #dd6b5d; } body { background: var(--paper); } .masthead-name { color: var(--ink); } .prose code { background: #34332f; } }
