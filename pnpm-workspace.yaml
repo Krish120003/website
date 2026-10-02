@@ -1,3 +1,6 @@
 allowBuilds:
+  '@sveltejs/kit': false
+  '@vercel/speed-insights': false
+  core-js: false
   esbuild: true
   sharp: true

@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
-// Static image imports
+import vercelImg from "../../public/work/vercel.png";
 import tangoImg from "../../public/work/tango.png";
 import legendImage from "../../public/work/robinhood-legend.webp";
 import gitfasterImg from "../../public/work/gitfaster.png";
@@ -45,6 +45,12 @@ export interface ProjectItemType {
 }
 
 export const projects: ProjectItemType[] = [
+  {
+    title: "Vercel",
+    description: "Growth & Experimentation",
+    link: "https://vercel.com",
+    image: vercelImg,
+  },
   {
     title: "Tango",
     description:
