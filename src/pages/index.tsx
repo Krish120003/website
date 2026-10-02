@@ -9,8 +9,8 @@ import {
 } from "react-icons/md";
 import { ProjectItemType, projects, technologies } from "../lib/data";
 import { Layout } from "~/components/Layout";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
-import { FaFilePdf } from "react-icons/fa";
+import { SiGithub, SiX } from "react-icons/si";
+import { FaFilePdf, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { ProfilePage, WithContext } from "schema-dts";
 import { jsonLdWebSite } from "./_app";
@@ -24,7 +24,7 @@ const ProjectItem: React.FC<ProjectItemType> = ({
 }) => {
   return (
     <>
-      <Link href={link} className="flex w-fit flex-col  p-2 pb-2">
+      <Link href={link} className="flex w-fit flex-col p-2 pb-2">
         {image && (
           <Image
             src={image}
@@ -115,10 +115,10 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="grid grid-cols-12 gap-4 md:pt-8">
-          <div className="col-span-12  md:col-span-4">
-            <div className="top-35  py-6 md:fixed">
+          <div className="col-span-12 md:col-span-4">
+            <div className="top-35 py-6 md:fixed">
               <section className="space-y-2 pb-6">
-                <h1 className="font-serif-display text-4xl font-bold  md:text-6xl">
+                <h1 className="font-serif-display text-4xl font-bold md:text-6xl">
                   {/* <div className="text-lg opacity-50">Hi there,</div> {"I'm"}{" "} */}
                   Krish
                 </h1>
@@ -126,7 +126,7 @@ export default function Home() {
                   i like to write code that runs fast
                 </p>
               </section>
-              <section className=" py-6 ">
+              <section className="py-6">
                 <h2 className="pb-1 text-xl font-thin md:text-2xl dark:opacity-65">
                   Links
                 </h2>
@@ -167,9 +167,9 @@ export default function Home() {
                   <li>
                     <Link
                       href="https://www.linkedin.com/in/krish-krish/"
-                      className="flex w-full  items-center gap-2 transition-all hover:text-blue-700 dark:hover:text-blue-500"
+                      className="flex w-full items-center gap-2 transition-all hover:text-blue-700 dark:hover:text-blue-500"
                     >
-                      <SiLinkedin />
+                      <FaLinkedin />
                       linkedin.com/in/krish-krish
                       {/* <span className="flex items-center gap-2 font-sans text-sm opacity-50 md:flex-row-reverse">
                         LinkedIn
@@ -179,7 +179,7 @@ export default function Home() {
                   <li>
                     <Link
                       href="https://github.com/Krish120003"
-                      className="flex w-full  items-center gap-2 transition-all hover:text-purple-600 dark:hover:text-purple-500"
+                      className="flex w-full items-center gap-2 transition-all hover:text-purple-600 dark:hover:text-purple-500"
                     >
                       <SiGithub />
                       github.com/Krish120003

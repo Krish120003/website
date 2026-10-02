@@ -12,8 +12,8 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
-  SiVisualstudiocode,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import { FaJava } from "react-icons/fa";
 
 // Static image imports
@@ -222,6 +222,6 @@ export const technologies: TechnologyItem[] = [
   },
   {
     name: "VS Code",
-    icon: SiVisualstudiocode as React.FC,
+    icon: VscVscode as React.FC,
   },
 ];

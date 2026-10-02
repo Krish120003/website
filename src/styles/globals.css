@@ -1,6 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-serif:
+    "Poppins", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif-display:
+    "bluu", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans:
+    "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  --animate-spin-30s: spin 30s linear infinite;
+  --animate-spin-20s: spin 20s linear infinite;
+}
+
+/* tailwindcss-animation-delay v4 utilities (from tailwindcss-animation-delay/tailwindcss-v4.css) */
+@utility animation-delay-none {
+  animation-delay: 0s;
+}
+@utility animation-delay-inherit {
+  animation-delay: inherit;
+}
+@utility animation-delay-initial {
+  animation-delay: initial;
+}
+@utility animation-delay-revert {
+  animation-delay: revert;
+}
+@utility animation-delay-revert-layer {
+  animation-delay: revert-layer;
+}
+@utility animation-delay-unset {
+  animation-delay: unset;
+}
+@utility animation-delay-* {
+  animation-delay: --value([*]);
+  animation-delay: calc(--value(integer) * 1ms);
+}
 
 /* @font-face {
   font-family: "Libre Caslon Condensed";

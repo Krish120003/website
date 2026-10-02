@@ -1,3 +1,25 @@
 allowBuilds:
+  "@sveltejs/kit": false
+  "@vercel/speed-insights": false
+  core-js: false
   esbuild: true
   sharp: true
+overrides:
+  unified: 11.0.5
+minimumReleaseAgeExclude:
+  - "@next/bundle-analyzer@16.3.8"
+  - "@next/env@16.3.8"
+  - "@next/eslint-plugin-next@16.3.8"
+  - "@next/swc-darwin-arm64@16.3.8"
+  - "@next/swc-darwin-x64@16.3.8"
+  - "@next/swc-linux-arm64-gnu@16.3.8"
+  - "@next/swc-linux-arm64-musl@16.3.8"
+  - "@next/swc-linux-x64-gnu@16.3.8"
+  - "@next/swc-linux-x64-musl@16.3.8"
+  - "@next/swc-win32-arm64-msvc@16.3.8"
+  - "@next/swc-win32-x64-msvc@16.3.8"
+  - eslint-config-next@16.3.8
+  - next@16.3.8
+  - posthog-js@1.435.5 || 1.435.6
+  - '@posthog/browser-common@0.9.1'
+  - '@posthog/core@1.55.3'
